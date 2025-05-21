@@ -133,7 +133,7 @@ namespace DVLD_Project.Tests.Controls
                     return;          
             }
 
-            lblTotalFees.Text = (Convert.ToSingle(lblTotalFees.Text) + Convert.ToString(lblRetakeApplicationFees.Text)).ToString();
+            lblTotalFees.Text = (Convert.ToSingle(lblFees.Text) + Convert.ToSingle(lblRetakeApplicationFees.Text)).ToString();
 
             if(!_HandleActiveTestAppointmentContraint())
                 return;
