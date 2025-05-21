@@ -100,7 +100,7 @@ namespace DVLD_Project.Tests.Controls
             }
 
             lblLocalDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
-            //lblDrivingClass.Text = _LocalDrivingLicenseApplication.LicenseClassInfo.ClassName;
+            lblDrivingClass.Text = _LocalDrivingLicenseApplication.LicenseClassInfo.ClassName;
             lblFullName.Text = _LocalDrivingLicenseApplication.PersonFullName;
 
             //This will show the trials for this test before 
