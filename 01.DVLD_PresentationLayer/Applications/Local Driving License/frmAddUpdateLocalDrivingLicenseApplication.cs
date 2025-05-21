@@ -77,7 +77,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
         private void _LoadData()
         {
             ctrlPersonCardWithFilter1.FilterEnabled = false; //we have app ID bcs we are in update mode
-            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByApplicationID(_LocalDrivingLicenseApplicationID);
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
 
             if (_LocalDrivingLicenseApplication == null)
             {
