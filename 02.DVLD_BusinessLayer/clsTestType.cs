@@ -11,7 +11,7 @@ namespace DVLD_BusinessLayer
     public class clsTestType
     {
         public enum enMode { AddNew = 1, Update = 2};
-        public enum enTestType { VisionTest = 0, WrittenTest = 1, StreetTest = 2};
+        public enum enTestType { VisionTest = 1, WrittenTest = 2, StreetTest = 3};
 
         public enMode Mode;
 
