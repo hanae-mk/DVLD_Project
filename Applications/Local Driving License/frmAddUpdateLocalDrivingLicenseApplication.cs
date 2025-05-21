@@ -1,0 +1,230 @@
+﻿using DVLD_BusinessLayer;
+using DVLD_Project.Global_Classes;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DVLD_Project.Applications.Local_Driving_License
+{
+    public partial class frmAddUpdateLocalDrivingLicenseApplication : Form
+    {
+        public enum enMode { AddNew = 1, Update = 2};
+        public enMode Mode = enMode.AddNew;
+
+        private int _LocalDrivingLicenseApplicationID = -1;
+        private int _SelectedPersonID = -1; //We use it in DataBack Event
+
+        clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
+
+        public frmAddUpdateLocalDrivingLicenseApplication()
+        {
+            InitializeComponent();
+            Mode = enMode.AddNew;
+        }
+
+        public frmAddUpdateLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID)
+        {
+            InitializeComponent();
+
+            Mode = enMode.Update;
+            _LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;          
+        }
+
+        private void _FillLicenseClassesInComboBox()
+        {
+            DataTable Table = clsLicenseClass.GetAllLicenseClasses();
+
+            foreach (DataRow Row in Table.Rows)
+            {
+                cbLicenseClass.Items.Add(Row["ClassName"]);
+            }
+        }
+
+        private void _ResetDefaultValues()
+        {
+            _FillLicenseClassesInComboBox();
+
+            if(Mode == enMode.AddNew)
+            {
+                lblTitle.Text = "New Local Driving License Application";
+                this.Text = "New Local Driving License Application";
+                _LocalDrivingLicenseApplication = new clsLocalDrivingLicenseApplication();
+                ctrlPersonCardWithFilter1.Focus();
+                tpApplicationInfo.Enabled = false;
+
+                lblDrivingLicenseApplicationID.Text = "[???]";
+                lblApplicationDate.Text = DateTime.Now.ToShortDateString();
+                cbLicenseClass.SelectedIndex = 2; //Ordinary Driving License
+                lblFees.Text = clsApplicationType.Find((int)clsApplication.enApplicationType.NewDrivingLicense).ApplicationTypeFees.ToString();   
+                lblCreatedByUser.Text = clsGlobal.CurrentUser.UserName;
+            }
+            else
+            {
+                lblTitle.Text = "Update Local Driving License Application";
+                this.Text = "Update Local Driving License Application";
+
+                tpApplicationInfo.Enabled = true;
+                btnSave.Enabled = true;              
+            }
+        }
+
+        private void _LoadData()
+        {
+            ctrlPersonCardWithFilter1.FilterEnabled = false; //we have app ID bcs we are in update mode
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByApplicationID(_LocalDrivingLicenseApplicationID);
+
+            if (_LocalDrivingLicenseApplication == null)
+            {
+                //"Person with ID = " +
+                MessageBox.Show("Application with ID = " + _LocalDrivingLicenseApplicationID + " is NOT Found!",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+           
+            ctrlPersonCardWithFilter1.LoadPersonInfo(_LocalDrivingLicenseApplication.ApplicantPersonID);
+
+            //why we don't use Applications? instead of Local....
+            lblDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.ApplicationID.ToString();
+
+            //why we didn't use .ToShortDateString();
+            lblApplicationDate.Text = clsFormat.ShortDateTime(_LocalDrivingLicenseApplication.ApplicationDate);
+            cbLicenseClass.SelectedIndex = cbLicenseClass.FindString(clsLicenseClass.Find(_LocalDrivingLicenseApplication.LicenseClassID).ClassName);
+            lblFees.Text = _LocalDrivingLicenseApplication.PaidFees.ToString();
+            //_LocalDrivingLicenseApplication.CreatedByUserInfo.UserName.ToString()    
+            lblCreatedByUser.Text = clsUser.FindByUserID(_LocalDrivingLicenseApplication.CreatedByUserID).UserName;
+        }
+
+        private void frmAddUpdateLocalDrivingLicenseApplication_Load(object sender, EventArgs e)
+        {
+            _ResetDefaultValues();
+
+            if (Mode == enMode.Update)
+                _LoadData();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (ctrlPersonCardWithFilter1.PersonID == -1)
+            {
+                MessageBox.Show("Please Select A Person",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                ctrlPersonCardWithFilter1.FilterFocus(); //Why FilterFocus is not in ctrlpersoncard
+                return;
+            }
+
+            if (Mode == enMode.Update)
+            {
+                btnSave.Enabled = true;
+                tpApplicationInfo.Enabled = true;
+                tabControl1.SelectedTab = tabControl1.TabPages["tpApplicationInfo"];
+                return;
+            }
+
+            //Incase of AddNew Mode we don't check if this person have an application
+            //or not because every person can have more than one application
+            btnSave.Enabled = true;
+            tpApplicationInfo.Enabled = true;
+            tabControl1.SelectedTab = tabControl1.TabPages["tpApplicationInfo"];
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //we validate what? bcs we didn't set validating event on app.fees....
+            if (!this.ValidateChildren())
+            {
+                MessageBox.Show("Some Fields are Not Valid, Put the mouse over the red icon(s) to see the error", 
+                                "Validation Error", 
+                                MessageBoxButtons.OK, 
+                                MessageBoxIcon.Error);
+                return;
+            }
+
+            int LicenseClassID = clsLicenseClass.Find(cbLicenseClass.Text).LicenseClassID;
+            int ActiveApplicationID = clsApplication.GetActiveApplicationIDForLicenseClass(_SelectedPersonID, (int)clsApplication.enApplicationType.NewDrivingLicense, LicenseClassID);
+
+            //we check if the user have already an active license for this class
+            if (ActiveApplicationID != -1)
+            {
+                MessageBox.Show("Choose Another License Class, The Selected Person Already have an active application for the selected class with ID = " + ActiveApplicationID, 
+                                "Error", 
+                                MessageBoxButtons.OK, 
+                                MessageBoxIcon.Error);
+                cbLicenseClass.Focus();
+                return;
+            }
+
+            //check if user already have issued license of the same driving class.
+
+            if (clsLicense.IsLicenseExistByPersonID(ctrlPersonCardWithFilter1.PersonID, LicenseClassID))
+            {
+
+                MessageBox.Show("Person already have a license with the same applied driving class, Choose diffrent driving class",
+                                "Not allowed",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return;
+            }
+
+            _LocalDrivingLicenseApplication.ApplicantPersonID = ctrlPersonCardWithFilter1.PersonID;
+            _LocalDrivingLicenseApplication.ApplicationDate = DateTime.Now;
+            _LocalDrivingLicenseApplication.ApplicationTypeID = 1;
+            _LocalDrivingLicenseApplication.ApplicationStatus = clsApplication.enApplicationStatus.New;
+            _LocalDrivingLicenseApplication.LastStatusDate = DateTime.Now;
+            _LocalDrivingLicenseApplication.PaidFees = Convert.ToSingle(lblFees.Text);
+            _LocalDrivingLicenseApplication.CreatedByUserID = clsGlobal.CurrentUser.UserID;
+            _LocalDrivingLicenseApplication.LicenseClassID = LicenseClassID;
+
+            if (_LocalDrivingLicenseApplication.Save())
+            {
+                Mode = enMode.Update;
+                lblTitle.Text = "Update Local Driving License Application";
+                lblDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();                         
+                MessageBox.Show("Data Saved Successfully", 
+                                "Saved", 
+                                MessageBoxButtons.OK, 
+                                MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("An Error Occured While Saving Data", 
+                                "Error", 
+                                MessageBoxButtons.OK, 
+                                MessageBoxIcon.Error);
+        }
+
+        //we didn't use it here we use it in ctrlPersonCardWithFilter to return data
+        //private void _DataBackEvent(object sender, int PersonID)
+        //{
+        //    // Handle the data received why we didn't use this method in 
+        //    //frmAddUpdateUser because when we click on search we receive data
+        //    _SelectedPersonID = PersonID;
+        //    ctrlPersonCardWithFilter1.LoadPersonInfo(_SelectedPersonID);
+        //}
+
+        //here we receive PersonID from ctrlPersonCardWithFilter
+        private void ctrlPersonCardWithFilter1_OnPersonSelected(int obj)
+        {
+            _SelectedPersonID = obj;
+        }
+
+        private void frmAddUpdateLocalDrivingLicenseApplication_Activated(object sender, EventArgs e)
+        {
+            ctrlPersonCardWithFilter1.FilterFocus();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
