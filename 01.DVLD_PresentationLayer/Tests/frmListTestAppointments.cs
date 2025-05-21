@@ -96,7 +96,7 @@ namespace DVLD_Project.Tests
 
             clsTest LastTest = LocalDrivingLicenseApplication.GetLastTestPerTestType(_TestType);
 
-            if(LastTest != null)
+            if(LastTest == null)
             {
                   frmScheduleTest frm = new frmScheduleTest(_LocalDrivingLicenseApplicationID, _TestType);
                   frm.ShowDialog();
@@ -117,6 +117,8 @@ namespace DVLD_Project.Tests
 
             frmScheduleTest frm2 = new frmScheduleTest(LastTest.TestAppointmentInfo.LocalDrivingLicenseApplicationID, _TestType);
             frm2.ShowDialog();
+
+            //Refresh Form
             frmListTestAppointments_Load(null, null);
         }
 
