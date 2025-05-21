@@ -52,7 +52,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 dgvLocalDrivingLicenseApplications.Columns[1].Width = 250;
 
                 dgvLocalDrivingLicenseApplications.Columns[2].HeaderText = "National No.";
-                dgvLocalDrivingLicenseApplications.Columns[2].Width = 100;
+                dgvLocalDrivingLicenseApplications.Columns[2].Width = 110;
 
                 dgvLocalDrivingLicenseApplications.Columns[3].HeaderText = "Full Name";
                 dgvLocalDrivingLicenseApplications.Columns[3].Width = 250;
