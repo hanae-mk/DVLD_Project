@@ -84,7 +84,6 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 txtFilterValue.Focus();
             }
 
-            //kandun hna khsna n3mlu else muhim db ghi kankteb code w sf
             _dtAllLocalDrivingLicenseApplications.DefaultView.RowFilter = "";
             lblRowsCount.Text = dgvLocalDrivingLicenseApplications.Rows.Count.ToString();
         }
@@ -120,7 +119,6 @@ namespace DVLD_Project.Applications.Local_Driving_License
             if(txtFilterValue.Text == "" || cbFilterBy.Text == "None")
             {
                 _dtAllLocalDrivingLicenseApplications.DefaultView.RowFilter = "";
-                //I think same as    dgvLocalDrivingLicenseApplications
                 lblRowsCount.Text = _dtAllLocalDrivingLicenseApplications.Rows.Count.ToString();
                 return;
             }
@@ -130,8 +128,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
             else
                 _dtAllLocalDrivingLicenseApplications.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilterValue.Text.Trim());
             
-            //I think same as    dgvLocalDrivingLicenseApplications
-            lblRowsCount.Text = _dtAllLocalDrivingLicenseApplications.Rows.Count.ToString();
+            lblRowsCount.Text = dgvLocalDrivingLicenseApplications.Rows.Count.ToString();
         }
 
         private void editApplicationToolStripMenuItem_Click(object sender, EventArgs e)
