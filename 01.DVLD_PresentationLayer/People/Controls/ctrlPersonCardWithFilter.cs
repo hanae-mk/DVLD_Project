@@ -90,7 +90,7 @@ namespace DVLD_Project.People.Controls
 
         private void ctrlPersonCardWithFilter_Load(object sender, EventArgs e)
         {
-            cbFilterBy.SelectedIndex = 0; //here 0 means the 1st item in combo box
+            cbFilterBy.SelectedIndex = 1; //here 1 means the 2nd item in combo box
             txtFilterValue.Focus();
         }
 
