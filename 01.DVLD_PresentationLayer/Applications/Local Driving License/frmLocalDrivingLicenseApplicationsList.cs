@@ -324,7 +324,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
                                 MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
-            clsLocalDrivingLicenseApplication localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByApplicationID((int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value);
+            clsLocalDrivingLicenseApplication localDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationInfoByID((int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value);
 
             if(localDrivingLicenseApplication != null)
             {
