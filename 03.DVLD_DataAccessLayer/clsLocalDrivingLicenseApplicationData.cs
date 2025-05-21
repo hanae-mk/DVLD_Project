@@ -398,7 +398,7 @@ namespace DVLD_DataAccessLayer
                 object Result = Command.ExecuteScalar();
 
                 if (Result != null)
-                   Result = true;               
+                   IsActive = true;               
             }
             catch (Exception ex)
             {
