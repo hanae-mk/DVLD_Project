@@ -27,8 +27,8 @@ namespace DVLD_Project.Applications.Local_Driving_License
         public void FillComboBoxWithFilters()
         {
             cbFilterBy.Items.Add("None");
-            cbFilterBy.Items.Add("L.D.L AppID");
-            cbFilterBy.Items.Add("National No");
+            cbFilterBy.Items.Add("L.D.L. AppID");
+            cbFilterBy.Items.Add("National No.");
             cbFilterBy.Items.Add("Full Name");
             cbFilterBy.Items.Add("Status");
         }
@@ -95,7 +95,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
             switch(cbFilterBy.Text)
             {
-                case "L.D.L.AppID":
+                case "L.D.L. AppID":
                     FilterColumn = "LocalDrivingLicenseApplicationID";
                     break;
 
