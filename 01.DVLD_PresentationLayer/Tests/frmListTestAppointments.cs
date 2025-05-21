@@ -130,8 +130,8 @@ namespace DVLD_Project.Tests
 
         private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmTakeTest frm = new frmTakeTest((int)dgvAppointments.CurrentRow.Cells[0].Value, _TestType);
-            //frm.ShowDialog();
+            frmTakeTest frm = new frmTakeTest((int)dgvAppointments.CurrentRow.Cells[0].Value, _TestType);
+            frm.ShowDialog();
 
             frmListTestAppointments_Load(null, null);
         }
