@@ -94,29 +94,29 @@ namespace DVLD_Project.Tests
                 return;
             }
 
-            //clsTestAppointment LastTest = LocalDrivingLicenseApplication.GetLastTestPerTestType(_TestType);
+            clsTest LastTest = LocalDrivingLicenseApplication.GetLastTestPerTestType(_TestType);
 
-            //if(LastTest != null)
-            //{
-            //    frmScheduleTest frm = new frmScheduleTest(_LocalDrivingLicenseApplicationID, _TestType);
-            //    frm.ShowDialog();
-            //    frmListTestAppointments_Load(null, null);
-            //    return;
-            //}
+            if(LastTest != null)
+            {
+                  frmScheduleTest frm = new frmScheduleTest(_LocalDrivingLicenseApplicationID, _TestType);
+                  frm.ShowDialog();
+                  frmListTestAppointments_Load(null, null);
+                  return;
+            }
 
             //If The Person Already Passed The Test he cannot retake it!
-            //if(LastTest.TestResult)
-            //{
-            //    MessageBox.Show(@"This Person Already Passed This Test Before, 
-            //                      you can only retake faild test", 
-            //                     "Not Allowed", 
-            //                     MessageBoxButtons.OK, 
-            //                     MessageBoxIcon.Error);
-            //    return;
-            //}
+            if(LastTest.TestResult)
+            {
+                MessageBox.Show(@"This Person Already Passed This Test Before, 
+                                  you can only retake faild test", 
+                                "Not Allowed", 
+                                MessageBoxButtons.OK, 
+                                 MessageBoxIcon.Error);
+                return;
+            }
 
-            //frmScheduleTest frm2 = new frmScheduleTest(LastTest.TestAppointmentInfo.LocalDrivingLicenseApplicationID, _TestType);
-            //frm2.ShowDialog();
+            frmScheduleTest frm2 = new frmScheduleTest(LastTest.TestAppointmentInfo.LocalDrivingLicenseApplicationID, _TestType);
+            frm2.ShowDialog();
             frmListTestAppointments_Load(null, null);
         }
 
