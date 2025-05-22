@@ -269,7 +269,7 @@ namespace DVLD_DataAccessLayer
 
                 if (Result != null && bool.TryParse(Result.ToString(), out bool ReturnedResult))
                 {
-                    Result = ReturnedResult;
+                    IsPass = ReturnedResult;
                 }
             }
             catch (Exception ex)
