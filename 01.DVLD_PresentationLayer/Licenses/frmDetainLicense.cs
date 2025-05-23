@@ -21,6 +21,16 @@ namespace DVLD_Project.Licenses
         {
             InitializeComponent();
         }
+
+        private void frmDetainLicense_Load(object sender, EventArgs e)
+        {
+            lblDetainDate.Text = clsFormat.ShortDateTime(DateTime.Now);
+            lblCreatedBy.Text = clsGlobal.CurrentUser.UserName;
+            LinklblShowLicenseInfo.Enabled = false;
+            LinklblShowLicenseHistory.Enabled = false;
+            btnDetainLicense.Enabled = false;
+       }
+        
         private void btnDetainLicense_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are You Sure You Want To Detain This License?",
@@ -84,7 +94,7 @@ namespace DVLD_Project.Licenses
         {
             if (string.IsNullOrEmpty(txtFineFees.Text.Trim()))
             {
-                e.Cancel = true;
+                //e.Cancel = true;
                 errorProvider1.SetError(txtFineFees, "This Field Is Required!");
                 return;
             }
