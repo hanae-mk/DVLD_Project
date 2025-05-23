@@ -33,6 +33,15 @@ namespace DVLD_Project.Licenses
         
         private void btnDetainLicense_Click(object sender, EventArgs e)
         {
+             if(this.ValidateChildren())
+             {
+                  MessageBox.Show("Please Put the mouse over the red icon(s) to see the error!",
+                                  "Invalid Form",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Error);
+                 return;
+             }
+            
             if (MessageBox.Show("Are You Sure You Want To Detain This License?",
                                 "Confirm",
                                 MessageBoxButtons.YesNo,
