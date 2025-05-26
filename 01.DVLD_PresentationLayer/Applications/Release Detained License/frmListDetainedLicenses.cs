@@ -101,7 +101,7 @@ namespace DVLD_Project.Applications.Release_Detained_License
                 return;
             }
 
-            if(FilterColumn == "DetainID" || FilterColumn == "Release Application ID")
+            if(FilterColumn == "DetainID" || FilterColumn == "ReleaseApplicationID")
                 _dtAllDetainedLicenses.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilterValue.Text.Trim());         
             else
                 _dtAllDetainedLicenses.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilterValue.Text.Trim());
