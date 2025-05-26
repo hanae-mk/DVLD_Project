@@ -34,7 +34,7 @@ namespace DVLD_Project.Applications.Release_Detained_License
 
             if (dgvDetainedLicenses.Rows.Count > 0)
             {
-                dgvDetainedLicenses.Columns[0].HeaderText = "Driver ID";
+                dgvDetainedLicenses.Columns[0].HeaderText = "Detain ID";
                 dgvDetainedLicenses.Columns[0].Width = 80;
 
                 dgvDetainedLicenses.Columns[1].HeaderText = "License ID";
@@ -162,7 +162,7 @@ namespace DVLD_Project.Applications.Release_Detained_License
 
         private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(cbFilters.Text == "DetainID" || cbFilters.Text == "Release Application ID")
+            if(cbFilters.Text == "Detain ID" || cbFilters.Text == "Release Application ID")
             {
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
