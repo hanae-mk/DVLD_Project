@@ -157,7 +157,7 @@ namespace DVLD_Project.Applications.Release_Detained_License
             else
                 _dtAllDetainedLicenses.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, FilterValue);
 
-            lblRowsCount.Text = _dtAllDetainedLicenses.Rows.Count.ToString();
+            lblRowsCount.Text = dgvDetainedLicenses.Rows.Count.ToString();
         }
 
         private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
