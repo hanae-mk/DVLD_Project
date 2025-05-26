@@ -113,6 +113,13 @@ namespace DVLD_Project.Applications.Release_Detained_License
             LinklblShowLicenseInfo.Enabled = true;
         }
 
+         private void frmReleaseDetainedLicenseApplication_Load(object sender, EventArgs e)
+         {
+             btnReleaseDetainedLicense.Enabled = false;
+             LinklblShowLicenseHistory.Enabled = false;
+             LinklblShowLicenseInfo.Enabled = false;
+         }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
