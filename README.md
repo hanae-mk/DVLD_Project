@@ -1,11 +1,11 @@
-🚗 Driving License Management System
+🚗 **Driving License Management System**
 
 A comprehensive Windows Forms application for managing driver licenses, applications, and related administrative tasks.
 This system provides a robust solution for driving license authorities to manage licenses, applications, tests, and driver records efficiently.
 
-✨ Features
+✨ **Features**
 
-👤 User Management
+👤 **User Management**
 
 Secure user authentication and authorization 
 
@@ -13,7 +13,7 @@ Role-based access control
 
 User profile management
 
-👥 Driver Management
+👥 **Driver Management**
 
 Driver registration and profile management
 
@@ -21,7 +21,7 @@ Driver history tracking
 
 License status monitoring
 
-**License Management**
+📄 **License Management**  
 
 Local driving license processing
 
@@ -35,7 +35,7 @@ License Detain and Release
 
 License class management
 
-📄 Application Processing
+📄 **Application Processing**
 
 New license applications
 
@@ -45,7 +45,7 @@ Application status tracking
 
 Fee management
 
-🧪 Test Management
+🧪 **Test Management**
 
 Test scheduling and appointments
 
@@ -55,7 +55,7 @@ Test results tracking
 
 Test type management
 
-📊 Reporting
+📊 **Reporting**
 
 License status reports
 
@@ -65,7 +65,7 @@ Test results reports
 
 Licenses Driver history reports
 
-🛠️ Prerequisites
+🛠️ **Prerequisites**
 
 .NET Framework
 
