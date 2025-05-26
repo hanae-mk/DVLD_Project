@@ -15,7 +15,7 @@ namespace DVLD_Project.Licenses.Local_Licenses
     {
         private int _LicenseID = -1;
        
-        public frmShowLicenseInfo(int LicenseID) //hna mayn jibna LicenseID mashi khsna n3mlu (int)dgv....
+        public frmShowLicenseInfo(int LicenseID)
         {
             InitializeComponent();
             _LicenseID = LicenseID;
