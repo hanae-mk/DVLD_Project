@@ -4,7 +4,7 @@ This system provides a robust solution for driving license authorities to manage
 
 ✨ Features
 👤 User Management
-Secure user authentication and authorization
+Secure user authentication and authorization 
 Role-based access control
 User profile management
 👥 Driver Management
