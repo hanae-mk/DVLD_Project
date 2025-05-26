@@ -135,7 +135,6 @@ namespace DVLD_Project.Users
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //nzid neamel debug bash nxuf dik not .
             //we don't continue because the form is NOT Valid!
             if (!this.ValidateChildren())
             {
@@ -158,7 +157,7 @@ namespace DVLD_Project.Users
             {
                 Mode = enMode.Update;
                 lblUserID.Text = _User.UserID.ToString();
-                lblTitle.Text = "Update User";           //elash zad hadu hnaya??????
+                lblTitle.Text = "Update User";          
                 this.Text = "Update User";
                 MessageBox.Show("Data Saved Successfully",
                                  "Saved",
@@ -212,12 +211,15 @@ namespace DVLD_Project.Users
         private void txtConfirmPassword_Validating(object sender, CancelEventArgs e)
         {
             if (clsValidation.IsMatchedPassword(txtPassword.Text.Trim(), txtConfirmPassword.Text.Trim()))
-                errorProvider1.SetError(txtConfirmPassword, null);
+            {   
+                 errorProvider1.SetError(txtConfirmPassword, null);
+                 btnSave.Enabled = true; 
+            }
             else
-            {
-                btnSave.Enabled = false; 
+            {        
                 e.Cancel = true;
-                errorProvider1.SetError(txtConfirmPassword, "Unmatched Password!");                   
+                errorProvider1.SetError(txtConfirmPassword, "Unmatched Password!");        
+                btnSave.Enabled = false; 
             }
         }
 
