@@ -21,7 +21,7 @@ Driver history tracking
 
 License status monitoring
 
-🪪 License Management
+**License Management**
 
 Local driving license processing
 
