@@ -98,7 +98,7 @@ namespace DVLD_DataAccessLayer
             DataTable Table = new DataTable();
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string Query = "SELECT * FROM Drivers_View ORDER BY FullName";
+            string Query = "SELECT * FROM Drivers_View ORDER BY DriverID";
 
             SqlCommand Command = new SqlCommand(Query, Connection);
 
