@@ -22,6 +22,15 @@ namespace DVLD_Project.Licenses
             InitializeComponent();
         }
 
+        public frmDetainLicense(int LicenseID)
+        {
+            InitializeComponent();
+            _SelectedLicenseID = LicenseID;
+
+            ctrlDriverLicenseInfoWithFilter1.LoadLicenseInfo(_SelectedLicenseID);
+            ctrlDriverLicenseInfoWithFilter1.IsFilterEnabled = false;
+        }
+
         private void frmDetainLicense_Load(object sender, EventArgs e)
         {
             lblDetainDate.Text = clsFormat.ShortDateTime(DateTime.Now);
