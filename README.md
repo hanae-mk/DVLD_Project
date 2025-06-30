@@ -66,7 +66,7 @@ This system provides a robust solution for driving license authorities to manage
 
 - Licenses Driver history reports
 ***
-## 🛠️ **Prerequisites**
+## 🛠️ **Requirements**
 
 - .NET Framework
 
