@@ -1,78 +1,79 @@
-🚗 **Driving License Management System**
+ # 🚗 Driving License Management System
 
-A comprehensive Windows Forms application for managing driver licenses, applications, and related administrative tasks.
+A comprehensive **Windows Forms Application** for managing driver licenses, applications, and related administrative tasks.
+
 This system provides a robust solution for driving license authorities to manage licenses, applications, tests, and driver records efficiently.
-
-✨ **Features**
+***
+## ✨ **Features**
 
 👤 **User Management**
 
-Secure user authentication and authorization 
+- Secure user authentication and authorization 
 
-Role-based access control
+- Role-based access control
 
-User profile management
+- User profile management
 
 👥 **Driver Management**
 
-Driver registration and profile management
+- Driver registration and profile management
 
-Driver history tracking
+- Driver history tracking
 
-License status monitoring
+- License status monitoring
 
 📄 **License Management**  
 
-Local driving license processing
+- Local driving license processing
 
-International license management
+- International license management
 
-License renewal and updates
+- License renewal and updates
 
-License Replacement For Damaged OR Lost
+- License Replacement For Damaged OR Lost
 
-License Detain and Release
+- License Detain and Release
 
-License class management
+- License class management
 
 📄 **Application Processing**
 
-New license applications
+- New license applications
 
-License renewal applications
+- License renewal applications
 
-Application status tracking
+- Application status tracking
 
-Fee management
+- Fee management
 
 🧪 **Test Management**
 
-Test scheduling and appointments
+- Test scheduling and appointments
 
-Different test types ( Vision, Written(Theory), Road(Practical) )
+- Different test types (Vision, Written(Theory), Road(Practical))
 
-Test results tracking
+- Test results tracking
 
-Test type management
+- Test type management
 
 📊 **Reporting**
 
-License status reports
+- License status reports
 
-Application statistics
+- Application statistics
 
-Test results reports
+- Test results reports
 
-Licenses Driver history reports
+- Licenses Driver history reports
 
 🛠️ **Prerequisites**
 
-.NET Framework
+- .NET Framework
 
-ADO.Net
+- ADO.Net
 
-SQL Server
+- SQL Server
 
-Windows Forms
+- Windows Forms
 
-Visual Studio 2022
+- Visual Studio 2022
