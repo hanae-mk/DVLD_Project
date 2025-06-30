@@ -81,21 +81,30 @@ This system provides a robust solution for driving license authorities to manage
 - Visual Studio 2022
   ***
   ## 🚀 Installation
-  1. Clone The Repository:
 
-  Use This Command Line :
-
-  git clone https://github.com/hanae-mk/DVLD_Project.git
+1. Clone The Repository:  
+Use This Command Line :  
+git clone https://github.com/hanae-mk/DVLD_Project.git
 
 2. Create a new SQL Server Database and name it "DVLD Database"
 
 3. Download the Database Script in the "00.DataBase BackUp File" Folder
 
-4. Restore the Database by clicking on New Query then Paste this command Line :
+4. Restore the Database by clicking on New Query then Paste this command Line :  
+   RESTORE DATABASE DVLD FROM Disk = 'C:\DVLD.bak';
 
-RESTORE DATABASE DVLD
-fROM Disk = 'C:\DVLD.bak';
+5. Open The Project Go to DVLD_DataAccessLayer scroll down and search "clsDataAccessSettings.cs" class
+   You will find a ConnectionString Update DataBase, User ID and Password.
+   
+6. Build and Run the Project
 
-5.
+***
+## 📽️ **Project Demo**
+
+Please visit this link:  
+https://lnkd.in/ekBaZMPM
+
+
+
 
 
