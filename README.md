@@ -94,9 +94,10 @@ git clone https://github.com/hanae-mk/DVLD_Project.git
    RESTORE DATABASE DVLD FROM Disk = 'C:\DVLD.bak';
 
 5. Open The Project Go to DVLD_DataAccessLayer scroll down and search "clsDataAccessSettings.cs" class
-   You will find a ConnectionString Update DataBase, User ID and Password.
+   You will find a ConnectionString
+   Update DataBase, User ID and Password.
    
-6. Build and Run the Project
+7. Build and Run the Project
 
 ***
 ## 📽️ **Project Demo**
