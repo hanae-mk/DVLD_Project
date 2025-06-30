@@ -97,8 +97,9 @@ git clone https://github.com/hanae-mk/DVLD_Project.git
    You will find a ConnectionString
    Update DataBase, User ID and Password.
    
-7. Build and Run the Project
-
+7. Build and Run the Project  
+   **UserName** : Hanae  
+   **Password** : 1234
 ***
 ## 📽️ **Project Demo**
 
