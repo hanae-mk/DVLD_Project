@@ -111,7 +111,7 @@ namespace DVLD_Project.Applications.Release_Detained_License
 
         private void cbFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbFilters.Text == "IsReleased")
+            if(cbFilters.Text == "Is Released")
             {
                 txtFilterValue.Visible = false;
                 cbIsReleased.Visible = true;
