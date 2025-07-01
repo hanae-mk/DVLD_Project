@@ -108,7 +108,7 @@ Please visit this link:
 https://lnkd.in/ekBaZMPM
 
 ***
-### Contact  
+### 👤 Contact  
 If you have any question feel free to contact me via my Linkedin  
 https://www.linkedin.com/in/hanae-mk/
 
