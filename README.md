@@ -79,8 +79,8 @@ This system provides a robust solution for driving license authorities to manage
 - Windows Forms
 
 - Visual Studio 2022
-  ***
-  ## 🚀 Installation
+***
+## 🚀 **Installation**
 
 1. Clone The Repository:  
 Use This Command Line :  
@@ -108,7 +108,9 @@ Please visit this link:
 https://lnkd.in/ekBaZMPM
 
 ***
-### Contact
+### Contact  
+If you have any question feel free to contact me via my Linkedin  
+https://www.linkedin.com/in/hanae-mk/
 
 
 
