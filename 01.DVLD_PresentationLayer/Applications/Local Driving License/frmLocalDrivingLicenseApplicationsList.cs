@@ -224,8 +224,6 @@ namespace DVLD_Project.Applications.Local_Driving_License
             frmLocalDrivingLicenseApplicationsList_Load(null, null);
         }
 
-        //HADU KAYNIN ASLAN MA3RAFTXI ELASH TEACHER 3AWDUM HNAYA
-
         private void scheduleVisionTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _ScheduleTest(clsTestType.enTestType.VisionTest);
@@ -354,7 +352,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
                                MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
-            clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByApplicationID((int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value);
+            clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationInfoByID((int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value);
 
             if(LocalDrivingLicenseApplication != null)
             {

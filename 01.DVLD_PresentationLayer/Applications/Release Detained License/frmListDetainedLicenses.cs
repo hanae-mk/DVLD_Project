@@ -208,7 +208,7 @@ namespace DVLD_Project.Applications.Release_Detained_License
 
         private void btnReleaseLicense_Click(object sender, EventArgs e)
         {
-            frmReleaseDetainedLicenseApplication frm = new frmReleaseDetainedLicenseApplication((int)dgvDetainedLicenses.CurrentRow.Cells[0].Value);
+            frmReleaseDetainedLicenseApplication frm = new frmReleaseDetainedLicenseApplication();
             frm.ShowDialog();
 
             //Refresh Table

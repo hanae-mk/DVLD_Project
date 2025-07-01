@@ -1,5 +1,6 @@
 ﻿using DVLD_BusinessLayer;
 using DVLD_Project.Global_Classes;
+using DVLD_Project.Licenses;
 using DVLD_Project.Licenses.Local_Licenses;
 using System;
 using System.Collections.Generic;
@@ -47,6 +48,7 @@ namespace DVLD_Project.Applications.ReplaceLostOrDamagedLicense
             lblCreatedBy.Text = clsGlobal.CurrentUser.UserName;
 
             rbDamagedLicense.Checked = true;
+            LinklblShowLicenseHistory.Enabled = false;
         }
 
         private void rbDamagedLicense_CheckedChanged(object sender, EventArgs e)
@@ -95,7 +97,7 @@ namespace DVLD_Project.Applications.ReplaceLostOrDamagedLicense
             if (MessageBox.Show("Are You Sure You Want To Issue a Replacement For This License?", 
                                 "Confirm", 
                                 MessageBoxButtons.YesNo, 
-                                MessageBoxIcon.Question) == DialogResult.Yes)
+                                MessageBoxIcon.Question) == DialogResult.No)
                 return;
 
             clsLicense NewLicense = ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.Replace(_GetIssueReason(), clsGlobal.CurrentUser.UserID);
@@ -132,13 +134,15 @@ namespace DVLD_Project.Applications.ReplaceLostOrDamagedLicense
 
         private void LinklblShowLicenseHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //frmShowPersonLicenseHistory frm = new frmShowPersonLicenseHistory(ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.DriverInfo.PersonID);
-            //frm.ShowDialog();
+            frmShowPersonLicenseHistory frm = new frmShowPersonLicenseHistory(ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.DriverInfo.PersonID);
+            frm.ShowDialog();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+     
     }
 }

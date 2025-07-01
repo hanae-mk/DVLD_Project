@@ -90,7 +90,7 @@
             this.ctrlPersonCardWithFilter1.TabIndex = 1;
             this.ctrlPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.ctrlPersonCardWithFilter1_OnPersonSelected);
             // 
-            // frmShowPersonLicensesHistory
+            // frmShowPersonLicenseHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,7 +102,7 @@
             this.Controls.Add(this.ctrlPersonCardWithFilter1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmShowPersonLicensesHistory";
+            this.Name = "frmShowPersonLicenseHistory";
             this.Text = "ShowPersonLicensesHistory";
             this.Load += new System.EventHandler(this.frmShowPersonLicensesHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

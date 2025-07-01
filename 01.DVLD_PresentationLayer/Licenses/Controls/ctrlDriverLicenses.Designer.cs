@@ -130,7 +130,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(963, 198);
+            this.tabPage2.Size = new System.Drawing.Size(1042, 198);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "International";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -165,7 +165,7 @@
             this.dgvInternationalLicensesHistory.Location = new System.Drawing.Point(14, 40);
             this.dgvInternationalLicensesHistory.Name = "dgvInternationalLicensesHistory";
             this.dgvInternationalLicensesHistory.ReadOnly = true;
-            this.dgvInternationalLicensesHistory.Size = new System.Drawing.Size(653, 125);
+            this.dgvInternationalLicensesHistory.Size = new System.Drawing.Size(1022, 125);
             this.dgvInternationalLicensesHistory.TabIndex = 4;
             // 
             // label2

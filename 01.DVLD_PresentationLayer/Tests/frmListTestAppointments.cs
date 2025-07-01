@@ -107,10 +107,9 @@ namespace DVLD_Project.Tests
             //If The Person Already Passed The Test he cannot retake it!
             if(LastTest.TestResult)
             {
-                MessageBox.Show(@"This Person Already Passed This Test Before, 
-                                  you can only retake faild test", 
-                                "Not Allowed", 
-                                MessageBoxButtons.OK, 
+                MessageBox.Show(@"This Person Already Passed This Test Before, you can only retake faild test", 
+                                 "Not Allowed", 
+                                 MessageBoxButtons.OK, 
                                  MessageBoxIcon.Error);
                 return;
             }

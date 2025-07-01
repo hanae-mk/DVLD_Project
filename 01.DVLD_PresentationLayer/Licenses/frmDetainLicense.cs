@@ -149,6 +149,8 @@ namespace DVLD_Project.Licenses
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }      
+        }
+
+       
     }
 }

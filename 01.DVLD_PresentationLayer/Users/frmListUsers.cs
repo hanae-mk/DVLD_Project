@@ -42,7 +42,7 @@ namespace DVLD_Project.Users
                 dgvUsers.Columns[2].Width = 350;
 
                 dgvUsers.Columns[3].HeaderText = "UserName";
-                dgvUsers.Columns[3].Width = 80;
+                dgvUsers.Columns[3].Width = 100;
 
                 dgvUsers.Columns[4].HeaderText = "Is Active";
                 dgvUsers.Columns[4].Width = 80;

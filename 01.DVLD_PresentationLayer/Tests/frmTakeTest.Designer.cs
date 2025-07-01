@@ -38,7 +38,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblUserMessage = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.ctrlScheduledTest2 = new DVLD_Project.Tests.Controls.ctrlScheduledTest();
+            this.ctrlScheduledTest1 = new DVLD_Project.Tests.Controls.ctrlScheduledTest();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtNotes = new System.Windows.Forms.TextBox();
@@ -164,13 +164,13 @@
             this.pictureBox9.TabIndex = 58;
             this.pictureBox9.TabStop = false;
             // 
-            // ctrlScheduledTest2
+            // ctrlScheduledTest1
             // 
-            this.ctrlScheduledTest2.Location = new System.Drawing.Point(12, 12);
-            this.ctrlScheduledTest2.Name = "ctrlScheduledTest2";
-            this.ctrlScheduledTest2.Size = new System.Drawing.Size(483, 460);
-            this.ctrlScheduledTest2.TabIndex = 0;
-            this.ctrlScheduledTest2.TestTypeID = DVLD_BusinessLayer.clsTestType.enTestType.VisionTest;
+            this.ctrlScheduledTest1.Location = new System.Drawing.Point(12, 12);
+            this.ctrlScheduledTest1.Name = "ctrlScheduledTest1";
+            this.ctrlScheduledTest1.Size = new System.Drawing.Size(483, 460);
+            this.ctrlScheduledTest1.TabIndex = 0;
+            this.ctrlScheduledTest1.TestTypeID = DVLD_BusinessLayer.clsTestType.enTestType.VisionTest;
             // 
             // btnClose
             // 
@@ -299,7 +299,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.ctrlScheduledTest2);
+            this.Controls.Add(this.ctrlScheduledTest1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmTakeTest";
             this.Text = "TakeTest";
@@ -315,7 +315,6 @@
 
         #endregion
 
-        private Controls.ctrlScheduledTest ctrlScheduledTest1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
@@ -326,7 +325,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblUserMessage;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private Controls.ctrlScheduledTest ctrlScheduledTest2;
+        private Controls.ctrlScheduledTest ctrlScheduledTest1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtNotes;

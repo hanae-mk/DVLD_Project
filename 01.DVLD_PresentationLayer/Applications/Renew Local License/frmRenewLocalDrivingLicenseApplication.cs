@@ -63,6 +63,9 @@ namespace DVLD_Project.Licenses.Local_Licenses
 
         private void frmRenewLocalDrivingLicenseApplication_Load(object sender, EventArgs e)
         {
+            btnRenewLicense.Enabled = false;
+            linklblShowNewLicenseInfo.Enabled = false;
+            linklblShowLicenseHistory.Enabled = false;
             ctrlDriverLicenseInfoWithFilter1.txtLicenseIDFocus();
 
             lblApplicationDate.Text = clsFormat.ShortDateTime(DateTime.Now);
@@ -73,13 +76,13 @@ namespace DVLD_Project.Licenses.Local_Licenses
    
         private void linklblShowNewLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //frmShowLicenseInfo frm = new frmShowPersonLicenseHistory(_NewLicenseID);
-            //frm.ShowDialog();
+            frmShowLicenseInfo frm = new frmShowLicenseInfo(_NewLicenseID);
+            frm.ShowDialog();
         }
 
         private void linklblShowLicenseHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmShowLicenseInfo frm = new frmShowLicenseInfo(_NewLicenseID);
+            frmShowPersonLicenseHistory frm = new frmShowPersonLicenseHistory(ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.DriverInfo.PersonID);
             frm.ShowDialog();
         }
 
@@ -124,6 +127,7 @@ namespace DVLD_Project.Licenses.Local_Licenses
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }     
+        }
+
     }
 }

@@ -99,7 +99,7 @@ namespace DVLD_BusinessLayer
 
         public static clsLocalDrivingLicenseApplication FindByApplicationID(int ApplicationID)
         {
-            //I think it's the same function li fu9 hadi!
+
             int LocalDrivingLicenseApplicationID = -1, LicenseClassID = -1;
 
             if (clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationInfoByApplicationID
@@ -162,7 +162,8 @@ namespace DVLD_BusinessLayer
                 return false;
 
             //Then we delete the base Application
-            //IsBaseApplicationDeleted = base.DeleteApplication(ApplicationID);
+            IsBaseApplicationDeleted = base.DeleteApplication();
+
             return IsBaseApplicationDeleted;
         }
 

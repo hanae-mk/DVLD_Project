@@ -327,6 +327,7 @@
             this.Name = "frmDetainLicense";
             this.Text = "DetainedLicenses";
             this.Activated += new System.EventHandler(this.frmDetainedLicenses_Activated);
+            this.Load += new System.EventHandler(this.frmDetainLicense_Load);
             this.gbDetainInfo.ResumeLayout(false);
             this.gbDetainInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

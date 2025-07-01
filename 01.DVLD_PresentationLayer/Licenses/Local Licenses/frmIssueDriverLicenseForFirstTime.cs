@@ -27,7 +27,7 @@ namespace DVLD_Project.Licenses.Local_Licenses
         {
             txtNotes.Focus();
 
-            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByApplicationID(_LocalDrivingLicenseApplicationID);
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
 
             if(_LocalDrivingLicenseApplication == null)
             {
@@ -39,15 +39,15 @@ namespace DVLD_Project.Licenses.Local_Licenses
                 return;
             }
 
-            //if(!_LocalDrivingLicenseApplication.IsPassTest())
-            //{
-            //    MessageBox.Show("This Person Should Pass All Tests First", 
-            //                    "Not Allowed", 
-            //                    MessageBoxButtons.OK, 
-            //                    MessageBoxIcon.Error);
-            //    this.Close();
-            //    return;
-            //}
+            if (!_LocalDrivingLicenseApplication.PassedAllTests())
+            {
+                MessageBox.Show("This Person Should Pass All Tests First",
+                                "Not Allowed",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
 
             int LicenseID = _LocalDrivingLicenseApplication.GetActiveLicenseID();
 
@@ -61,12 +61,12 @@ namespace DVLD_Project.Licenses.Local_Licenses
                 return;
             }
 
-            ctrlLocalDrivingLicenseApplicationInfo1.LoadApplicationInfoByApplicationID(_LocalDrivingLicenseApplicationID);
+            ctrlLocalDrivingLicenseApplicationInfo1.LoadApplicationInfoByLocalDrivingApplicationID(_LocalDrivingLicenseApplicationID);
         }
 
         private void btnIssueLicense_Click(object sender, EventArgs e)
         {
-            int LicenseID = -1;//_LocalDrivingLicenseApplication.IssueLicenseForTheFirstTime(txtNotes.Text.Trim(), clsGlobal.CurrentUser.UserID);
+            int LicenseID = _LocalDrivingLicenseApplication.IssueLicenseForTheFirtTime(txtNotes.Text.Trim(), clsGlobal.CurrentUser.UserID);
 
             if(LicenseID != -1)
             {
