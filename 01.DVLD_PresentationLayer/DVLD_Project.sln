@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.DVLD Presentation Layer", "01.DVLD_PresentationLayer\DVLD Presentation Layer.csproj", "{36526248-31B2-483D-B584-63A39A7A2B79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.DVLD Presentation Layer", "DVLD Presentation Layer.csproj", "{36526248-31B2-483D-B584-63A39A7A2B79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.DVLD_BusinessLayer", "02.DVLD_BusinessLayer\DVLD_BusinessLayer.csproj", "{B8EFE37E-DFB2-4BCE-9C13-0E000627DC87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.DVLD_BusinessLayer", "..\02.DVLD_BusinessLayer\DVLD_BusinessLayer.csproj", "{B8EFE37E-DFB2-4BCE-9C13-0E000627DC87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.DVLD_DataAccessLayer", "03.DVLD_DataAccessLayer\DVLD_DataAccessLayer.csproj", "{77B07562-63FA-4B9A-863A-D35302608206}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.DVLD_DataAccessLayer", "..\03.DVLD_DataAccessLayer\DVLD_DataAccessLayer.csproj", "{77B07562-63FA-4B9A-863A-D35302608206}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
