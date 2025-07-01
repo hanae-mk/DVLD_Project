@@ -58,7 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DVLD_DataAccessLayer\03.DVLD_DataAccessLayer.csproj">
+    <ProjectReference Include="..\03.DVLD_DataAccessLayer\DVLD_DataAccessLayer.csproj">
       <Project>{77b07562-63fa-4b9a-863a-d35302608206}</Project>
       <Name>03.DVLD_DataAccessLayer</Name>
     </ProjectReference>

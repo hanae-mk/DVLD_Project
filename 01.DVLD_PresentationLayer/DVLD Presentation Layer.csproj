@@ -556,7 +556,7 @@
     <Content Include="Resources\Written Test 512.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DVLD_BusinessLayer\02.DVLD_BusinessLayer.csproj">
+    <ProjectReference Include="..\02.DVLD_BusinessLayer\DVLD_BusinessLayer.csproj">
       <Project>{b8efe37e-dfb2-4bce-9c13-0e000627dc87}</Project>
       <Name>02.DVLD_BusinessLayer</Name>
     </ProjectReference>
