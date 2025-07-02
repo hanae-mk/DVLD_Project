@@ -112,7 +112,7 @@ namespace DVLD_Project.Licenses.Controls
         //private void InternationalLicenseHistorytoolStripMenuItem_Click(object sender, EventArgs e)
         //{
         //    int InternationalLicenseID = (int)dgvInternationalLicensesHistory.CurrentRow.Cells[0].Value;
-        //    frmShowInternationalLicenseInfo frm = new frmShowInternationalLicenseInfo(InternationalLicenseID);
+        //    frmShowLicenseInfo frm = new frmShowLicenseInfo(InternationalLicenseID);
         //    frm.ShowDialog();
         //}
 

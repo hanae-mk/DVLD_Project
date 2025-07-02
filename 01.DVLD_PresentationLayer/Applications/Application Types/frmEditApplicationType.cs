@@ -78,7 +78,6 @@ namespace DVLD_Project.Applications.Application_Types
                 errorProvider1.SetError(txtApplicationTypeFees, null);
             }
 
-            //why we used this method instead of this :
             //e.Handled = char.IsDigit(e.KeyChar) && char.IsControl(e.KeyChar);    
             if (!clsValidation.IsNumber(txtApplicationTypeFees.Text))
             {

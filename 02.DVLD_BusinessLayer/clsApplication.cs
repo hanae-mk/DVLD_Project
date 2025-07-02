@@ -27,7 +27,6 @@ namespace DVLD_BusinessLayer
         public float PaidFees { set; get; }
         public int CreatedByUserID { set; get; }
 
-        //3lash zidnaha?
         public string ApplicantFullName //ApplicantPersonID here is not user but driver
         { 
             get { return clsPerson.FindPerson(ApplicantPersonID).FullName; }
@@ -83,12 +82,12 @@ namespace DVLD_BusinessLayer
             this.PersonInfo = clsPerson.FindPerson(ApplicantPersonID);
             this.ApplicationDate = ApplicationDate;
             this.ApplicationTypeID = ApplicationTypeID;
-            this.ApplicationTypeInfo = clsApplicationType.Find(ApplicationTypeID); //zidnaha
+            this.ApplicationTypeInfo = clsApplicationType.Find(ApplicationTypeID); 
             this.ApplicationStatus = ApplicationStatus;
             this.LastStatusDate = LastStatusDate;
             this.PaidFees = PaidFees;
             this.CreatedByUserID = CreatedByUserID;
-            this.CreatedByUserInfo = clsUser.FindByUserID(CreatedByUserID); //zidnaha
+            this.CreatedByUserInfo = clsUser.FindByUserID(CreatedByUserID); 
 
             Mode = enMode.Update;
         }
@@ -220,7 +219,6 @@ namespace DVLD_BusinessLayer
 
                 case enMode.Update:
                     return _UpdateApplication();
-                    //return _UpdateStatus(); No bcs here we update just status 
 
                 default:
                     return false;

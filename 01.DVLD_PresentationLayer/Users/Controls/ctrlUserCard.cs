@@ -60,34 +60,13 @@ namespace DVLD_Project.Users.Controls
         {
             ctrlUserCard1.LoadPersonInfo(_User.PersonID);
             lblUserID.Text = _User.UserID.ToString();
-            lblUserName.Text = _User.UserName; //hnaya kifash 3melna dik f.n + m.n + t.n + l.n nsiiiit
+            lblUserName.Text = _User.UserName; 
             lblIsActive.Text = _User.IsActive ? "Yes" : "No";
         }
 
         private void ctrlLoginInfo_Load(object sender, EventArgs e)
-        {
-            
+        {          
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

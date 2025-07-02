@@ -13,10 +13,9 @@ namespace DVLD_BusinessLayer
         public enum enMode { AddNew = 1, Update = 2};
         public enMode Mode;
 
-        //3lash ma3mlnahaxi hnaya
+        //we made this enum in clsApplication
         //public enum enApplicationType { NewDrivingLicense = 1, RenewDrivingLicense = 2, ReplaceLostDrivingLicense=3,
-        //ReplaceDamagedDrivingLicense=4, ReleaseDetainedDrivingLicsense=5, NewInternationalLicense=6,RetakeTest=7
-        //3lash 3melnaha f clsApplication
+        //ReplaceDamagedDrivingLicense=4, ReleaseDetainedDrivingLicsense=5, NewInternationalLicense=6,RetakeTest=7};
 
         public int ApplicationTypeID { set; get; }
         public string ApplicationTypeTitle { set; get; }

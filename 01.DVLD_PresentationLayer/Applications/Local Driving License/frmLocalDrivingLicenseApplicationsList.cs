@@ -290,10 +290,10 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 //To Allow Schedule vision test, Person must not passed the same test before.
                 scheduleVisionTestToolStripMenuItem.Enabled = !PassedVisionTest;
 
-                //To Allow Schdule written test, Person must pass the vision test and must not passed the same test before.
+                //To Allow Schedule written test, Person must pass the vision test and must not passed the same test before.
                 scheduleWrittenTestToolStripMenuItem.Enabled = PassedVisionTest && !PassedWrittenTest;
 
-                //To Allow Schdule steet test, Person must pass the vision * written tests, and must not passed the same test before.
+                //To Allow Schedule street test, Person must pass the vision * written tests, and must not passed the same test before.
                 scheduleStreetTestToolStripMenuItem.Enabled = PassedVisionTest && PassedWrittenTest && !PassedStreetTest;
             }
         }

@@ -179,8 +179,6 @@ namespace DVLD_BusinessLayer
                     {
                         Mode = enMode.Update;
                         return true;
-                        //teacher said if we did not set it update
-                        //the record will be added many times
                     }
                     else
                         return false;

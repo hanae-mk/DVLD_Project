@@ -105,7 +105,7 @@ namespace DVLD_Project
             else
                 pbGender.Image = Resources.Woman_32;
 
-            _LoadPersonImage(); //pbPersonImage.Load(_Person.ImagePath); NJAREB HADI
+            _LoadPersonImage(); //pbPersonImage.Load(_Person.ImagePath); 
         }
 
         private void _LoadPersonImage()

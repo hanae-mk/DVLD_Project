@@ -72,7 +72,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        public static clsUser FindByPersonID(int PersonID) //FindByUserName
+        public static clsUser FindByPersonID(int PersonID) 
         {
             int UserID = -1;
             string UserName = "", Password = "";
@@ -99,7 +99,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        private bool _UpdateUser() //we don't update PersonID why teacher put it in parameters?
+        private bool _UpdateUser() 
         {
             return clsUserData.UpdateUser(this.UserID, this.UserName, this.Password, this.IsActive);
         }
@@ -138,8 +138,6 @@ namespace DVLD_BusinessLayer
                     {
                         Mode = enMode.Update;
                         return true;
-                        //teacher said if we did not set it update
-                        //the record will be added many times
                     }
                     else
                         return false;

@@ -34,7 +34,7 @@ namespace DVLD_Project.People.Controls
         {
             set
             {
-                _ShowAddPerson = value; //??? value here means true or false
+                _ShowAddPerson = value; //value here means true or false
                 btnAddPerson.Visible = _ShowAddPerson;
                 //if true : btnAddPerson.Visible = true;
                 //if false : btnAddPerson.Visible = false;
@@ -124,9 +124,9 @@ namespace DVLD_Project.People.Controls
             }
 
             //You can set your conditions as you want
-            //OnPersonSelected != null means is this control used in a form?
-            //so we can use the event?
-            if (OnPersonSelected != null && FilterEnabled) // = is gbEnabled? 
+            //OnPersonSelected != null means is this control used in a form
+            //so we can use the event
+            if (OnPersonSelected != null && FilterEnabled) // = is gbEnabled
             {
                 //OnPersonSelected(ctrlPersonCard.PersonID); DEBUG BOTH
                 PersonSelected(ctrlPersonCard1.PersonID);
@@ -138,7 +138,6 @@ namespace DVLD_Project.People.Controls
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //z3ma wash mli kanbdlu filter f combobox txtfiltervalue kirja3 "" ???
             txtFilterValue.Text = "";
             txtFilterValue.Focus();            
         }
@@ -184,13 +183,10 @@ namespace DVLD_Project.People.Controls
         {
             cbFilterBy.SelectedIndex = 1; //This is the index of AddPerson in ComboBox
             txtFilterValue.Text = PersonID.ToString();
-            ctrlPersonCard1.LoadPersonInfo(PersonID); //hadi elash 3melnaha hnaya?
+            ctrlPersonCard1.LoadPersonInfo(PersonID);
             //here we will return the PersonID in Form AddUpdatePerson
-            //but there is no control in frmaddupdateperson?????
-            //njareb ghi star talet bla duk juj lwala cbFilterBy w txtFilterValue
         }
 
-        //we use it in another forms 3awed ms7a bash t3raf fayen khademnaha
         public void FilterFocus()
         {
             txtFilterValue.Focus();

@@ -140,7 +140,7 @@ namespace DVLD_Project.People
                 return;
             }
 
-            if (FilterColumn == "PersonID")//                       = bcs integer
+            if (FilterColumn == "PersonID")//                       = because integer
                 _dtPeople.DefaultView.RowFilter = string.Format("{0} = {1}", FilterColumn, txtFilterValue.Text.Trim());
             else
                 _dtPeople.DefaultView.RowFilter = string.Format("{0} LIKE '{1}%'", FilterColumn, txtFilterValue.Text.Trim());

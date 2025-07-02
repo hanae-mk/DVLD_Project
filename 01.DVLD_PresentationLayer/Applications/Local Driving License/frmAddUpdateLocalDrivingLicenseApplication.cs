@@ -92,7 +92,6 @@ namespace DVLD_Project.Applications.Local_Driving_License
            
             ctrlPersonCardWithFilter1.LoadPersonInfo(_LocalDrivingLicenseApplication.ApplicantPersonID);
 
-            //why we don't use Applications? instead of Local....
             lblDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.ApplicationID.ToString();
 
             //why we didn't use .ToShortDateString();
@@ -119,7 +118,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-                ctrlPersonCardWithFilter1.FilterFocus(); //Why FilterFocus is not in ctrlpersoncard
+                ctrlPersonCardWithFilter1.FilterFocus(); 
                 return;
             }
 
@@ -140,7 +139,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //we validate what? bcs we didn't set validating event on app.fees....
+
             if (!this.ValidateChildren())
             {
                 MessageBox.Show("Some Fields are Not Valid, Put the mouse over the red icon(s) to see the error", 

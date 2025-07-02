@@ -349,8 +349,6 @@ namespace DVLD_Project.People
             this.Close();
         }
 
-        
-
         //private void rbFemale_CheckedChanged(object sender, EventArgs e)
         //{         
         //    pbPersonImage.Image = Resources.Female_512;       

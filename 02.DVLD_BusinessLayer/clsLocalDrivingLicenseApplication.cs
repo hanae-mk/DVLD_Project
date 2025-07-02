@@ -155,6 +155,7 @@ namespace DVLD_BusinessLayer
         {
             bool IsLocalDrivingApplicationDeleted = false;
             bool IsBaseApplicationDeleted = false;
+
             //First we delete the Local Driving License Application
             IsLocalDrivingApplicationDeleted = clsLocalDrivingLicenseApplicationData.DeleteLocalDrivingLicenseApplication(this.LocalDrivingLicenseApplicationID);
 
@@ -305,7 +306,7 @@ namespace DVLD_BusinessLayer
             if (License.Save())
             {
                 //now we should set the application status to complete. how we pass to clsApplication
-                //bcs clsApplication inherits this class?
+                //bcs clsApplication inherits this class
                 this.SetComplete();
 
                 return License.LicenseID;

@@ -3,9 +3,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 
-//using DVLD_DataAccess; Instead of writing using DataAcces we write in the namespace 
-
-namespace DVLD_DataAccessLayer //PersonDataAccess
+namespace DVLD_DataAccessLayer 
 {
     public class clsPersonData  //All methods in data access should be static 
     {
@@ -440,10 +438,5 @@ namespace DVLD_DataAccessLayer //PersonDataAccess
             return IsFound;
 
         }
-
-
-
-
-
     }
 }

@@ -181,8 +181,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                //Njarreb f catch ida matalan w9a3 error w3melt return false
-                //wash dik finally will be executed or not?
+                
             }
             finally
             {
@@ -382,7 +381,7 @@ namespace DVLD_DataAccessLayer
 
         //public static bool IsThisApplicationActive(int ApplicantPersonID, int ApplicationTypeID)
         //{
-        //    //My Own Code is Different from Teacher's code
+        //   
         //    bool IsActive = false;
 
         //    SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);

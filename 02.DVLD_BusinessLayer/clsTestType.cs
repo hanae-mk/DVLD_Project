@@ -51,7 +51,7 @@ namespace DVLD_BusinessLayer
             //                CAST integer to enum
             this.TestTypeID = (clsTestType.enTestType)clsTestTypeData.AddNewTestType(this.TestTypeTitle, this.TestTypeDescription, this.TestTypeFees);
             
-            return (this.TestTypeTitle != ""); //??
+            return (this.TestTypeTitle != ""); 
         }
 
         private bool _UpdateTestType()
