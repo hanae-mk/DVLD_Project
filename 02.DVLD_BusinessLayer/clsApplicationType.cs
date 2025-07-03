@@ -13,10 +13,6 @@ namespace DVLD_BusinessLayer
         public enum enMode { AddNew = 1, Update = 2};
         public enMode Mode;
 
-        //we made this enum in clsApplication
-        //public enum enApplicationType { NewDrivingLicense = 1, RenewDrivingLicense = 2, ReplaceLostDrivingLicense=3,
-        //ReplaceDamagedDrivingLicense=4, ReleaseDetainedDrivingLicsense=5, NewInternationalLicense=6,RetakeTest=7};
-
         public int ApplicationTypeID { set; get; }
         public string ApplicationTypeTitle { set; get; }
         public float ApplicationTypeFees { set; get; }
@@ -24,9 +20,9 @@ namespace DVLD_BusinessLayer
         //Parameter Less Constructor used in AddNew Mode
         public clsApplicationType()
         {
-            ApplicationTypeID = -1;
-            ApplicationTypeTitle = null;
-            ApplicationTypeFees = 0.00f;
+            this.ApplicationTypeID = -1;
+            this.ApplicationTypeTitle = null;
+            this.ApplicationTypeFees = 0.00f;
 
             Mode = enMode.AddNew;
         }
