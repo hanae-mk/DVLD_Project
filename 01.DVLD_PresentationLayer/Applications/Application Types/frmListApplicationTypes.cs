@@ -14,7 +14,7 @@ namespace DVLD_Project.Applications.Application_Types
     public partial class frmListApplicationTypes : Form
     {
         private DataTable _dtAllApplicationTypes;
-        
+
         public frmListApplicationTypes()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace DVLD_Project.Applications.Application_Types
             lblRowsCount.Text = dgvApplicationTypes.Rows.Count.ToString();
 
             if (dgvApplicationTypes.Rows.Count > 0)
-            {         
+            {
                 dgvApplicationTypes.Columns[0].HeaderText = "ID";
                 dgvApplicationTypes.Columns[0].Width = 50;
 
@@ -52,5 +52,6 @@ namespace DVLD_Project.Applications.Application_Types
         {
             this.Close();
         }
+
     }
 }

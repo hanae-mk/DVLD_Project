@@ -201,7 +201,7 @@
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEditApplicationType";
-            this.Text = "frmUpdateApplicationType";
+            this.Text = "Edit Application Type";
             this.Load += new System.EventHandler(this.frmUpdateApplicationType_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

@@ -151,7 +151,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmListApplicationTypes";
-            this.Text = "frmListApplicationTypes";
+            this.Text = "Manage Application Types";
             this.Load += new System.EventHandler(this.frmListApplicationTypes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplicationTypes)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

@@ -15,8 +15,8 @@ namespace DVLD_Project.Applications.Application_Types
     public partial class frmEditApplicationType : Form
     {
         
-        private int _ApplicationTypeID = -1;
-        private clsApplicationType _ApplicationType;
+        private int _ApplicationTypeID = -1; //Global Variable in this Class
+        private clsApplicationType _ApplicationType; //An instance/Object of clsApplicationType business class
 
         public frmEditApplicationType(int ApplicationTypeID)
         {
@@ -30,11 +30,11 @@ namespace DVLD_Project.Applications.Application_Types
 
             _ApplicationType = clsApplicationType.Find(_ApplicationTypeID);
 
-            if(_ApplicationType != null)
+            if (_ApplicationType != null)
             {
                 txtApplicationTypeTitle.Text = _ApplicationType.ApplicationTypeTitle;
                 txtApplicationTypeFees.Text = _ApplicationType.ApplicationTypeFees.ToString();
-            }
+        }
             else
             {
                 MessageBox.Show("Application Type with ID = " + _ApplicationTypeID + " is NOT found!",
@@ -42,15 +42,15 @@ namespace DVLD_Project.Applications.Application_Types
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 this.Close();
-            }
-        }
+    }
+}
 
         private void txtApplicationTypeTitle_Validating(object sender, CancelEventArgs e)
         {
             if(string.IsNullOrEmpty(txtApplicationTypeTitle.Text.Trim()))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(txtApplicationTypeTitle, "This Field is Required!");
+                errorProvider1.SetError(txtApplicationTypeTitle, "Title Required!");
             }
             else
             {
@@ -61,7 +61,7 @@ namespace DVLD_Project.Applications.Application_Types
 
         private void txtApplicationTypeTitle_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = char.IsDigit(e.KeyChar) /*&& char.IsControl(e.KeyChar)*/;    
+            e.Handled = char.IsDigit(e.KeyChar);
         }
 
         private void txtApplicationTypeFees_Validating(object sender, CancelEventArgs e)
@@ -69,7 +69,7 @@ namespace DVLD_Project.Applications.Application_Types
             if (string.IsNullOrEmpty(txtApplicationTypeFees.Text.Trim()))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(txtApplicationTypeFees, "This Field is Required!");
+                errorProvider1.SetError(txtApplicationTypeFees, "Fees Required!");
                 return;
             }
             else
@@ -78,7 +78,6 @@ namespace DVLD_Project.Applications.Application_Types
                 errorProvider1.SetError(txtApplicationTypeFees, null);
             }
 
-            //e.Handled = char.IsDigit(e.KeyChar) && char.IsControl(e.KeyChar);    
             if (!clsValidation.IsNumber(txtApplicationTypeFees.Text))
             {
                 e.Cancel = true;
@@ -105,7 +104,10 @@ namespace DVLD_Project.Applications.Application_Types
 
             _ApplicationType.ApplicationTypeTitle = txtApplicationTypeTitle.Text.Trim();
             _ApplicationType.ApplicationTypeFees = Convert.ToSingle(txtApplicationTypeFees.Text.Trim());
+            //                                             = float
 
+            //In this form we have UPDATE mode only, the mode was saved in the object
+            //when we found the ApplicationID
             if(_ApplicationType.Save())
                 MessageBox.Show("Data Saved Successfully!",
                                 "Save",
@@ -122,7 +124,5 @@ namespace DVLD_Project.Applications.Application_Types
         {
             this.Close();
         }
-
-        
     }
 }
