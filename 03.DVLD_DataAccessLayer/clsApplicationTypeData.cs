@@ -46,7 +46,7 @@ namespace DVLD_DataAccessLayer
             return Table;
         }
 
-        //the parameters are by ref because we will display data in the form
+        //the parameters are by ref keyword because we will display data in the form
         public static bool GetApplicationTypeInfoByID(int ApplicationTypeID, ref string ApplicationTypeTitle,
                                                       ref float ApplicationFees)
         {
