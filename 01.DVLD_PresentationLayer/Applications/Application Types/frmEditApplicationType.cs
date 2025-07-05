@@ -27,14 +27,14 @@ namespace DVLD_Project.Applications.Application_Types
         private void frmUpdateApplicationType_Load(object sender, EventArgs e)
         {
             lblApplicationTypeID.Text = _ApplicationTypeID.ToString();
-
+         
             _ApplicationType = clsApplicationType.Find(_ApplicationTypeID);
 
             if (_ApplicationType != null)
             {
                 txtApplicationTypeTitle.Text = _ApplicationType.ApplicationTypeTitle;
                 txtApplicationTypeFees.Text = _ApplicationType.ApplicationTypeFees.ToString();
-        }
+            }
             else
             {
                 MessageBox.Show("Application Type with ID = " + _ApplicationTypeID + " is NOT found!",
@@ -42,8 +42,8 @@ namespace DVLD_Project.Applications.Application_Types
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 this.Close();
-    }
-}
+            }
+        }
 
         private void txtApplicationTypeTitle_Validating(object sender, CancelEventArgs e)
         {
