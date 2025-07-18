@@ -29,6 +29,7 @@ namespace DVLD_Project.Tests.Test_Types
 
             if (_TestType != null)
             {
+                //Display Data
                 lblTestTypeID.Text = ((int)_TestTypeID).ToString();
                 txtTestTypeTitle.Text = _TestType.TestTypeTitle;
                 txtTestTypeDescription.Text = _TestType.TestTypeDescription;
@@ -111,6 +112,7 @@ namespace DVLD_Project.Tests.Test_Types
                 return; //So here we don't continue because the form is NOT valid!
             }
 
+            //Fill Object with modified Data
             _TestType.TestTypeTitle = txtTestTypeTitle.Text;
             _TestType.TestTypeDescription = txtTestTypeDescription.Text;
             _TestType.TestTypeFees = Convert.ToSingle(txtTestTypeFees.Text);

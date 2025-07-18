@@ -10,7 +10,6 @@ namespace DVLD_Project.Global_Classes
 {
     class clsValidation
     {
-
         public static bool IsValidEmail(string Email)
         {          
             var Pattern = @"^[a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";

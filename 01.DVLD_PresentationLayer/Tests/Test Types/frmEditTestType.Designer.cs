@@ -237,7 +237,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEditTestType";
-            this.Text = "frmEditTestType";
+            this.Text = "Update Test Type";
             this.Load += new System.EventHandler(this.frmEditTestType_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

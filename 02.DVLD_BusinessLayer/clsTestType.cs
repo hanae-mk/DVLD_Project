@@ -11,9 +11,9 @@ namespace DVLD_BusinessLayer
     public class clsTestType
     {
         public enum enMode { AddNew = 1, Update = 2};
-        public enum enTestType { VisionTest = 1, WrittenTest = 2, StreetTest = 3};
-
         public enMode Mode;
+
+        public enum enTestType { VisionTest = 1, WrittenTest = 2, StreetTest = 3};   
 
         public clsTestType.enTestType TestTypeID { set; get; }
         public string TestTypeTitle { set; get; }
@@ -22,7 +22,7 @@ namespace DVLD_BusinessLayer
 
         public clsTestType()
         {
-            TestTypeID = clsTestType.enTestType.VisionTest; //0
+            TestTypeID = clsTestType.enTestType.VisionTest; //1
             TestTypeTitle = "";
             TestTypeDescription = "";
             TestTypeFees = 0.00f;

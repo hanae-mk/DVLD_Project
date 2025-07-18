@@ -142,7 +142,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmListTestTypes";
-            this.Text = "frmListTestTypes";
+            this.Text = "List Test Types";
             this.Load += new System.EventHandler(this.frmListTestTypes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTestTypes)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
