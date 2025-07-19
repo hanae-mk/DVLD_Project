@@ -119,7 +119,8 @@
             this.txtTestTypeTitle.Name = "txtTestTypeTitle";
             this.txtTestTypeTitle.Size = new System.Drawing.Size(271, 22);
             this.txtTestTypeTitle.TabIndex = 20;
-            this.txtTestTypeTitle.Validating += new System.ComponentModel.CancelEventHandler(this.txtTestTypeTitle_Validating);
+            this.txtTestTypeTitle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.txtTestTypeTitle.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // txtTestTypeFees
             // 
@@ -178,7 +179,8 @@
             this.txtTestTypeDescription.Name = "txtTestTypeDescription";
             this.txtTestTypeDescription.Size = new System.Drawing.Size(271, 80);
             this.txtTestTypeDescription.TabIndex = 26;
-            this.txtTestTypeDescription.Validating += new System.ComponentModel.CancelEventHandler(this.txtTestTypeDescription_Validating);
+            this.txtTestTypeDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
+            this.txtTestTypeDescription.Validating += new System.ComponentModel.CancelEventHandler(this.TextBox_Validating);
             // 
             // label5
             // 
@@ -218,6 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(443, 346);
             this.Controls.Add(this.pictureBox2);

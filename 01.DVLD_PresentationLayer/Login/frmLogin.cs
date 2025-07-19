@@ -58,7 +58,7 @@ namespace DVLD_Project.Users
                 }
 
                 clsGlobal.CurrentUser = User;
-                this.Hide(); //jarreb this.Close();
+                this.Hide(); //Do Not Close the form completly like this.Close();
                 frmMain frm = new frmMain(this);
                 frm.ShowDialog();
             }

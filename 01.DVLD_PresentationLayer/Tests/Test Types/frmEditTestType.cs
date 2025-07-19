@@ -45,37 +45,32 @@ namespace DVLD_Project.Tests.Test_Types
             }
         }
 
-        private void txtTestTypeTitle_Validating(object sender, CancelEventArgs e)
+        private void TextBox_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTestTypeTitle.Text))
+            //In this case The sender can be Title Or Description 
+            TextBox Temp = (TextBox)sender;
+
+            if (string.IsNullOrEmpty(Temp.Text.Trim()))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(txtTestTypeTitle, "This Field is Required!");
+                errorProvider1.SetError(Temp, "This Field is Required!");
             }
             else
             {
                 e.Cancel = false;
-                errorProvider1.SetError(txtTestTypeTitle, null);
+                errorProvider1.SetError(Temp, null);
             }
         }
 
-        private void txtTestTypeDescription_Validating(object sender, CancelEventArgs e)
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTestTypeDescription.Text))
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(txtTestTypeDescription, "This Field is Required!");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(txtTestTypeDescription, null);
-            }
+            //Checks Both Title and Description
+            e.Handled = char.IsDigit(e.KeyChar);
         }
 
         private void txtTestTypeFees_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtTestTypeFees.Text))
+            if (string.IsNullOrEmpty(txtTestTypeFees.Text.Trim()))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtTestTypeFees, "This Field is Required!");
@@ -87,8 +82,7 @@ namespace DVLD_Project.Tests.Test_Types
                 errorProvider1.SetError(txtTestTypeFees, null);
             }
 
-            //char.IsDigit()???
-            if(!clsValidation.IsNumber(txtTestTypeFees.Text))
+            if (!clsValidation.IsNumber(txtTestTypeFees.Text.Trim()))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtTestTypeFees, "Invalid Number!");

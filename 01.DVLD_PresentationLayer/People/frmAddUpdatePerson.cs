@@ -138,7 +138,7 @@ namespace DVLD_Project.People
             //sender may be txt1stName, txt2ndName, txtNationalNo, txtAddress...
             //It's can be any control
             //we cast sender to TextBox
-            TextBox Temp = ((TextBox)sender);
+            TextBox Temp = (TextBox)sender;
 
             if (string.IsNullOrEmpty(Temp.Text.Trim()))
             {
