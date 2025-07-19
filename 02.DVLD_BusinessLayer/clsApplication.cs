@@ -27,13 +27,13 @@ namespace DVLD_BusinessLayer
         public float PaidFees { set; get; }
         public int CreatedByUserID { set; get; }
 
-        public string ApplicantFullName //ApplicantPersonID here is not user but driver
+        public string ApplicantFullName //ApplicantFullName here is not User but Driver
         { 
             get { return clsPerson.FindPerson(ApplicantPersonID).FullName; }
         }
 
         //COMPOSITION
-        public clsPerson PersonInfo { set; get; }
+        public clsPerson PersonInfo { set; get; } 
 
         //COMPOSITION
         public clsApplicationType ApplicationTypeInfo;

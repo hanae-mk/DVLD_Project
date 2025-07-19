@@ -9,41 +9,8 @@ using System.Threading.Tasks;
 namespace DVLD_DataAccessLayer
 {
     public class clsApplicationData
-    {
-        public static DataTable GetApplicationsList()
-        {
-            DataTable Table = new DataTable();
-
-            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-
-            string Query = "SELECT * from Applications ORDER BY ApplicationDate DESC";
-
-            SqlCommand Command = new SqlCommand(Query, Connection);
-
-            try
-            {
-                Connection.Open();
-
-                SqlDataReader Reader = Command.ExecuteReader();
-
-                if (Reader.HasRows)
-                    Table.Load(Reader);
-
-                Reader.Close();
-            }
-
-            catch (Exception ex)
-            {
-
-            }
-            finally
-            {
-                Connection.Close();
-            }
-
-            return Table;
-        }
-
+    {    
+        //This Method returns all infos about Application by reference
         public static bool GetApplicationInfoByID(int ApplicationID, ref int ApplicantPersonID,
                                                   ref DateTime ApplicationDate, ref int ApplicationTypeID,
                                                   ref byte ApplicationStatus, ref DateTime LastStatusDate,
@@ -91,6 +58,43 @@ namespace DVLD_DataAccessLayer
             return IsFound;
         }
 
+        public static DataTable GetAllApplications()
+        {
+            DataTable Table = new DataTable();
+
+            string ConnectionString = clsDataAccessSettings.ConnectionString;     
+
+            SqlConnection Connection = new SqlConnection(ConnectionString);
+
+            string Query = "SELECT * FROM Applications ORDER BY ApplicationID";
+
+            SqlCommand Command = new SqlCommand(Query, Connection);
+           
+            try
+            {
+                Connection.Open();
+
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if(Reader.HasRows)
+                {
+                    Table.Load(Reader);                 
+                }
+
+                Reader.Close();
+            }
+            catch(Exception ex) 
+            {
+
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return Table;
+        }
+
         public static int AddNewApplication(int ApplicantPersonID, DateTime ApplicationDate, 
                                             int ApplicationTypeID, byte ApplicationStatus, 
                                             DateTime LastStatusDate, float PaidFees, 
@@ -125,6 +129,7 @@ namespace DVLD_DataAccessLayer
 
                 object Result = Command.ExecuteScalar();
 
+                //The Result should NOT be null, in the same time a NUMBER
                 if (Result != null && int.TryParse(Result.ToString(), out int InsertedID))
                 {
                     ApplicationID = InsertedID;
@@ -182,41 +187,6 @@ namespace DVLD_DataAccessLayer
             catch (Exception ex)
             {
                 
-            }
-            finally
-            {
-                Connection.Close();
-            }
-
-            return (RowsAffected > 0);
-        }
-
-        public static bool UpdateStatus(int ApplicationID, short NewStatus)
-        {
-            int RowsAffected = 0;
-
-            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-
-            string Query = @"Update Applications  
-                             SET ApplicationStatus = @NewStatus, 
-                                 LastStatusDate = @LastStatusDate
-                             WHERE ApplicationID = @ApplicationID;";
-
-            SqlCommand Command = new SqlCommand(Query, Connection);
-
-            Command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
-            Command.Parameters.AddWithValue("@NewStatus", NewStatus);
-            Command.Parameters.AddWithValue("LastStatusDate", DateTime.Now);
-
-            try
-            {
-                Connection.Open();
-                RowsAffected = Command.ExecuteNonQuery();
-
-            }
-            catch (Exception ex)
-            {
-
             }
             finally
             {
@@ -289,6 +259,49 @@ namespace DVLD_DataAccessLayer
 
             return IsFound;
         }
+
+
+
+
+
+
+
+        public static bool UpdateStatus(int ApplicationID, short NewStatus)
+        {
+            int RowsAffected = 0;
+
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string Query = @"Update Applications  
+                             SET ApplicationStatus = @NewStatus, 
+                                 LastStatusDate = @LastStatusDate
+                             WHERE ApplicationID = @ApplicationID;";
+
+            SqlCommand Command = new SqlCommand(Query, Connection);
+
+            Command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            Command.Parameters.AddWithValue("@NewStatus", NewStatus);
+            Command.Parameters.AddWithValue("LastStatusDate", DateTime.Now);
+
+            try
+            {
+                Connection.Open();
+                RowsAffected = Command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+            return (RowsAffected > 0);
+        }
+
+        
 
         public static int GetActiveApplicationIDForLicenseClass(int ApplicantPersonID, int ApplicationTypeID, int LicenseClassID)
         {
@@ -378,43 +391,5 @@ namespace DVLD_DataAccessLayer
             //Incase the ActiveApplication ID != -1 it's returns TRUE.
             return (GetActiveApplicationID(PersonID, ApplicationTypeID) != -1);
         }
-
-        //public static bool IsThisApplicationActive(int ApplicantPersonID, int ApplicationTypeID)
-        //{
-        //   
-        //    bool IsActive = false;
-
-        //    SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-
-        //    string Query = @"SELECT IsActive = 1 
-        //                     FROM Applications 
-        //                     WHERE ApplicantPersonID = @ApplicantPersonID 
-        //                     AND ApplicationTypeID = @ApplicationTypeID 
-        //                     AND ApplicationStatus = 1";
-
-        //    SqlCommand Command = new SqlCommand(Query, Connection);
-
-        //    Command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
-        //    Command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
-
-        //    try
-        //    {
-        //        Connection.Open();
-        //        SqlDataReader Reader = Command.ExecuteReader();
-
-        //        if (Reader.HasRows)
-        //            IsActive = true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //    finally
-        //    {
-        //        Connection.Close();
-        //    }
-
-        //    return IsActive;
-        //}
     }
 }
