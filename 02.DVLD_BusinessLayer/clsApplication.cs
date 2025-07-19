@@ -92,11 +92,6 @@ namespace DVLD_BusinessLayer
             Mode = enMode.Update;
         }
 
-        //public static DataTable GetApplicationsList()
-        //{
-        //    return clsApplicationData.GetApplicationsList();
-        //}
-
         public static clsApplication GetApplicationInfoByID(int ApplicationID)
         {
             int ApplicantPersonID = -1, ApplicationTypeID = -1, CreatedByUserID = -1;
@@ -132,12 +127,6 @@ namespace DVLD_BusinessLayer
                                                         (byte)this.ApplicationStatus, this.LastStatusDate,
                                                         this.PaidFees, this.CreatedByUserID);
         }
-
-        //private
-        //public bool UpdateStatus()
-        //{
-        //    return clsApplicationData.UpdateStatus(this.ApplicationID, (short)this.ApplicationStatus);
-        //}
 
         public static clsApplication FindBaseApplication(int ApplicationID)
         {
