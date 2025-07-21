@@ -1,45 +1,34 @@
-﻿using DVLD_DataAccessLayer;
+using DVLD_DataAccessLayer;
 using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DVLD_BusinessLayer
 {
     public class clsApplication
     {
         public enum enMode { AddNew = 1, Update = 2 };
+        public enMode Mode = enMode.AddNew;
         public enum enApplicationStatus { New = 1, Cancelled = 2, Completed = 3 };
         public enum enApplicationType { NewDrivingLicense = 1, RenewDrivingLicense = 2, ReplaceLostDrivingLicense = 3,
                                         ReplaceDamagedDrivingLicense = 4, ReleaseDetainedDrivingLicense = 5,
                                         NewInternationalLicense = 6, RetakeTest = 7 };
-
-        public enMode Mode = enMode.AddNew;
         
+
         public int ApplicationID { set; get; }
         public int ApplicantPersonID { set; get; }
-        public DateTime ApplicationDate { set; get; }
-        public int ApplicationTypeID { set; get; }
-        public enApplicationStatus ApplicationStatus { set; get; } //byte
-        public DateTime LastStatusDate { set; get; }
-        public float PaidFees { set; get; }
-        public int CreatedByUserID { set; get; }
 
+        //COMPOSITION
         public string ApplicantFullName //ApplicantFullName here is not User but Driver
-        { 
+        {
             get { return clsPerson.FindPerson(ApplicantPersonID).FullName; }
         }
 
-        //COMPOSITION
-        public clsPerson PersonInfo { set; get; } 
+        public DateTime ApplicationDate { set; get; }
+        public int ApplicationTypeID { set; get; }
 
         //COMPOSITION
         public clsApplicationType ApplicationTypeInfo;
 
-        //COMPOSITION
-        public clsUser CreatedByUserInfo; //we use it while loading data in form
+        public enApplicationStatus ApplicationStatus { set; get; }
 
         public string StatusText
         {
@@ -59,6 +48,14 @@ namespace DVLD_BusinessLayer
             }
         }
 
+        public DateTime LastStatusDate { set; get; }
+        public float PaidFees { set; get; }
+        public int CreatedByUserID { set; get; }
+        
+        //COMPOSITION (in clsUser we have also composition for clsPerson so there is
+        //no need to have a composition of clsPerson in this class)
+        public clsUser CreatedByUserInfo; //we use it while loading data in form  
+       
         public clsApplication()
         {
             this.ApplicationID = -1;
@@ -73,13 +70,12 @@ namespace DVLD_BusinessLayer
             Mode = enMode.AddNew;
         }
 
-        public clsApplication(int ApplicationID, int ApplicantPersonID, DateTime ApplicationDate,
-                              int ApplicationTypeID, enApplicationStatus ApplicationStatus,
-                              DateTime LastStatusDate, float PaidFees, int CreatedByUserID)
+        private clsApplication(int ApplicationID, int ApplicantPersonID, DateTime ApplicationDate,
+                               int ApplicationTypeID, enApplicationStatus ApplicationStatus,
+                               DateTime LastStatusDate, float PaidFees, int CreatedByUserID)
         {
             this.ApplicationID = ApplicationID;
             this.ApplicantPersonID = ApplicantPersonID;
-            this.PersonInfo = clsPerson.FindPerson(ApplicantPersonID);
             this.ApplicationDate = ApplicationDate;
             this.ApplicationTypeID = ApplicationTypeID;
             this.ApplicationTypeInfo = clsApplicationType.Find(ApplicationTypeID); 
@@ -113,10 +109,9 @@ namespace DVLD_BusinessLayer
         private bool _AddNewApplication()
         {
             this.ApplicationID = clsApplicationData.AddNewApplication(this.ApplicantPersonID, 
-                                 this.ApplicationDate, this.ApplicationTypeID, 
-                                 (byte)this.ApplicationStatus, this.LastStatusDate,
-                                 this.PaidFees, this.CreatedByUserID);
-
+                                                this.ApplicationDate, this.ApplicationTypeID, 
+                                           (byte)this.ApplicationStatus, this.LastStatusDate,
+                                                        this.PaidFees, this.CreatedByUserID);
             return (this.ApplicationID != -1);
         }
 
@@ -128,12 +123,13 @@ namespace DVLD_BusinessLayer
                                                         this.PaidFees, this.CreatedByUserID);
         }
 
+        //This is the base class
         public static clsApplication FindBaseApplication(int ApplicationID)
         {
-            int ApplicantPersonID = -1;
-            DateTime ApplicationDate = DateTime.Now; int ApplicationTypeID = -1;
-            byte ApplicationStatus = 1; DateTime LastStatusDate = DateTime.Now;
-            float PaidFees = 0; int CreatedByUserID = -1;
+            int ApplicantPersonID = -1, ApplicationTypeID = -1, CreatedByUserID = -1;
+            DateTime ApplicationDate = DateTime.Now, LastStatusDate = DateTime.Now;
+            byte ApplicationStatus = 1;  
+            float PaidFees = 0; 
 
             bool IsFound = clsApplicationData.GetApplicationInfoByID
                                 (
@@ -144,11 +140,11 @@ namespace DVLD_BusinessLayer
                                 );
 
             if (IsFound)
-                //we return new object of that person with the right data
+                //we return new object of that application with the right data
                 return new clsApplication(ApplicationID, ApplicantPersonID,
-                                     ApplicationDate, ApplicationTypeID,
-                                    (enApplicationStatus)ApplicationStatus, LastStatusDate,
-                                     PaidFees, CreatedByUserID);
+                                         ApplicationDate, ApplicationTypeID,
+                                      (enApplicationStatus)ApplicationStatus, LastStatusDate,
+                                         PaidFees, CreatedByUserID);
             else
                 return null;
         }
@@ -158,7 +154,7 @@ namespace DVLD_BusinessLayer
             return clsApplicationData.UpdateStatus(this.ApplicationID, 2);
         }
 
-        public bool SetComplete()
+        public bool CompleteApplication()
         {
             return clsApplicationData.UpdateStatus(this.ApplicationID, 3);
         }
@@ -175,7 +171,7 @@ namespace DVLD_BusinessLayer
 
         public static bool IsThisApplicationActive(int ApplicantPersonID, int ApplicationTypeID)
         {
-            return clsApplicationData.DoesPersonHaveActiveApplication(ApplicantPersonID, ApplicationTypeID);
+            return clsApplicationData.IsThisApplicationActive(ApplicantPersonID, ApplicationTypeID);
         }
 
         public bool IsThisApplicationActive(int ApplicationTypeID)
