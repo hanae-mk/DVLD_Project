@@ -22,6 +22,8 @@ namespace DVLD_BusinessLayer
             get { return clsPerson.FindPerson(ApplicantPersonID).FullName; }
         }
 
+        public clsPerson PersonInfo;
+
         public DateTime ApplicationDate { set; get; }
         public int ApplicationTypeID { set; get; }
 
@@ -51,7 +53,7 @@ namespace DVLD_BusinessLayer
         public DateTime LastStatusDate { set; get; }
         public float PaidFees { set; get; }
         public int CreatedByUserID { set; get; }
-        
+
         //COMPOSITION (in clsUser we have also composition for clsPerson so there is
         //no need to have a composition of clsPerson in this class)
         public clsUser CreatedByUserInfo; //we use it while loading data in form  
@@ -76,6 +78,7 @@ namespace DVLD_BusinessLayer
         {
             this.ApplicationID = ApplicationID;
             this.ApplicantPersonID = ApplicantPersonID;
+            this.PersonInfo = clsPerson.FindPerson(ApplicantPersonID);
             this.ApplicationDate = ApplicationDate;
             this.ApplicationTypeID = ApplicationTypeID;
             this.ApplicationTypeInfo = clsApplicationType.Find(ApplicationTypeID); 

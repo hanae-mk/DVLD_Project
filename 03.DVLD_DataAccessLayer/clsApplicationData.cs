@@ -386,7 +386,7 @@ namespace DVLD_DataAccessLayer
             return ActiveApplicationID;
         }
 
-        public static bool DoesPersonHaveActiveApplication(int PersonID, int ApplicationTypeID)
+        public static bool IsThisApplicationActive(int PersonID, int ApplicationTypeID)
         {
             //Incase the ActiveApplication ID != -1 it's returns TRUE.
             return (GetActiveApplicationID(PersonID, ApplicationTypeID) != -1);

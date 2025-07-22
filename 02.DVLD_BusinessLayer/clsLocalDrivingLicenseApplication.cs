@@ -307,7 +307,7 @@ namespace DVLD_BusinessLayer
             {
                 //now we should set the application status to complete. how we pass to clsApplication
                 //bcs clsApplication inherits this class
-                this.SetComplete();
+                this.CompleteApplication();
 
                 return License.LicenseID;
             }

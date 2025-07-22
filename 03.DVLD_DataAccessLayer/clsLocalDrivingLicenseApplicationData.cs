@@ -88,6 +88,7 @@ namespace DVLD_DataAccessLayer
             return IsFound;
         }
 
+        //We get ApplicationID by it's Original ID (L.Driving License) or by General ApplicationID
         public static bool GetLocalDrivingLicenseApplicationInfoByApplicationID(int ApplicationID,
                                                        ref int LocalDrivingLicenseApplicationID,
                                                                          ref int LicenseClassID)
