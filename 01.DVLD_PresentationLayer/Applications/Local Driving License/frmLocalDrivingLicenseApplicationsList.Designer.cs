@@ -293,7 +293,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmLocalDrivingLicenseApplicationsList";
-            this.Text = "LocalDrivingLicenseApplications";
+            this.Text = "Local Driving License Applications";
             this.Load += new System.EventHandler(this.frmLocalDrivingLicenseApplicationsList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalDrivingLicenseApplications)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

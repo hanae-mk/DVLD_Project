@@ -13,7 +13,7 @@ namespace DVLD_DataAccessLayer
         public static DataTable GetLocalDrivingLicenseApplicationsList()
         {
 
-            DataTable Table = new DataTable();
+           DataTable Table = new DataTable();
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
