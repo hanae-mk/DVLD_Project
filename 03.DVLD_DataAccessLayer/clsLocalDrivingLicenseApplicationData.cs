@@ -145,8 +145,8 @@ namespace DVLD_DataAccessLayer
 
             SqlCommand Command = new SqlCommand(Query, Connection);
 
-            Command.Parameters.AddWithValue("ApplicationID", ApplicationID);
-            Command.Parameters.AddWithValue("LicenseClassID", LicenseClassID);
+            Command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            Command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
 
             try
             {
@@ -188,8 +188,8 @@ namespace DVLD_DataAccessLayer
             SqlCommand Command = new SqlCommand(Query, Connection);
 
             Command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
-            Command.Parameters.AddWithValue("ApplicationID", ApplicationID);
-            Command.Parameters.AddWithValue("LicenseClassID", LicenseClassID);
+            Command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            Command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
 
             try
             {

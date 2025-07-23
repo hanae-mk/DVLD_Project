@@ -115,13 +115,13 @@ namespace DVLD_DataAccessLayer
 
             SqlCommand Command = new SqlCommand(query, Connection);
 
-            Command.Parameters.AddWithValue("ApplicantPersonID", @ApplicantPersonID);
-            Command.Parameters.AddWithValue("ApplicationDate", @ApplicationDate);
-            Command.Parameters.AddWithValue("ApplicationTypeID", @ApplicationTypeID);
-            Command.Parameters.AddWithValue("ApplicationStatus", @ApplicationStatus);
-            Command.Parameters.AddWithValue("LastStatusDate", @LastStatusDate);
-            Command.Parameters.AddWithValue("PaidFees", @PaidFees);
-            Command.Parameters.AddWithValue("CreatedByUserID", @CreatedByUserID);
+            Command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
+            Command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
+            Command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+            Command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+            Command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
+            Command.Parameters.AddWithValue("@PaidFees", PaidFees);
+            Command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
             try
             {
@@ -170,13 +170,13 @@ namespace DVLD_DataAccessLayer
             SqlCommand Command = new SqlCommand(Query, Connection);
 
             Command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
-            Command.Parameters.AddWithValue("ApplicantPersonID", @ApplicantPersonID);
-            Command.Parameters.AddWithValue("ApplicationDate", @ApplicationDate);
-            Command.Parameters.AddWithValue("ApplicationTypeID", @ApplicationTypeID);
-            Command.Parameters.AddWithValue("ApplicationStatus", @ApplicationStatus);
-            Command.Parameters.AddWithValue("LastStatusDate", @LastStatusDate);
-            Command.Parameters.AddWithValue("PaidFees", @PaidFees);
-            Command.Parameters.AddWithValue("CreatedByUserID", @CreatedByUserID);
+            Command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
+            Command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
+            Command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+            Command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+            Command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
+            Command.Parameters.AddWithValue("@PaidFees", PaidFees);
+            Command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
             try
             {
@@ -281,7 +281,7 @@ namespace DVLD_DataAccessLayer
 
             Command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
             Command.Parameters.AddWithValue("@NewStatus", NewStatus);
-            Command.Parameters.AddWithValue("LastStatusDate", DateTime.Now);
+            Command.Parameters.AddWithValue("@LastStatusDate", DateTime.Now);
 
             try
             {
