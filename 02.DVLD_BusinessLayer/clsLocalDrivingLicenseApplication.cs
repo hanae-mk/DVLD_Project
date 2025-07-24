@@ -24,6 +24,7 @@ namespace DVLD_BusinessLayer
         { 
             get 
             {
+                //we can access to the base class info via sub class
                 return base.PersonInfo.FullName;              
             }
         }
@@ -40,23 +41,23 @@ namespace DVLD_BusinessLayer
         }
 
         private clsLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID, 
-                                                  int ApplicationID, int ApplicantPersonID,
-                                                  DateTime ApplicationDate, int ApplicationTypeID,
-                                                  enApplicationStatus ApplicationStatus, 
-                                                  DateTime LastStatusDate, float PaidFees,
-                                                  int CreatedByUserID, int LicenseClassID)
+                                                 int ApplicationID, int ApplicantPersonID,
+                                                 DateTime ApplicationDate, int ApplicationTypeID,
+                                                 enApplicationStatus ApplicationStatus, 
+                                                 DateTime LastStatusDate, float PaidFees,
+                                                 int CreatedByUserID, int LicenseClassID)
         {
             this.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
-            this.ApplicationID = ApplicationID;
-            this.ApplicantPersonID = ApplicantPersonID; //we use it while loading person data in form
-            this.ApplicationDate = ApplicationDate;
-            this.ApplicationTypeID = (int)ApplicationTypeID;
-            this.ApplicationStatus = ApplicationStatus;
-            this.LastStatusDate = LastStatusDate;
-            this.PaidFees = PaidFees;
-            this.CreatedByUserID = CreatedByUserID;
+            this.ApplicationID = ApplicationID;         //Properties
+            this.ApplicantPersonID = ApplicantPersonID; // 
+            this.ApplicationDate = ApplicationDate;     //Inherited
+            this.ApplicationTypeID = ApplicationTypeID; //
+            this.ApplicationStatus = ApplicationStatus; //From
+            this.LastStatusDate = LastStatusDate;       //
+            this.PaidFees = PaidFees;                   //
+            this.CreatedByUserID = CreatedByUserID;     //Base Class
             this.LicenseClassID = LicenseClassID;
-            this.LicenseClassInfo = clsLicenseClass.Find(LicenseClassID);
+            this.LicenseClassInfo = clsLicenseClass.Find(LicenseClassID); //COMPOSITION
 
             Mode = enMode.Update;
         }
