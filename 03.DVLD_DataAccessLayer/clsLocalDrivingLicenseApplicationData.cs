@@ -268,9 +268,9 @@ namespace DVLD_DataAccessLayer
 
                 object Result = Command.ExecuteScalar();
 
-                if (Result != null && bool.TryParse(Result.ToString(), out bool ReturnedResult))
+                if (Result != null /*&& bool.TryParse(Result.ToString(), out bool ReturnedResult)*/)
                 {
-                    IsPass = ReturnedResult;
+                    IsPass = true; /*= ReturnedResult*/
                 }
             }
             catch (Exception ex)
