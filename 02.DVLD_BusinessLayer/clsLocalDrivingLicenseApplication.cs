@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace DVLD_BusinessLayer
 {
+   //              SUB-CLASS                         BASE CLASS
     public class clsLocalDrivingLicenseApplication : clsApplication
     {
         public enum enMode { AddNew = 1, Update = 2 };
@@ -21,8 +22,14 @@ namespace DVLD_BusinessLayer
 
         public string PersonFullName
         { 
-            get { return clsPerson.FindPerson(ApplicantPersonID).FullName; }
+            get 
+            {
+                return base.PersonInfo.FullName;              
+            }
         }
+
+        //We did not add ApplicationID and ApplicationInfo because
+        //we already inherit clsApplication
 
         public clsLocalDrivingLicenseApplication()
         {

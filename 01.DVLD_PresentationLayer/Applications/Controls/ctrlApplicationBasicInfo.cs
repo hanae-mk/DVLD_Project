@@ -50,7 +50,7 @@ namespace DVLD_Project.Applications.Controls
             lblApplicationStatus.Text = _Application.StatusText;
             lblApplicationType.Text = _Application.ApplicationTypeInfo.ApplicationTypeTitle;
             lblApplicationFees.Text = _Application.PaidFees.ToString();
-            lblApplicantName.Text = _Application.ApplicantFullName;
+            lblApplicantName.Text = _Application.PersonInfo.FullName;
             lblApplicationDate.Text = clsFormat.ShortDateTime(_Application.ApplicationDate);
             lblStatusDate.Text = clsFormat.ShortDateTime(_Application.LastStatusDate);
             lblCreatedByUser.Text = _Application.CreatedByUserInfo.UserName;

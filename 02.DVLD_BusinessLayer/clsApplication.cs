@@ -3,7 +3,8 @@ using System;
 
 namespace DVLD_BusinessLayer
 {
-    public class clsApplication
+    //             Base Class
+    public class clsApplication 
     {
         public enum enMode { AddNew = 1, Update = 2 };
         public enMode Mode = enMode.AddNew;
@@ -17,11 +18,12 @@ namespace DVLD_BusinessLayer
         public int ApplicantPersonID { set; get; }
 
         //COMPOSITION
-        public string ApplicantFullName //ApplicantFullName here is not User but Driver
-        {
-            get { return clsPerson.FindPerson(ApplicantPersonID).FullName; }
-        }
+        //public string ApplicantFullName //ApplicantFullName here is not User but Driver
+        //{
+        //    get { return clsPerson.FindPerson(ApplicantPersonID).FullName; }
+        //}
 
+        //COMPOSITION
         public clsPerson PersonInfo;
 
         public DateTime ApplicationDate { set; get; }
