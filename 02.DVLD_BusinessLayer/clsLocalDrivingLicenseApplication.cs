@@ -86,9 +86,10 @@ namespace DVLD_BusinessLayer
             if (clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationInfoByID
                      (LocalDrivingLicenseApplicationID, ref ApplicationID, ref LicenseClassID))
             {
-                //now we found the base application
+                //now we will find the base application because we have now the ApplicationID
+                //from the sub class
                 clsApplication Application = clsApplication.GetApplicationInfoByID(ApplicationID);
-
+                //                                          GetApplicationInfoByID
                 //we return new object of that person with the right data
                 return new clsLocalDrivingLicenseApplication(LocalDrivingLicenseApplicationID,
                                                              Application.ApplicationID,

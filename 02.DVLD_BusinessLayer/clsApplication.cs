@@ -97,13 +97,14 @@ namespace DVLD_BusinessLayer
         {
             int ApplicantPersonID = -1, ApplicationTypeID = -1, CreatedByUserID = -1;
             DateTime ApplicationDate = System.DateTime.Now, LastStatusDate = System.DateTime.Now;
-            byte ApplicationStatus = 1; //No enum here bcs there is no enum in database later we convert
+            byte ApplicationStatus = 1; //No enum here bcs there is no enum in database
             float PaidFees = 0.00f;
 
             if(clsApplicationData.GetApplicationInfoByID(ApplicationID, ref ApplicantPersonID, 
                                                           ref ApplicationDate, ref ApplicationTypeID,
                                                           ref ApplicationStatus, ref LastStatusDate,
                                                           ref PaidFees, ref CreatedByUserID))
+                //we return new object of that application with the right data
                 return new clsApplication(ApplicationID, ApplicantPersonID, ApplicationDate,
                                           ApplicationTypeID, (enApplicationStatus)ApplicationStatus,
                                           LastStatusDate, PaidFees, CreatedByUserID);
@@ -126,32 +127,6 @@ namespace DVLD_BusinessLayer
                                                         this.ApplicationDate, this.ApplicationTypeID,
                                                         (byte)this.ApplicationStatus, this.LastStatusDate,
                                                         this.PaidFees, this.CreatedByUserID);
-        }
-
-        //This is the base class
-        public static clsApplication FindBaseApplication(int ApplicationID)
-        {
-            int ApplicantPersonID = -1, ApplicationTypeID = -1, CreatedByUserID = -1;
-            DateTime ApplicationDate = DateTime.Now, LastStatusDate = DateTime.Now;
-            byte ApplicationStatus = 1;  
-            float PaidFees = 0; 
-
-            bool IsFound = clsApplicationData.GetApplicationInfoByID
-                                (
-                                    ApplicationID, ref ApplicantPersonID,
-                                    ref ApplicationDate, ref ApplicationTypeID,
-                                    ref ApplicationStatus, ref LastStatusDate,
-                                    ref PaidFees, ref CreatedByUserID
-                                );
-
-            if (IsFound)
-                //we return new object of that application with the right data
-                return new clsApplication(ApplicationID, ApplicantPersonID,
-                                         ApplicationDate, ApplicationTypeID,
-                                      (enApplicationStatus)ApplicationStatus, LastStatusDate,
-                                         PaidFees, CreatedByUserID);
-            else
-                return null;
         }
 
         public bool CancelApplication()

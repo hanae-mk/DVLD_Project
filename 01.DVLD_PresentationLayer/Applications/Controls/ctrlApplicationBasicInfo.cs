@@ -27,12 +27,11 @@ namespace DVLD_Project.Applications.Controls
         public ctrlApplicationBasicInfo()
         {
             InitializeComponent();
-
         }
 
         public void LoadApplicationInfo(int ApplicationID)
         {
-            _Application = clsApplication.FindBaseApplication(ApplicationID);
+            _Application = clsApplication.GetApplicationInfoByID(ApplicationID);
 
             if (_Application == null)
             {
