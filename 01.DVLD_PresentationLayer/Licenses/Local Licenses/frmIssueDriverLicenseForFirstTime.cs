@@ -39,7 +39,7 @@ namespace DVLD_Project.Licenses.Local_Licenses
                 return;
             }
 
-            if (!_LocalDrivingLicenseApplication.PassedAllTests())
+            if (!_LocalDrivingLicenseApplication.IsPassedAllTests())
             {
                 MessageBox.Show("This Person Should Pass All Tests First",
                                 "Not Allowed",

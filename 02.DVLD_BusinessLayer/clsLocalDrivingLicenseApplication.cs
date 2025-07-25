@@ -89,8 +89,8 @@ namespace DVLD_BusinessLayer
                 //now we will find the base application because we have now the ApplicationID
                 //from the sub class
                 clsApplication Application = clsApplication.GetApplicationInfoByID(ApplicationID);
-                //                                          GetApplicationInfoByID
-                //we return new object of that person with the right data
+               
+                //we return new object of L.D.License with the right data
                 return new clsLocalDrivingLicenseApplication(LocalDrivingLicenseApplicationID,
                                                              Application.ApplicationID,
                                                              Application.ApplicantPersonID,
@@ -114,10 +114,10 @@ namespace DVLD_BusinessLayer
             if (clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationInfoByApplicationID
                (ApplicationID, ref LocalDrivingLicenseApplicationID, ref LicenseClassID))
             {
-                //now we find the base application
+                //now we will find the base application with the ApplicationID
                 clsApplication Application = clsApplication.GetApplicationInfoByID(ApplicationID);
 
-                //we return new object of that person with the right data
+                //we return new object of L.D.License with the right data
                 return new clsLocalDrivingLicenseApplication(LocalDrivingLicenseApplicationID,
                                                              Application.ApplicationID,
                                                              Application.ApplicantPersonID,
@@ -136,12 +136,12 @@ namespace DVLD_BusinessLayer
         public bool Save()
         {
             //Because of inheritance first we call the save method in the base class,
-            //it will take care of adding all information to the application table.
-            base.Mode = (clsApplication.enMode)Mode;
+            //it will take care of adding all informations to the application table.
+            base.Mode  = (clsApplication.enMode)Mode;
             if (!base.Save())
                 return false;
 
-            //After we save the main application now we save the sub application.
+            //After we save the main application now we save the sub/child application.
             switch (Mode)
             {
                 case enMode.AddNew:
@@ -182,6 +182,11 @@ namespace DVLD_BusinessLayer
             return clsLocalDrivingLicenseApplicationData.IsPassTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
 
+        public static bool IsPassTest(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
+        {
+            return clsLocalDrivingLicenseApplicationData.IsPassTest(LocalDrivingLicenseApplicationID, (int)TestTypeID);
+        }
+
         public bool DoesPassPreviousTest(clsTestType.enTestType CurrentTestType)
         {
             switch (CurrentTestType)
@@ -204,11 +209,6 @@ namespace DVLD_BusinessLayer
                 default:
                     return false;
             }
-        }
-
-        public static bool IsPassTest(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
-        {
-            return clsLocalDrivingLicenseApplicationData.IsPassTest(LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
 
         public bool DoesAttendTestType(clsTestType.enTestType TestTypeID)
@@ -261,12 +261,12 @@ namespace DVLD_BusinessLayer
             return clsTest.GetPassedTestCount(LocalDrivingLicenseApplicationID);
         }
 
-        public bool PassedAllTests()
+        public bool IsPassedAllTests()
         {
             return clsTest.PassedAllTests(this.LocalDrivingLicenseApplicationID);
         }
 
-        public static bool PassedAllTests(int LocalDrivingLicenseApplicationID)
+        public static bool IsPassedAllTests(int LocalDrivingLicenseApplicationID)
         {
             //if total passed test less than 3 it will return false otherwise will return true
             return clsTest.PassedAllTests(LocalDrivingLicenseApplicationID);
@@ -285,21 +285,16 @@ namespace DVLD_BusinessLayer
 
                 Driver.PersonID = this.ApplicantPersonID;
                 Driver.CreatedByUserID = CreatedByUserID;
+
                 if (Driver.Save())
-                {
                     DriverID = Driver.DriverID;
-                }
                 else
-                {
-                    return -1;
-                }
+                    return -1;              
             }
             else
-            {
                 DriverID = Driver.DriverID;
-            }
-            //now we diver is there, so we add new licesnse
 
+            //now we diver is there, so we add new licesnse
             clsLicense License = new clsLicense();
             License.ApplicationID = this.ApplicationID;
             License.DriverID = DriverID;
