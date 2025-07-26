@@ -49,7 +49,7 @@
             // 
             this.ctrlLocalDrivingLicenseApplicationInfo1.Location = new System.Drawing.Point(11, 113);
             this.ctrlLocalDrivingLicenseApplicationInfo1.Name = "ctrlLocalDrivingLicenseApplicationInfo1";
-            this.ctrlLocalDrivingLicenseApplicationInfo1.Size = new System.Drawing.Size(881, 392);
+            this.ctrlLocalDrivingLicenseApplicationInfo1.Size = new System.Drawing.Size(881, 353);
             this.ctrlLocalDrivingLicenseApplicationInfo1.TabIndex = 0;
             // 
             // pbTestTypeImage
@@ -77,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 517);
+            this.label2.Location = new System.Drawing.Point(12, 469);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 16);
             this.label2.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             this.btnAddAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAppointment.Image = global::DVLD_Project.Properties.Resources.AddAppointment_32;
-            this.btnAddAppointment.Location = new System.Drawing.Point(858, 517);
+            this.btnAddAppointment.Location = new System.Drawing.Point(858, 462);
             this.btnAddAppointment.Name = "btnAddAppointment";
             this.btnAddAppointment.Size = new System.Drawing.Size(34, 33);
             this.btnAddAppointment.TabIndex = 4;
@@ -101,7 +101,7 @@
             this.dgvAppointments.AllowUserToOrderColumns = true;
             this.dgvAppointments.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointments.Location = new System.Drawing.Point(12, 556);
+            this.dgvAppointments.Location = new System.Drawing.Point(11, 497);
             this.dgvAppointments.Name = "dgvAppointments";
             this.dgvAppointments.ReadOnly = true;
             this.dgvAppointments.Size = new System.Drawing.Size(880, 150);
@@ -113,7 +113,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD_Project.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(793, 711);
+            this.btnClose.Location = new System.Drawing.Point(793, 653);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(99, 34);
             this.btnClose.TabIndex = 6;
@@ -125,7 +125,7 @@
             // 
             this.lblRecords.AutoSize = true;
             this.lblRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecords.Location = new System.Drawing.Point(12, 723);
+            this.lblRecords.Location = new System.Drawing.Point(12, 653);
             this.lblRecords.Name = "lblRecords";
             this.lblRecords.Size = new System.Drawing.Size(102, 16);
             this.lblRecords.TabIndex = 7;
@@ -138,14 +138,14 @@
             this.editAppointmentToolStripMenuItem,
             this.takeTestToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(190, 90);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 68);
             // 
             // editAppointmentToolStripMenuItem
             // 
             this.editAppointmentToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editAppointmentToolStripMenuItem.Image = global::DVLD_Project.Properties.Resources.edit_32;
             this.editAppointmentToolStripMenuItem.Name = "editAppointmentToolStripMenuItem";
-            this.editAppointmentToolStripMenuItem.Size = new System.Drawing.Size(189, 32);
+            this.editAppointmentToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
             this.editAppointmentToolStripMenuItem.Text = "Edit Appointment";
             this.editAppointmentToolStripMenuItem.Click += new System.EventHandler(this.editAppointmentToolStripMenuItem_Click);
             // 
@@ -153,7 +153,7 @@
             // 
             this.takeTestToolStripMenuItem.Image = global::DVLD_Project.Properties.Resources.Test_32;
             this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
-            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(189, 32);
+            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
             this.takeTestToolStripMenuItem.Text = "Take Test";
             this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
             // 
@@ -162,7 +162,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(904, 749);
+            this.ClientSize = new System.Drawing.Size(904, 691);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.btnClose);
