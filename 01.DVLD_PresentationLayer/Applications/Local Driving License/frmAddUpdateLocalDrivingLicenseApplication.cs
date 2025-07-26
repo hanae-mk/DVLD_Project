@@ -32,8 +32,8 @@ namespace DVLD_Project.Applications.Local_Driving_License
         {
             InitializeComponent();
 
+            _LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
             Mode = enMode.Update;
-            _LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;          
         }
 
         private void _FillLicenseClassesInComboBox()
@@ -68,7 +68,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
             {
                 lblTitle.Text = "Update Local Driving License Application";
                 this.Text = "Update Local Driving License Application";
-
+                
                 tpApplicationInfo.Enabled = true;
                 btnSave.Enabled = true;              
             }
@@ -81,7 +81,6 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
             if (_LocalDrivingLicenseApplication == null)
             {
-                //"Person with ID = " +
                 MessageBox.Show("Application with ID = " + _LocalDrivingLicenseApplicationID + " is NOT Found!",
                                 "Error",
                                 MessageBoxButtons.OK,

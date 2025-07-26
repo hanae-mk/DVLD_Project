@@ -35,6 +35,7 @@ namespace DVLD_BusinessLayer
         public clsLocalDrivingLicenseApplication()
         {
             this.LocalDrivingLicenseApplicationID = -1;
+            //this.ApplicationID = -1;
             this.LicenseClassID = -1;
 
             Mode = enMode.AddNew;
