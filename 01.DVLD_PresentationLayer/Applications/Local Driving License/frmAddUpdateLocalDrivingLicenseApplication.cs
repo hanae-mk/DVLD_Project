@@ -111,6 +111,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            //Incase of Add New Mode
             if (ctrlPersonCardWithFilter1.PersonID == -1)
             {
                 MessageBox.Show("Please Select A Person",
