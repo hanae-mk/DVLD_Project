@@ -51,7 +51,7 @@ namespace DVLD_Project.People.Controls
             set
             {
                 _FilterEnabled = value;
-                gbFilters.Enabled = _FilterEnabled;
+                gbFilter.Enabled = _FilterEnabled;
                 //In some cases we can enable or disable the gbFilters (all the GroupBox)
             }
             get

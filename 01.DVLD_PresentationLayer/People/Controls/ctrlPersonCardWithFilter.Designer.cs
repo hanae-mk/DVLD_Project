@@ -36,10 +36,10 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
-            this.gbFilters = new System.Windows.Forms.GroupBox();
+            this.gbFilter = new System.Windows.Forms.GroupBox();
             this.ctrlPersonCard1 = new DVLD_Project.ctrlPersonCard();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.gbFilters.SuspendLayout();
+            this.gbFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -113,19 +113,19 @@
             this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);
             this.txtFilterValue.Validating += new System.ComponentModel.CancelEventHandler(this.txtFilterValue_Validating);
             // 
-            // gbFilters
+            // gbFilter
             // 
-            this.gbFilters.Controls.Add(this.label1);
-            this.gbFilters.Controls.Add(this.btnAddPerson);
-            this.gbFilters.Controls.Add(this.label2);
-            this.gbFilters.Controls.Add(this.btnFind);
-            this.gbFilters.Controls.Add(this.cbFilterBy);
-            this.gbFilters.Controls.Add(this.txtFilterValue);
-            this.gbFilters.Location = new System.Drawing.Point(13, 10);
-            this.gbFilters.Name = "gbFilters";
-            this.gbFilters.Size = new System.Drawing.Size(638, 73);
-            this.gbFilters.TabIndex = 13;
-            this.gbFilters.TabStop = false;
+            this.gbFilter.Controls.Add(this.label1);
+            this.gbFilter.Controls.Add(this.btnAddPerson);
+            this.gbFilter.Controls.Add(this.label2);
+            this.gbFilter.Controls.Add(this.btnFind);
+            this.gbFilter.Controls.Add(this.cbFilterBy);
+            this.gbFilter.Controls.Add(this.txtFilterValue);
+            this.gbFilter.Location = new System.Drawing.Point(13, 10);
+            this.gbFilter.Name = "gbFilter";
+            this.gbFilter.Size = new System.Drawing.Size(638, 73);
+            this.gbFilter.TabIndex = 13;
+            this.gbFilter.TabStop = false;
             // 
             // ctrlPersonCard1
             // 
@@ -143,13 +143,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.ctrlPersonCard1);
-            this.Controls.Add(this.gbFilters);
+            this.Controls.Add(this.gbFilter);
             this.Name = "ctrlPersonCardWithFilter";
             this.Size = new System.Drawing.Size(908, 359);
             this.Load += new System.EventHandler(this.ctrlPersonCardWithFilter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.gbFilters.ResumeLayout(false);
-            this.gbFilters.PerformLayout();
+            this.gbFilter.ResumeLayout(false);
+            this.gbFilter.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -157,7 +157,7 @@
         #endregion
 
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.GroupBox gbFilters;
+        private System.Windows.Forms.GroupBox gbFilter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddPerson;
         private System.Windows.Forms.Label label2;

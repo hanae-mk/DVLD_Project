@@ -55,22 +55,21 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 lblTitle.Text = "New Local Driving License Application";
                 this.Text = "New Local Driving License Application"; //this.Text means the title of the form
                 _LocalDrivingLicenseApplication = new clsLocalDrivingLicenseApplication();
-                ctrlPersonCardWithFilter1.Focus();
+                ctrlPersonCardWithFilter1.FilterFocus();
                 tpApplicationInfo.Enabled = false;
 
                 lblDrivingLicenseApplicationID.Text = "[???]";
                 lblApplicationDate.Text = DateTime.Now.ToShortDateString();
                 cbLicenseClass.SelectedIndex = 2; //Ordinary Driving License
+                //Here we chose enApplicationType.NewDrivingLicense because we are in AddNew Mode
                 lblFees.Text = clsApplicationType.Find((int)clsApplication.enApplicationType.NewDrivingLicense).ApplicationTypeFees.ToString();   
                 lblCreatedByUser.Text = clsGlobal.CurrentUser.UserName;
             }
             else
             {
                 lblTitle.Text = "Update Local Driving License Application";
-                this.Text = "Update Local Driving License Application";
-                
-                tpApplicationInfo.Enabled = true;
-                btnSave.Enabled = true;              
+                this.Text = "Update Local Driving License Application";           
+                tpApplicationInfo.Enabled = true;             
             }
         }
 
