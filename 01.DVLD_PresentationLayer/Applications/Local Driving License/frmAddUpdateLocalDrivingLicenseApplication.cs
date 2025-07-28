@@ -15,17 +15,17 @@ namespace DVLD_Project.Applications.Local_Driving_License
     public partial class frmAddUpdateLocalDrivingLicenseApplication : Form
     {
         public enum enMode { AddNew = 1, Update = 2};
-        public enMode Mode = enMode.AddNew;
+        private enMode _Mode = enMode.AddNew;
 
         private int _LocalDrivingLicenseApplicationID = -1;
         private int _SelectedPersonID = -1; //We use it in DataBack Event
 
-        clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
+        clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication; //private object
 
         public frmAddUpdateLocalDrivingLicenseApplication()
         {
             InitializeComponent();
-            Mode = enMode.AddNew;
+            _Mode = enMode.AddNew;
         }
 
         public frmAddUpdateLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID)
@@ -33,7 +33,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
             InitializeComponent();
 
             _LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
-            Mode = enMode.Update;
+            _Mode = enMode.Update;
         }
 
         private void _FillLicenseClassesInComboBox()
@@ -50,10 +50,10 @@ namespace DVLD_Project.Applications.Local_Driving_License
         {
             _FillLicenseClassesInComboBox();
 
-            if(Mode == enMode.AddNew)
+            if(_Mode == enMode.AddNew)
             {
                 lblTitle.Text = "New Local Driving License Application";
-                this.Text = "New Local Driving License Application";
+                this.Text = "New Local Driving License Application"; //this.Text means the title of the form
                 _LocalDrivingLicenseApplication = new clsLocalDrivingLicenseApplication();
                 ctrlPersonCardWithFilter1.Focus();
                 tpApplicationInfo.Enabled = false;
@@ -76,7 +76,8 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
         private void _LoadData()
         {
-            ctrlPersonCardWithFilter1.FilterEnabled = false; //we have app ID bcs we are in update mode
+            ctrlPersonCardWithFilter1.FilterEnabled = false; 
+            //we have app ID bcs we are in update mode
             _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
 
             if (_LocalDrivingLicenseApplication == null)
@@ -105,7 +106,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
         {
             _ResetDefaultValues();
 
-            if (Mode == enMode.Update)
+            if (_Mode == enMode.Update)
                 _LoadData();
         }
 
@@ -122,7 +123,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 return;
             }
 
-            if (Mode == enMode.Update)
+            if (_Mode == enMode.Update)
             {
                 btnSave.Enabled = true;
                 tpApplicationInfo.Enabled = true;
@@ -184,7 +185,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
             if (_LocalDrivingLicenseApplication.Save())
             {
-                Mode = enMode.Update;
+                _Mode = enMode.Update;
                 lblTitle.Text = "Update Local Driving License Application";
                 lblDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();                         
                 MessageBox.Show("Data Saved Successfully", 

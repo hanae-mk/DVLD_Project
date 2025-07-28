@@ -80,7 +80,7 @@
             this.tabControl1.Location = new System.Drawing.Point(19, 60);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(932, 542);
+            this.tabControl1.Size = new System.Drawing.Size(932, 475);
             this.tabControl1.TabIndex = 1;
             // 
             // tpPersonalInfo
@@ -91,7 +91,7 @@
             this.tpPersonalInfo.Location = new System.Drawing.Point(4, 25);
             this.tpPersonalInfo.Name = "tpPersonalInfo";
             this.tpPersonalInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPersonalInfo.Size = new System.Drawing.Size(924, 513);
+            this.tpPersonalInfo.Size = new System.Drawing.Size(924, 446);
             this.tpPersonalInfo.TabIndex = 0;
             this.tpPersonalInfo.Text = "Personal Info";
             this.tpPersonalInfo.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Image = global::DVLD_Project.Properties.Resources.Next_32;
             this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNext.Location = new System.Drawing.Point(808, 464);
+            this.btnNext.Location = new System.Drawing.Point(797, 396);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(100, 31);
             this.btnNext.TabIndex = 4;
@@ -114,11 +114,11 @@
             // 
             this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.SystemColors.Window;
             this.ctrlPersonCardWithFilter1.FilterEnabled = true;
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(13, 4);
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(7, 7);
             this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
             this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(901, 453);
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(910, 380);
             this.ctrlPersonCardWithFilter1.TabIndex = 0;
             this.ctrlPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.ctrlPersonCardWithFilter1_OnPersonSelected);
             // 
@@ -143,7 +143,7 @@
             this.tpApplicationInfo.Location = new System.Drawing.Point(4, 25);
             this.tpApplicationInfo.Name = "tpApplicationInfo";
             this.tpApplicationInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpApplicationInfo.Size = new System.Drawing.Size(924, 513);
+            this.tpApplicationInfo.Size = new System.Drawing.Size(924, 446);
             this.tpApplicationInfo.TabIndex = 1;
             this.tpApplicationInfo.Text = "Application Info";
             this.tpApplicationInfo.UseVisualStyleBackColor = true;
@@ -154,7 +154,7 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = global::DVLD_Project.Properties.Resources.Save_32;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(821, 476);
+            this.btnSave.Location = new System.Drawing.Point(821, 409);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 31);
             this.btnSave.TabIndex = 3;
@@ -316,7 +316,7 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD_Project.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(855, 608);
+            this.btnClose.Location = new System.Drawing.Point(849, 541);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(98, 31);
             this.btnClose.TabIndex = 2;
@@ -329,7 +329,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(965, 651);
+            this.ClientSize = new System.Drawing.Size(965, 578);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnClose);

@@ -144,7 +144,8 @@ namespace DVLD_Project.People.Controls
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            if (!this.ValidateChildren()) //hadi dyal ay method katsala b _Validating
+            //This Event is for every method that ends with _Validating()
+            if (!this.ValidateChildren()) 
             {
                 MessageBox.Show("This filed is not valid!, put the mouse over the red icon to see the error", 
                                 "Validation Error", 
@@ -202,7 +203,5 @@ namespace DVLD_Project.People.Controls
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             //                                         what are control characters??
         }
-
-       
     }
 }

@@ -111,6 +111,7 @@
             this.txtFilterValue.Size = new System.Drawing.Size(158, 22);
             this.txtFilterValue.TabIndex = 10;
             this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);
+            this.txtFilterValue.Validating += new System.ComponentModel.CancelEventHandler(this.txtFilterValue_Validating);
             // 
             // gbFilters
             // 
@@ -144,7 +145,7 @@
             this.Controls.Add(this.ctrlPersonCard1);
             this.Controls.Add(this.gbFilters);
             this.Name = "ctrlPersonCardWithFilter";
-            this.Size = new System.Drawing.Size(908, 457);
+            this.Size = new System.Drawing.Size(908, 359);
             this.Load += new System.EventHandler(this.ctrlPersonCardWithFilter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.gbFilters.ResumeLayout(false);
