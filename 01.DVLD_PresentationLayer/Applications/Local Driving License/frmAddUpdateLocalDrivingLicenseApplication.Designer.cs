@@ -39,7 +39,7 @@
             this.lblCreatedByUser = new System.Windows.Forms.Label();
             this.lblFees = new System.Windows.Forms.Label();
             this.lblApplicationDate = new System.Windows.Forms.Label();
-            this.lblDrivingLicenseApplicationID = new System.Windows.Forms.Label();
+            this.lblLocalDrivingLicenseApplicationID = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -129,7 +129,7 @@
             this.tpApplicationInfo.Controls.Add(this.lblCreatedByUser);
             this.tpApplicationInfo.Controls.Add(this.lblFees);
             this.tpApplicationInfo.Controls.Add(this.lblApplicationDate);
-            this.tpApplicationInfo.Controls.Add(this.lblDrivingLicenseApplicationID);
+            this.tpApplicationInfo.Controls.Add(this.lblLocalDrivingLicenseApplicationID);
             this.tpApplicationInfo.Controls.Add(this.pictureBox5);
             this.tpApplicationInfo.Controls.Add(this.pictureBox4);
             this.tpApplicationInfo.Controls.Add(this.pictureBox3);
@@ -194,21 +194,21 @@
             // 
             this.lblApplicationDate.AutoSize = true;
             this.lblApplicationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicationDate.Location = new System.Drawing.Point(361, 103);
+            this.lblApplicationDate.Location = new System.Drawing.Point(361, 101);
             this.lblApplicationDate.Name = "lblApplicationDate";
             this.lblApplicationDate.Size = new System.Drawing.Size(91, 16);
             this.lblApplicationDate.TabIndex = 11;
             this.lblApplicationDate.Text = "[??/??/????]";
             // 
-            // lblDrivingLicenseApplicationID
+            // lblLocalDrivingLicenseApplicationID
             // 
-            this.lblDrivingLicenseApplicationID.AutoSize = true;
-            this.lblDrivingLicenseApplicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDrivingLicenseApplicationID.Location = new System.Drawing.Point(361, 56);
-            this.lblDrivingLicenseApplicationID.Name = "lblDrivingLicenseApplicationID";
-            this.lblDrivingLicenseApplicationID.Size = new System.Drawing.Size(41, 16);
-            this.lblDrivingLicenseApplicationID.TabIndex = 10;
-            this.lblDrivingLicenseApplicationID.Text = "[???]";
+            this.lblLocalDrivingLicenseApplicationID.AutoSize = true;
+            this.lblLocalDrivingLicenseApplicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalDrivingLicenseApplicationID.Location = new System.Drawing.Point(361, 62);
+            this.lblLocalDrivingLicenseApplicationID.Name = "lblLocalDrivingLicenseApplicationID";
+            this.lblLocalDrivingLicenseApplicationID.Size = new System.Drawing.Size(41, 16);
+            this.lblLocalDrivingLicenseApplicationID.TabIndex = 10;
+            this.lblLocalDrivingLicenseApplicationID.Text = "[???]";
             // 
             // pictureBox5
             // 
@@ -375,7 +375,7 @@
         private System.Windows.Forms.Label lblCreatedByUser;
         private System.Windows.Forms.Label lblFees;
         private System.Windows.Forms.Label lblApplicationDate;
-        private System.Windows.Forms.Label lblDrivingLicenseApplicationID;
+        private System.Windows.Forms.Label lblLocalDrivingLicenseApplicationID;
         private System.Windows.Forms.Button btnSave;
     }
 }

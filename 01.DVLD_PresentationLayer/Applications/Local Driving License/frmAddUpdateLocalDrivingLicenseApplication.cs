@@ -58,7 +58,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 ctrlPersonCardWithFilter1.FilterFocus();
                 tpApplicationInfo.Enabled = false;
 
-                lblDrivingLicenseApplicationID.Text = "[???]";
+                lblLocalDrivingLicenseApplicationID.Text = "[???]";
                 lblApplicationDate.Text = DateTime.Now.ToShortDateString();
                 cbLicenseClass.SelectedIndex = 2; //Ordinary Driving License
                 //Here we chose enApplicationType.NewDrivingLicense because we are in AddNew Mode
@@ -75,7 +75,8 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
         private void _LoadData()
         {
-            ctrlPersonCardWithFilter1.FilterEnabled = false; 
+            ctrlPersonCardWithFilter1.FilterEnabled = false;
+
             //we have app ID bcs we are in update mode
             _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
 
@@ -89,15 +90,18 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 return;
             }
            
+            //We transfer Data from Object to Controls
             ctrlPersonCardWithFilter1.LoadPersonInfo(_LocalDrivingLicenseApplication.ApplicantPersonID);
 
-            lblDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.ApplicationID.ToString();
+            lblLocalDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.ApplicationID.ToString(); 
 
-            //why we didn't use .ToShortDateString();
+            //We can also use .ToShortDateString();
             lblApplicationDate.Text = clsFormat.ShortDateTime(_LocalDrivingLicenseApplication.ApplicationDate);
+
+            //First we find LicenseClassID we get it's Name then we search the LicenseClassName
+            //In the ComboBox using FindString() Method
             cbLicenseClass.SelectedIndex = cbLicenseClass.FindString(clsLicenseClass.Find(_LocalDrivingLicenseApplication.LicenseClassID).ClassName);
             lblFees.Text = _LocalDrivingLicenseApplication.PaidFees.ToString();
-            //_LocalDrivingLicenseApplication.CreatedByUserInfo.UserName.ToString()    
             lblCreatedByUser.Text = clsUser.FindByUserID(_LocalDrivingLicenseApplication.CreatedByUserID).UserName;
         }
 
@@ -186,7 +190,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
             {
                 _Mode = enMode.Update;
                 lblTitle.Text = "Update Local Driving License Application";
-                lblDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();                         
+                lblLocalDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();                         
                 MessageBox.Show("Data Saved Successfully", 
                                 "Saved", 
                                 MessageBoxButtons.OK, 
