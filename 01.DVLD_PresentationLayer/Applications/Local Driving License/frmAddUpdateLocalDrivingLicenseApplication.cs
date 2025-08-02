@@ -143,16 +143,6 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            if (!this.ValidateChildren())
-            {
-                MessageBox.Show("Some Fields are Not Valid, Put the mouse over the red icon(s) to see the error", 
-                                "Validation Error", 
-                                MessageBoxButtons.OK, 
-                                MessageBoxIcon.Error);
-                return;
-            }
-
             int LicenseClassID = clsLicenseClass.Find(cbLicenseClass.Text).LicenseClassID;
             int ActiveApplicationID = clsApplication.GetActiveApplicationIDForLicenseClass(_SelectedPersonID, (int)clsApplication.enApplicationType.NewDrivingLicense, LicenseClassID);
 

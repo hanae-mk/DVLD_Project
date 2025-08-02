@@ -134,7 +134,7 @@
             this.ctrlPersonCard1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctrlPersonCard1.Location = new System.Drawing.Point(13, 89);
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
-            this.ctrlPersonCard1.Size = new System.Drawing.Size(884, 312);
+            this.ctrlPersonCard1.Size = new System.Drawing.Size(884, 267);
             this.ctrlPersonCard1.TabIndex = 14;
             // 
             // ctrlPersonCardWithFilter
@@ -145,7 +145,7 @@
             this.Controls.Add(this.ctrlPersonCard1);
             this.Controls.Add(this.gbFilter);
             this.Name = "ctrlPersonCardWithFilter";
-            this.Size = new System.Drawing.Size(908, 359);
+            this.Size = new System.Drawing.Size(908, 364);
             this.Load += new System.EventHandler(this.ctrlPersonCardWithFilter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.gbFilter.ResumeLayout(false);

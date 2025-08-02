@@ -25,9 +25,11 @@ namespace DVLD_BusinessLayer
             get 
             {
                 //we can access to the base class info via sub class
-                return base.PersonInfo.FullName;              
+                return clsPerson.FindPerson(ApplicantPersonID).FullName; //base.PersonInfo.FullName;              
             }
         }
+
+        public clsUser UserInfo;
 
         //We did not add ApplicationID and ApplicationInfo because
         //we already inherit clsApplication
