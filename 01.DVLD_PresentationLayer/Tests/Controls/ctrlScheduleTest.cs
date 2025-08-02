@@ -77,7 +77,7 @@ namespace DVLD_Project.Tests.Controls
 
             _LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
             _TestAppointmentID = AppointmentID;
-            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLicenseByLicenseIDLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
 
             if(_LocalDrivingLicenseApplication == null)
             {
@@ -98,7 +98,7 @@ namespace DVLD_Project.Tests.Controls
 
             if(_CreationMode == enCreationMode.RetakeTestSchedule)
             {
-                lblRetakeApplicationFees.Text = clsApplicationType.Find((int)clsApplication.enApplicationType.RetakeTest).ApplicationTypeFees.ToString();
+                lblRetakeApplicationFees.Text = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.RetakeTest).ApplicationTypeFees.ToString();
                 gbRetakeTestInfo.Enabled = true;
                 lblTitle.Text = "Schedule Retake Test";
                 lblRetakeTestApplicationID.Text = "0";
@@ -121,7 +121,7 @@ namespace DVLD_Project.Tests.Controls
 
             if(_Mode == enMode.AddNew)
             {
-                lblFees.Text = clsTestType.Find(_TestTypeID).TestTypeFees.ToString();
+                lblFees.Text = clsTestType.FindLicenseByLicenseID(_TestTypeID).TestTypeFees.ToString();
                 dtpTestDate.MinDate = DateTime.Now;
                 lblRetakeTestApplicationID.Text = "N/A";
 
@@ -160,7 +160,7 @@ namespace DVLD_Project.Tests.Controls
 
         private bool _LoadTestAppointmentData()
         {
-            _TestAppointment = clsTestAppointment.FindTestAppointmentByID(_TestAppointmentID);
+            _TestAppointment = clsTestAppointment.FindLicenseByLicenseIDTestAppointmentByID(_TestAppointmentID);
 
             if (_TestAppointment == null)
             {
@@ -289,7 +289,7 @@ namespace DVLD_Project.Tests.Controls
                 Application.ApplicationTypeID = (int)clsApplication.enApplicationType.RetakeTest;
                 Application.ApplicationStatus = clsApplication.enApplicationStatus.Completed;
                 Application.LastStatusDate = DateTime.Now;
-                Application.PaidFees = clsApplicationType.Find((int)clsApplication.enApplicationType.RetakeTest).ApplicationTypeFees;
+                Application.PaidFees = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.RetakeTest).ApplicationTypeFees;
                 Application.CreatedByUserID = clsGlobal.CurrentUser.UserID;
 
                 if(!Application.Save())

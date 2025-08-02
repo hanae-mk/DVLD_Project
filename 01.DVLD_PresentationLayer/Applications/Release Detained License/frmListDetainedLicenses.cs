@@ -177,7 +177,7 @@ namespace DVLD_Project.Applications.Release_Detained_License
         private void showPersonDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int LicenseID = (int)dgvDetainedLicenses.CurrentRow.Cells[1].Value;
-            int PersonID = clsLicense.Find(LicenseID).DriverInfo.PersonID;
+            int PersonID = clsLicense.FindLicenseByLicenseID(LicenseID).DriverInfo.PersonID;
 
             frmShowPersonInfo frm = new frmShowPersonInfo(PersonID);
             frm.ShowDialog();//                I made Just Cells[6]
@@ -194,7 +194,7 @@ namespace DVLD_Project.Applications.Release_Detained_License
         private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int LicenseID = (int)dgvDetainedLicenses.CurrentRow.Cells[1].Value;
-            int PersonID = clsLicense.Find(LicenseID).DriverInfo.PersonID;
+            int PersonID = clsLicense.FindLicenseByLicenseID(LicenseID).DriverInfo.PersonID;
 
             frmShowPersonLicenseHistory frm = new frmShowPersonLicenseHistory(PersonID);
             frm.ShowDialog();//                                                Cells[0]

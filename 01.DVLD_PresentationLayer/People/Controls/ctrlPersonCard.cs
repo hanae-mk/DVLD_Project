@@ -44,7 +44,7 @@ namespace DVLD_Project
 
         public void LoadPersonInfo(int PersonID)
         {
-            _Person = clsPerson.FindPerson(PersonID);
+            _Person = clsPerson.FindLicenseByLicenseIDPerson(PersonID);
 
             if (_Person == null)
             {
@@ -58,7 +58,7 @@ namespace DVLD_Project
 
         public void LoadPersonInfo(string NationalNo)
         {
-            _Person = clsPerson.FindPerson(NationalNo);
+            _Person = clsPerson.FindLicenseByLicenseIDPerson(NationalNo);
 
             if (_Person == null)
             {

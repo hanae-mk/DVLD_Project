@@ -56,7 +56,7 @@ namespace DVLD_Project.Licenses.Local_Licenses
         public void LoadDriverInfo(int LicenseID)
         {
             _LicenseID = LicenseID;
-            _License = clsLicense.Find(_LicenseID);
+            _License = clsLicense.FindLicenseByLicenseID(_LicenseID);
 
             if (_License == null)
             {

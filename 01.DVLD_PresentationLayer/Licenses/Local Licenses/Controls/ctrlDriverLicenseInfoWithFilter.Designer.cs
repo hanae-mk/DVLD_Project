@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbFilters = new System.Windows.Forms.GroupBox();
-            this.btnFindLicense = new System.Windows.Forms.Button();
+            this.btnFindLicenseByLicenseIDLicense = new System.Windows.Forms.Button();
             this.txtLicenseID = new System.Windows.Forms.TextBox();
             this.lblLicenseID = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -41,7 +41,7 @@
             // 
             // gbFilters
             // 
-            this.gbFilters.Controls.Add(this.btnFindLicense);
+            this.gbFilters.Controls.Add(this.btnFindLicenseByLicenseIDLicense);
             this.gbFilters.Controls.Add(this.txtLicenseID);
             this.gbFilters.Controls.Add(this.lblLicenseID);
             this.gbFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -52,16 +52,16 @@
             this.gbFilters.TabStop = false;
             this.gbFilters.Text = "Filter";
             // 
-            // btnFindLicense
+            // btnFindLicenseByLicenseIDLicense
             // 
-            this.btnFindLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFindLicense.Image = global::DVLD_Project.Properties.Resources.License_Type_32;
-            this.btnFindLicense.Location = new System.Drawing.Point(300, 23);
-            this.btnFindLicense.Name = "btnFindLicense";
-            this.btnFindLicense.Size = new System.Drawing.Size(56, 33);
-            this.btnFindLicense.TabIndex = 2;
-            this.btnFindLicense.UseVisualStyleBackColor = true;
-            this.btnFindLicense.Click += new System.EventHandler(this.btnFindLicense_Click);
+            this.btnFindLicenseByLicenseIDLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindLicenseByLicenseIDLicense.Image = global::DVLD_Project.Properties.Resources.License_Type_32;
+            this.btnFindLicenseByLicenseIDLicense.Location = new System.Drawing.Point(300, 23);
+            this.btnFindLicenseByLicenseIDLicense.Name = "btnFindLicenseByLicenseIDLicense";
+            this.btnFindLicenseByLicenseIDLicense.Size = new System.Drawing.Size(56, 33);
+            this.btnFindLicenseByLicenseIDLicense.TabIndex = 2;
+            this.btnFindLicenseByLicenseIDLicense.UseVisualStyleBackColor = true;
+            this.btnFindLicenseByLicenseIDLicense.Click += new System.EventHandler(this.btnFindLicenseByLicenseIDLicense_Click);
             // 
             // txtLicenseID
             // 
@@ -112,7 +112,7 @@
 
         private ctrlDriverLicenseInfo ctrlDriverLicenseInfo1;
         private System.Windows.Forms.GroupBox gbFilters;
-        private System.Windows.Forms.Button btnFindLicense;
+        private System.Windows.Forms.Button btnFindLicenseByLicenseIDLicense;
         private System.Windows.Forms.TextBox txtLicenseID;
         private System.Windows.Forms.Label lblLicenseID;
         private System.Windows.Forms.ErrorProvider errorProvider1;

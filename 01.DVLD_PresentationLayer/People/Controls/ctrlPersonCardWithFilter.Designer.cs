@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnFind = new System.Windows.Forms.Button();
+            this.btnFindLicenseByLicenseID = new System.Windows.Forms.Button();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.gbFilter = new System.Windows.Forms.GroupBox();
@@ -76,19 +76,19 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 16);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Find By:";
+            this.label2.Text = "FindLicenseByLicenseID By:";
             // 
-            // btnFind
+            // btnFindLicenseByLicenseID
             // 
-            this.btnFind.BackColor = System.Drawing.SystemColors.Window;
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Image = global::DVLD_Project.Properties.Resources.SearchPerson;
-            this.btnFind.Location = new System.Drawing.Point(471, 21);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(58, 33);
-            this.btnFind.TabIndex = 11;
-            this.btnFind.UseVisualStyleBackColor = false;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            this.btnFindLicenseByLicenseID.BackColor = System.Drawing.SystemColors.Window;
+            this.btnFindLicenseByLicenseID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindLicenseByLicenseID.Image = global::DVLD_Project.Properties.Resources.SearchPerson;
+            this.btnFindLicenseByLicenseID.Location = new System.Drawing.Point(471, 21);
+            this.btnFindLicenseByLicenseID.Name = "btnFindLicenseByLicenseID";
+            this.btnFindLicenseByLicenseID.Size = new System.Drawing.Size(58, 33);
+            this.btnFindLicenseByLicenseID.TabIndex = 11;
+            this.btnFindLicenseByLicenseID.UseVisualStyleBackColor = false;
+            this.btnFindLicenseByLicenseID.Click += new System.EventHandler(this.btnFindLicenseByLicenseID_Click);
             // 
             // cbFilterBy
             // 
@@ -118,7 +118,7 @@
             this.gbFilter.Controls.Add(this.label1);
             this.gbFilter.Controls.Add(this.btnAddPerson);
             this.gbFilter.Controls.Add(this.label2);
-            this.gbFilter.Controls.Add(this.btnFind);
+            this.gbFilter.Controls.Add(this.btnFindLicenseByLicenseID);
             this.gbFilter.Controls.Add(this.cbFilterBy);
             this.gbFilter.Controls.Add(this.txtFilterValue);
             this.gbFilter.Location = new System.Drawing.Point(13, 10);
@@ -161,7 +161,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddPerson;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Button btnFindLicenseByLicenseID;
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.TextBox txtFilterValue;
         private ctrlPersonCard ctrlPersonCard1;

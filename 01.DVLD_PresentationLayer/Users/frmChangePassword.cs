@@ -28,7 +28,7 @@ namespace DVLD_Project.Users
             //Even it's non static we can access to it just by the name of control
             //It's should be only public so we can access to it
             //ctrlUserCard1.LoadUserInfo(_UserID);
-            //_User = clsUser.FindByUserID(_UserID);
+            //_User = clsUser.FindLicenseByLicenseIDByUserID(_UserID);
         }
 
         private void _ResetDefaultValues()
@@ -43,7 +43,7 @@ namespace DVLD_Project.Users
         {
             _ResetDefaultValues();
 
-            _User = clsUser.FindByUserID(_UserID);
+            _User = clsUser.FindLicenseByLicenseIDByUserID(_UserID);
 
             if(_User == null)
             {

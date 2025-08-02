@@ -83,7 +83,7 @@ namespace DVLD_Project.Tests
 
         private void btnAddAppointment_Click(object sender, EventArgs e)
         {
-            clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
+            clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLicenseByLicenseIDLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
 
             if(LocalDrivingLicenseApplication.IsThereAnActiveScheduledTest(_TestType))
             {

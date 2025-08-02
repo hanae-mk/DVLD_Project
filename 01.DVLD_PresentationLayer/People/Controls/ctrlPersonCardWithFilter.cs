@@ -99,10 +99,10 @@ namespace DVLD_Project.People.Controls
         {
             cbFilterBy.SelectedIndex = 0;
             txtFilterValue.Text = PersonID.ToString();
-            _FindNow();
+            _FindLicenseByLicenseIDNow();
         }
 
-        private void _FindNow()
+        private void _FindLicenseByLicenseIDNow()
         {
             switch(cbFilterBy.Text)
             {
@@ -142,7 +142,7 @@ namespace DVLD_Project.People.Controls
             txtFilterValue.Focus();            
         }
 
-        private void btnFind_Click(object sender, EventArgs e)
+        private void btnFindLicenseByLicenseID_Click(object sender, EventArgs e)
         {
             //This Event is for every method that ends with _Validating()
             if (!this.ValidateChildren()) 
@@ -154,7 +154,7 @@ namespace DVLD_Project.People.Controls
                 return;
             }
 
-            _FindNow();
+            _FindLicenseByLicenseIDNow();
         }      
 
         private void txtFilterValue_Validating(object sender, CancelEventArgs e)
@@ -197,7 +197,7 @@ namespace DVLD_Project.People.Controls
         {
             //First, we check if the "Enter" Key is pressed ((char)13 = Enter)
             if (e.KeyChar == (char)13)
-                btnFind.PerformClick();
+                btnFindLicenseByLicenseID.PerformClick();
 
             if (cbFilterBy.Text == "Person ID" || cbFilterBy.Text == "User ID")
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);

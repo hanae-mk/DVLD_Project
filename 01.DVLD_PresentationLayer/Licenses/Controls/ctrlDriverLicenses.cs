@@ -85,7 +85,7 @@ namespace DVLD_Project.Licenses.Controls
         public void LoadInfoByDriverID(int DriverID)
         {
             _DriverID = DriverID;
-            _Driver = clsDriver.FindByDriverID(_DriverID);
+            _Driver = clsDriver.FindLicenseByLicenseIDByDriverID(_DriverID);
 
             _LoadLocalLicenseInfo();
             _LoadInternationalLicenseInfo();
@@ -93,11 +93,11 @@ namespace DVLD_Project.Licenses.Controls
 
         public void LoadInfoByPersonID(int PersonID)
         {
-            _Driver = clsDriver.FindByPersonID(PersonID);
+            _Driver = clsDriver.FindLicenseByLicenseIDByPersonID(PersonID);
 
             if(_Driver != null)
             {
-                _DriverID = clsDriver.FindByPersonID(PersonID).DriverID;
+                _DriverID = clsDriver.FindLicenseByLicenseIDByPersonID(PersonID).DriverID;
             }
 
             _LoadLocalLicenseInfo();

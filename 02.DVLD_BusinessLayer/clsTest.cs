@@ -37,7 +37,7 @@ namespace DVLD_BusinessLayer
         {
             this.TestID = TestID;
             this.TestAppointmentID = TestAppointmentID;
-            this.TestAppointmentInfo = clsTestAppointment.FindTestAppointmentByID(TestAppointmentID);
+            this.TestAppointmentInfo = clsTestAppointment.FindLicenseByLicenseIDTestAppointmentByID(TestAppointmentID);
             this.TestResult = TestResult;
             this.Notes = Notes;
             this.CreatedByUserID = CreatedByUserID;
@@ -58,7 +58,7 @@ namespace DVLD_BusinessLayer
                                           this.Notes, this.CreatedByUserID);
         }
 
-        public static clsTest Find(int TestID)
+        public static clsTest FindLicenseByLicenseID(int TestID)
         {
             int TestAppointmentID = -1, CreatedByUserID = -1;
             string Notes = "";
@@ -71,7 +71,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        public static clsTest FindLastTestPerPersonAndLicenseClass(int PersonID, int LicenseClassID,
+        public static clsTest FindLicenseByLicenseIDLastTestPerPersonAndLicenseClass(int PersonID, int LicenseClassID,
                                                                    clsTestType.enTestType TestTypeID)
         {
             int TestID = -1, CreatedByUserID = -1, TestAppointmentID = -1;

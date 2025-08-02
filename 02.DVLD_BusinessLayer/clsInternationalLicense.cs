@@ -55,7 +55,7 @@ namespace DVLD_BusinessLayer
 
             this.InternationalLicenseID = InternationalLicenseID;
             this.DriverID = DriverID;
-            this.DriverInfo = clsDriver.FindByDriverID(this.DriverID);
+            this.DriverInfo = clsDriver.FindLicenseByLicenseIDByDriverID(this.DriverID);
             this.IssuedUsingLocalLicenseID = IssuedUsingLocalLicenseID;
             this.IssueDate = IssueDate;
             this.ExpirationDate = ExpirationDate;
@@ -86,7 +86,7 @@ namespace DVLD_BusinessLayer
                  this.IsActive, this.CreatedByUserID);
         }
 
-        public static clsInternationalLicense Find(int InternationalLicenseID)
+        public static clsInternationalLicense FindLicenseByLicenseID(int InternationalLicenseID)
         {
             int ApplicationID = -1, DriverID = -1, IssuedUsingLocalLicenseID = -1, CreatedByUserID = -1;
             DateTime IssueDate = DateTime.Now, ExpirationDate = DateTime.Now;

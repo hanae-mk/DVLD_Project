@@ -45,7 +45,7 @@ namespace DVLD_Project.Tests
 
             if(_TestID != -1)
             {
-                _Test = clsTest.Find(_TestID);
+                _Test = clsTest.FindLicenseByLicenseID(_TestID);
 
                 if (_Test.TestResult)
                     rbPass.Checked = true;

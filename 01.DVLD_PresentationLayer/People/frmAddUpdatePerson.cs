@@ -80,7 +80,7 @@ namespace DVLD_Project.People
         private void _LoadData()
         {
             //Global object type Person class
-            _Person = clsPerson.FindPerson(_PersonID);
+            _Person = clsPerson.FindLicenseByLicenseIDPerson(_PersonID);
 
             if (_Person == null)
             {
@@ -281,7 +281,7 @@ namespace DVLD_Project.People
             _Person.Email = txtEmail.Text.Trim();
             _Person.Address = txtAddress.Text.Trim();
             _Person.DateOfBirth = dtpDateOfBirth.Value;
-            _Person.NationalityCountryID = clsCountry.FindCountry(cbCountry.Text).CountryID;
+            _Person.NationalityCountryID = clsCountry.FindLicenseByLicenseIDCountry(cbCountry.Text).CountryID;
 
             if (pbPersonImage.ImageLocation != null)
                 _Person.ImagePath = pbPersonImage.ImageLocation;

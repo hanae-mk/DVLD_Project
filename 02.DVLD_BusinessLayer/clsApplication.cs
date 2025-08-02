@@ -20,7 +20,7 @@ namespace DVLD_BusinessLayer
         //COMPOSITION
         //public string ApplicantFullName //ApplicantFullName here is not User but Driver
         //{
-        //    get { return clsPerson.FindPerson(ApplicantPersonID).FullName; }
+        //    get { return clsPerson.FindLicenseByLicenseIDPerson(ApplicantPersonID).FullName; }
         //}
 
         //COMPOSITION
@@ -80,15 +80,15 @@ namespace DVLD_BusinessLayer
         {
             this.ApplicationID = ApplicationID;
             this.ApplicantPersonID = ApplicantPersonID;
-            this.PersonInfo = clsPerson.FindPerson(ApplicantPersonID);
+            this.PersonInfo = clsPerson.FindLicenseByLicenseIDPerson(ApplicantPersonID);
             this.ApplicationDate = ApplicationDate;
             this.ApplicationTypeID = ApplicationTypeID;
-            this.ApplicationTypeInfo = clsApplicationType.Find(ApplicationTypeID); 
+            this.ApplicationTypeInfo = clsApplicationType.FindLicenseByLicenseID(ApplicationTypeID); 
             this.ApplicationStatus = ApplicationStatus;
             this.LastStatusDate = LastStatusDate;
             this.PaidFees = PaidFees;
             this.CreatedByUserID = CreatedByUserID;
-            this.CreatedByUserInfo = clsUser.FindByUserID(CreatedByUserID); 
+            this.CreatedByUserInfo = clsUser.FindLicenseByLicenseIDByUserID(CreatedByUserID); 
 
             Mode = enMode.Update;
         }

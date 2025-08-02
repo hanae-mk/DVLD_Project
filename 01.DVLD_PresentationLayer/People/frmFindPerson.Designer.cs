@@ -1,6 +1,6 @@
 ﻿namespace DVLD_Project.People
 {
-    partial class frmFindPerson
+    partial class frmFindLicenseByLicenseIDPerson
     {
         /// <summary>
         /// Required designer variable.
@@ -52,7 +52,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 29);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Find Person";
+            this.label1.Text = "FindLicenseByLicenseID Person";
             // 
             // btnClose
             // 
@@ -67,7 +67,7 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // frmFindPerson
+            // frmFindLicenseByLicenseIDPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -77,9 +77,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ctrlPersonCardWithFilter1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmFindPerson";
-            this.Text = "frmFindPerson";
-            this.Load += new System.EventHandler(this.frmFindPerson_Load);
+            this.Name = "frmFindLicenseByLicenseIDPerson";
+            this.Text = "frmFindLicenseByLicenseIDPerson";
+            this.Load += new System.EventHandler(this.frmFindLicenseByLicenseIDPerson_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

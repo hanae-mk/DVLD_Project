@@ -52,11 +52,11 @@ namespace DVLD_BusinessLayer
             this.DetainDate = DetainDate;
             this.FineFees = FineFees;
             this.CreatedByUserID = CreatedByUserID;
-            this.CreatedByUserInfo = clsUser.FindByUserID(this.CreatedByUserID);
+            this.CreatedByUserInfo = clsUser.FindLicenseByLicenseIDByUserID(this.CreatedByUserID);
             this.IsReleased = IsReleased;
             this.ReleaseDate = ReleaseDate;
             this.ReleasedByUserID = ReleasedByUserID;
-            this.ReleasedByUserInfo = clsUser.FindByPersonID(this.ReleasedByUserID);
+            this.ReleasedByUserInfo = clsUser.FindLicenseByLicenseIDByPersonID(this.ReleasedByUserID);
             this.ReleaseApplicationID = ReleaseApplicationID;
             
             Mode = enMode.Update;
@@ -82,7 +82,7 @@ namespace DVLD_BusinessLayer
                                                                 this.CreatedByUserID);
         }
 
-        public static clsDetainedLicense FindByDetainID(int DetainID)
+        public static clsDetainedLicense FindLicenseByLicenseIDByDetainID(int DetainID)
         {
             int LicenseID = -1, ReleasedByUserID = -1, ReleaseApplicationID = -1, CreatedByUserID = -1; 
             DateTime DetainDate = DateTime.Now, ReleaseDate = DateTime.MaxValue;
@@ -101,7 +101,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }       
 
-        public static clsDetainedLicense FindByLicenseID(int LicenseID)
+        public static clsDetainedLicense FindLicenseByLicenseIDByLicenseID(int LicenseID)
         {
             int DetainID = -1, ReleasedByUserID = -1, ReleaseApplicationID = -1, CreatedByUserID = -1;
             DateTime DetainDate = DateTime.Now, ReleaseDate = DateTime.MaxValue;

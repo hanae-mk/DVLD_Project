@@ -75,7 +75,7 @@ namespace DVLD_BusinessLayer
                    this.IsLocked, this.RetakeTestApplicationID);
         }
 
-        public static clsTestAppointment FindTestAppointmentByID(int TestAppointmentID)
+        public static clsTestAppointment FindLicenseByLicenseIDTestAppointmentByID(int TestAppointmentID)
         {
             int TestTypeID = -1, LocalDrivingLicenseApplicationID = -1, 
                 CreatedByUserID = -1, RetakeTestApplicationID = -1;

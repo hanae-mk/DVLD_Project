@@ -36,7 +36,7 @@ namespace DVLD_Project.Users
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            clsUser User = clsUser.FindByUserNameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+            clsUser User = clsUser.FindLicenseByLicenseIDByUserNameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
 
             if(User != null)
             {

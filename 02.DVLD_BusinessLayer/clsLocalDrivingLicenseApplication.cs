@@ -25,7 +25,7 @@ namespace DVLD_BusinessLayer
             get 
             {
                 //we can access to the base class info via sub class
-                return clsPerson.FindPerson(ApplicantPersonID).FullName; //base.PersonInfo.FullName;              
+                return clsPerson.FindLicenseByLicenseIDPerson(ApplicantPersonID).FullName; //base.PersonInfo.FullName;              
             }
         }
 
@@ -60,7 +60,7 @@ namespace DVLD_BusinessLayer
             this.PaidFees = PaidFees;                   //
             this.CreatedByUserID = CreatedByUserID;     //Base Class
             this.LicenseClassID = LicenseClassID;
-            this.LicenseClassInfo = clsLicenseClass.FindLicenseByClassID(LicenseClassID); //COMPOSITION
+            this.LicenseClassInfo = clsLicenseClass.FindLicenseByLicenseIDLicenseByLicenseClassID(LicenseClassID); //COMPOSITION
 
             Mode = enMode.Update;
         }
@@ -82,14 +82,14 @@ namespace DVLD_BusinessLayer
                 (this.LocalDrivingLicenseApplicationID, this.ApplicationID, this.LicenseClassID);
         }
 
-        public static clsLocalDrivingLicenseApplication FindLocalDrivingLicenseApplicationInfoByID(int LocalDrivingLicenseApplicationID)
+        public static clsLocalDrivingLicenseApplication FindLicenseByLicenseIDLocalDrivingLicenseApplicationInfoByID(int LocalDrivingLicenseApplicationID)
         {
             int ApplicationID = -1, LicenseClassID = -1;
 
             if (clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationInfoByID
                      (LocalDrivingLicenseApplicationID, ref ApplicationID, ref LicenseClassID))
             {
-                //now we will find the base application because we have now the ApplicationID
+                //now we will FindLicenseByLicenseID the base application because we have now the ApplicationID
                 //from the sub class
                 clsApplication Application = clsApplication.GetApplicationInfoByID(ApplicationID);
                
@@ -109,7 +109,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        public static clsLocalDrivingLicenseApplication FindByApplicationID(int ApplicationID)
+        public static clsLocalDrivingLicenseApplication FindLicenseByLicenseIDByApplicationID(int ApplicationID)
         {
 
             int LocalDrivingLicenseApplicationID = -1, LicenseClassID = -1;
@@ -117,7 +117,7 @@ namespace DVLD_BusinessLayer
             if (clsLocalDrivingLicenseApplicationData.GetLocalDrivingLicenseApplicationInfoByApplicationID
                (ApplicationID, ref LocalDrivingLicenseApplicationID, ref LicenseClassID))
             {
-                //now we will find the base application with the ApplicationID
+                //now we will FindLicenseByLicenseID the base application with the ApplicationID
                 clsApplication Application = clsApplication.GetApplicationInfoByID(ApplicationID);
 
                 //we return new object of L.D.License with the right data
@@ -251,7 +251,7 @@ namespace DVLD_BusinessLayer
 
         public clsTest GetLastTestPerTestType(clsTestType.enTestType TestTypeID)
         {
-            return clsTest.FindLastTestPerPersonAndLicenseClass(this.ApplicantPersonID, this.LicenseClassID, TestTypeID);
+            return clsTest.FindLicenseByLicenseIDLastTestPerPersonAndLicenseClass(this.ApplicantPersonID, this.LicenseClassID, TestTypeID);
         }
 
         public byte GetPassedTestCount()
@@ -279,7 +279,7 @@ namespace DVLD_BusinessLayer
         {
             int DriverID = -1;
 
-            clsDriver Driver = clsDriver.FindByPersonID(this.ApplicantPersonID);
+            clsDriver Driver = clsDriver.FindLicenseByLicenseIDByPersonID(this.ApplicantPersonID);
 
             if (Driver == null)
             {
@@ -331,7 +331,7 @@ namespace DVLD_BusinessLayer
         public int GetActiveLicenseID()
         {
             //this will get the license id that belongs to this application
-            return clsLicense.GetActiveLicenseIDByPersonID(this.ApplicantPersonID, this.LicenseClassID);
+            return clsLicense.GetActiveLicenseID(this.ApplicantPersonID, this.LicenseClassID);
         }
     }
 }

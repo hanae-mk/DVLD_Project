@@ -91,10 +91,10 @@ namespace DVLD_Project.Licenses.Local_Licenses
 
             //Also We Check if the pressed key is Enter (character code 13)
             if (e.KeyChar == (char)13)
-                btnFindLicense.PerformClick(); //That means btnFindLicense Perform that Enter Click!
+                btnFindLicenseByLicenseIDLicense.PerformClick(); //That means btnFindLicenseByLicenseIDLicense Perform that Enter Click!
         }
 
-        private void btnFindLicense_Click(object sender, EventArgs e)
+        private void btnFindLicenseByLicenseIDLicense_Click(object sender, EventArgs e)
         {
             if(!this.ValidateChildren())
             {

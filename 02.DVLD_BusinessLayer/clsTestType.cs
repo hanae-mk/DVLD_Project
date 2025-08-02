@@ -60,7 +60,7 @@ namespace DVLD_BusinessLayer
             return clsTestTypeData.UpdateTestType((int)this.TestTypeID, this.TestTypeTitle, this.TestTypeDescription, this.TestTypeFees);
         }
 
-        public static clsTestType Find(clsTestType.enTestType TestTypeID)
+        public static clsTestType FindLicenseByLicenseID(clsTestType.enTestType TestTypeID)
         {
             string TestTypeTitle = "", TestTypeDescription = "";
             float TestTypeFees = 0.00f;

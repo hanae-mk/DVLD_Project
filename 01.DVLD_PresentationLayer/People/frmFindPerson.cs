@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace DVLD_Project.People
 {
-    public partial class frmFindPerson: Form
+    public partial class frmFindLicenseByLicenseIDPerson: Form
     {
         public delegate void SendDataBack(object sender, int PersonID);
         public event SendDataBack DataBack;
 
-        public frmFindPerson()
+        public frmFindLicenseByLicenseIDPerson()
         {
             InitializeComponent();
         }
 
-        private void frmFindPerson_Load(object sender, EventArgs e)
+        private void frmFindLicenseByLicenseIDPerson_Load(object sender, EventArgs e)
         {
 
         }

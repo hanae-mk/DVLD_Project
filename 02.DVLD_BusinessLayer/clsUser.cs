@@ -38,7 +38,7 @@ namespace DVLD_BusinessLayer
             this.UserName = UserName;
             this.Password = Password;
             this.IsActive = IsActive;        
-            this.PersonInfo = clsPerson.FindPerson(PersonID); //we can access to all User Infos
+            this.PersonInfo = clsPerson.FindLicenseByLicenseIDPerson(PersonID); //we can access to all User Infos
 
             Mode = enMode.Update;
             //return full object with meagniful data
@@ -57,7 +57,7 @@ namespace DVLD_BusinessLayer
             return (this.UserID != -1);
         }
 
-        public static clsUser FindByUserID(int UserID)
+        public static clsUser FindLicenseByLicenseIDByUserID(int UserID)
         {
             int PersonID = -1;
             string UserName = "", Password = "";
@@ -72,7 +72,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        public static clsUser FindByPersonID(int PersonID) 
+        public static clsUser FindLicenseByLicenseIDByPersonID(int PersonID) 
         {
             int UserID = -1;
             string UserName = "", Password = "";
@@ -87,7 +87,7 @@ namespace DVLD_BusinessLayer
         }
 
         //we use it in LOGIN
-        public static clsUser FindByUserNameAndPassword(string UserName, string Password)
+        public static clsUser FindLicenseByLicenseIDByUserNameAndPassword(string UserName, string Password)
         {
             int UserID = -1, PersonID = -1;
             bool IsActive = false;

@@ -75,9 +75,9 @@ namespace DVLD_BusinessLayer
             this.IsActive = IsActive;
             this.IssueReason = IssueReason;
             this.CreatedByUserID = CreatedByUserID;
-            this.DriverInfo = clsDriver.FindByDriverID(this.DriverID);
-            this.LicenseClassInfo = clsLicenseClass.FindLicenseByClassID(this.LicenseClass);
-            this.DetainedInfo = clsDetainedLicense.FindByLicenseID(this.LicenseID);
+            this.DriverInfo = clsDriver.FindLicenseByLicenseIDByDriverID(this.DriverID);
+            this.LicenseClassInfo = clsLicenseClass.FindLicenseByLicenseIDLicenseByLicenseClassID(this.LicenseClass);
+            this.DetainedInfo = clsDetainedLicense.FindLicenseByLicenseIDByLicenseID(this.LicenseID);
 
             Mode = enMode.Update;
         }
@@ -102,7 +102,7 @@ namespace DVLD_BusinessLayer
                                                 this.CreatedByUserID);
         }
 
-        public static clsLicense Find(int LicenseID)
+        public static clsLicense FindLicenseByLicenseID(int LicenseID)
         {
             int ApplicationID = -1, DriverID = -1, LicenseClass = -1, CreatedByUserID = 1;
             DateTime IssueDate = DateTime.Now, ExpirationDate = DateTime.Now;
@@ -127,12 +127,12 @@ namespace DVLD_BusinessLayer
             return clsLicenseData.GetAllLicenses();
         }      
 
-        public static bool IsLicenseExistByPersonID(int PersonID, int LicenseClassID)
+        public static bool IsLicenseExist(int PersonID, int LicenseClassID)
         {
-            return (GetActiveLicenseIDByPersonID(PersonID, LicenseClassID) != -1);
+            return (GetActiveLicenseID(PersonID, LicenseClassID) != -1);
         }
 
-        public static int GetActiveLicenseIDByPersonID(int PersonID, int LicenseClassID)
+        public static int GetActiveLicenseID(int PersonID, int LicenseClassID)
         {
             return clsLicenseData.GetActiveLicenseIDByPersonID(PersonID, LicenseClassID);
         }
@@ -142,7 +142,7 @@ namespace DVLD_BusinessLayer
             return clsLicenseData.GetDriverLicenses(DriverID);
         }
 
-        public Boolean IsLicenseExpired()
+        public bool IsLicenseExpired()
         {
             return (this.ExpirationDate < DateTime.Now);
         }
@@ -195,7 +195,7 @@ namespace DVLD_BusinessLayer
             Application.ApplicationTypeID = (int)clsApplication.enApplicationType.ReleaseDetainedDrivingLicense;
             Application.ApplicationStatus = clsApplication.enApplicationStatus.Completed;
             Application.LastStatusDate = DateTime.Now;
-            Application.PaidFees = clsApplicationType.Find((int)clsApplication.enApplicationType.ReleaseDetainedDrivingLicense).ApplicationTypeFees;
+            Application.PaidFees = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.ReleaseDetainedDrivingLicense).ApplicationTypeFees;
             Application.CreatedByUserID = ReleasedByUserID;
 
             if (!Application.Save())
@@ -219,7 +219,7 @@ namespace DVLD_BusinessLayer
             Application.ApplicationTypeID = (int)clsApplication.enApplicationType.RenewDrivingLicense;
             Application.ApplicationStatus = clsApplication.enApplicationStatus.Completed;
             Application.LastStatusDate = DateTime.Now;
-            Application.PaidFees = clsApplicationType.Find((int)clsApplication.enApplicationType.RenewDrivingLicense).ApplicationTypeFees;
+            Application.PaidFees = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.RenewDrivingLicense).ApplicationTypeFees;
             Application.CreatedByUserID = CreatedByUserID;
 
             if (!Application.Save())
@@ -263,7 +263,7 @@ namespace DVLD_BusinessLayer
 
             Application.ApplicationStatus = clsApplication.enApplicationStatus.Completed;
             Application.LastStatusDate = DateTime.Now;
-            Application.PaidFees = clsApplicationType.Find(Application.ApplicationTypeID).ApplicationTypeFees;
+            Application.PaidFees = clsApplicationType.FindLicenseByLicenseID(Application.ApplicationTypeID).ApplicationTypeFees;
             Application.CreatedByUserID = CreatedByUserID;
 
             if (!Application.Save())

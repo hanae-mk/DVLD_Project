@@ -27,7 +27,7 @@ namespace DVLD_Project.Licenses.Local_Licenses
         {
             txtNotes.Focus();
 
-            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLicenseByLicenseIDLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
 
             if(_LocalDrivingLicenseApplication == null)
             {

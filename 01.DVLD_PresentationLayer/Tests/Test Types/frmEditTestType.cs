@@ -25,7 +25,7 @@ namespace DVLD_Project.Tests.Test_Types
 
         private void frmEditTestType_Load(object sender, EventArgs e)
         {
-            _TestType = clsTestType.Find(_TestTypeID);
+            _TestType = clsTestType.FindLicenseByLicenseID(_TestTypeID);
 
             if (_TestType != null)
             {

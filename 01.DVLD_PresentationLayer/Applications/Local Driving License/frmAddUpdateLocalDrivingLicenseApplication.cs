@@ -62,7 +62,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 lblApplicationDate.Text = DateTime.Now.ToShortDateString();
                 cbLicenseClass.SelectedIndex = 2; //Ordinary Driving License
                 //Here we chose enApplicationType.NewDrivingLicense because we are in AddNew Mode
-                lblFees.Text = clsApplicationType.Find((int)clsApplication.enApplicationType.NewDrivingLicense).ApplicationTypeFees.ToString();   
+                lblFees.Text = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.NewDrivingLicense).ApplicationTypeFees.ToString();   
                 lblCreatedByUser.Text = clsGlobal.CurrentUser.UserName;
             }
             else
@@ -78,7 +78,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
             ctrlPersonCardWithFilter1.FilterEnabled = false;
 
             //we have app ID bcs we are in update mode
-            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLicenseByLicenseIDLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
 
             if (_LocalDrivingLicenseApplication == null)
             {
@@ -98,12 +98,12 @@ namespace DVLD_Project.Applications.Local_Driving_License
             //We can also use .ToShortDateString();
             lblApplicationDate.Text = clsFormat.ShortDateTime(_LocalDrivingLicenseApplication.ApplicationDate);
 
-            //First we find LicenseClassID we get it's Name then we search the LicenseClassName
-            //In the ComboBox using FindString() Method
-            cbLicenseClass.SelectedIndex = cbLicenseClass.FindString(clsLicenseClass.FindLicenseByClassID(_LocalDrivingLicenseApplication.LicenseClassID).ClassName);
+            //First we FindLicenseByLicenseID LicenseClassID we get it's Name then we search the LicenseClassName
+            //In the ComboBox using FindLicenseByLicenseIDString() Method
+            cbLicenseClass.SelectedIndex = cbLicenseClass.FindString(clsLicenseClass.FindLicenseByLicenseIDLicenseByLicenseClassID(_LocalDrivingLicenseApplication.LicenseClassID).ClassName);
 
             lblFees.Text = _LocalDrivingLicenseApplication.PaidFees.ToString();
-            lblCreatedByUser.Text = clsUser.FindByUserID(_LocalDrivingLicenseApplication.CreatedByUserID).UserName;
+            lblCreatedByUser.Text = clsUser.FindLicenseByLicenseIDByUserID(_LocalDrivingLicenseApplication.CreatedByUserID).UserName;
         }
 
         private void frmAddUpdateLocalDrivingLicenseApplication_Load(object sender, EventArgs e)
@@ -144,7 +144,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int LicenseClassID = clsLicenseClass.FindLicenseByClassName(cbLicenseClass.Text).LicenseClassID;
+            int LicenseClassID = clsLicenseClass.FindLicenseByLicenseIDLicenseByLicenseClassName(cbLicenseClass.Text).LicenseClassID;
 
             //bool IsActiveApplication
             int ActiveApplicationID = clsApplication.GetActiveApplicationIDForLicenseClass(_SelectedPersonID, (int)clsApplication.enApplicationType.NewDrivingLicense, LicenseClassID);
@@ -160,16 +160,17 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 return;
             }
 
-            //check if user already have issued license of the same driving class.
-            if (clsLicense.IsLicenseExistByPersonID(ctrlPersonCardWithFilter1.PersonID, LicenseClassID))
+            //check if the applicant already have an active license of the same driving class.
+            if (clsLicense.IsLicenseExist(ctrlPersonCardWithFilter1.PersonID, LicenseClassID))
             {
-                MessageBox.Show("Person already have a license with the same applied driving class, Choose diffrent driving class",
+                MessageBox.Show("This Person already have an active license with the same applied driving class, Choose a different driving class",
                                 "Not allowed",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return;
             }
 
+            //Store Controls Info in The Object
             _LocalDrivingLicenseApplication.ApplicantPersonID = ctrlPersonCardWithFilter1.PersonID;
             _LocalDrivingLicenseApplication.ApplicationDate = DateTime.Now;
             _LocalDrivingLicenseApplication.ApplicationTypeID = 1;

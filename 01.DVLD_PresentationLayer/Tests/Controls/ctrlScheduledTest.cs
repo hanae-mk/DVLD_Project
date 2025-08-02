@@ -72,9 +72,9 @@ namespace DVLD_Project.Tests.Controls
         {
             _TestAppointmentID = TestAppointmentID;
 
-            _TestAppointment = clsTestAppointment.FindTestAppointmentByID(_TestAppointmentID);
+            _TestAppointment = clsTestAppointment.FindLicenseByLicenseIDTestAppointmentByID(_TestAppointmentID);
 
-            //Incase we didn't find any appointment
+            //Incase we didn't FindLicenseByLicenseID any appointment
             if(_TestAppointment == null)
             {
                 MessageBox.Show("There is No Test Appointment With ID = " + _TestAppointmentID,
@@ -88,7 +88,7 @@ namespace DVLD_Project.Tests.Controls
             _TestID = _TestAppointment.TestID;
 
             _LocalDrivingLicenseApplicationID = _TestAppointment.LocalDrivingLicenseApplicationID;
-            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLicenseByLicenseIDLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
 
             if(_LocalDrivingLicenseApplication == null)
             {

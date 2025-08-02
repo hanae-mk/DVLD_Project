@@ -69,7 +69,7 @@ namespace DVLD_Project.Applications.International_Driving_License
         private void showPersonDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int DriverID = (int)dgvInternationalDrivingLicenseApplications.CurrentRow.Cells[2].Value;
-            int PersonID = clsDriver.FindByDriverID(DriverID).PersonID;
+            int PersonID = clsDriver.FindLicenseByLicenseIDByDriverID(DriverID).PersonID;
             
             frmShowPersonInfo frm = new frmShowPersonInfo(PersonID);
             frm.ShowDialog();
@@ -84,7 +84,7 @@ namespace DVLD_Project.Applications.International_Driving_License
         private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int DriverID = (int)dgvInternationalDrivingLicenseApplications.CurrentRow.Cells[2].Value;
-            int PersonID = clsDriver.FindByDriverID(DriverID).PersonID;
+            int PersonID = clsDriver.FindLicenseByLicenseIDByDriverID(DriverID).PersonID;
 
             frmShowPersonLicenseHistory frm = new frmShowPersonLicenseHistory(PersonID);
             frm.ShowDialog();

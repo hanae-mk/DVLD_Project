@@ -40,7 +40,7 @@ namespace DVLD_Project.Users.Controls
 
         public void LoadUserInfo(int UserID)
         {
-            _User = clsUser.FindByUserID(UserID);
+            _User = clsUser.FindLicenseByLicenseIDByUserID(UserID);
 
             if(_User == null)
             {

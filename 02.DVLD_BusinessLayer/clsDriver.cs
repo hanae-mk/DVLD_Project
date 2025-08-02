@@ -37,7 +37,7 @@ namespace DVLD_BusinessLayer
             this.PersonID = PersonID;
             this.CreatedByUserID = CreatedByUserID;
             this.CreatedDate = CreatedDate;
-            this.PersonInfo = clsPerson.FindPerson(PersonID);
+            this.PersonInfo = clsPerson.FindLicenseByLicenseIDPerson(PersonID);
 
             Mode = enMode.Update;
         }
@@ -54,7 +54,7 @@ namespace DVLD_BusinessLayer
             return clsDriverData.UpdateDriver(this.DriverID, this.PersonID, this.CreatedByUserID);
         }
 
-        public static clsDriver FindByDriverID(int DriverID)
+        public static clsDriver FindLicenseByLicenseIDByDriverID(int DriverID)
         {
             int PersonID = -1, CreatedByUserID = -1; 
             DateTime CreatedDate = DateTime.Now;
@@ -65,7 +65,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        public static clsDriver FindByPersonID(int PersonID)
+        public static clsDriver FindLicenseByLicenseIDByPersonID(int PersonID)
         {
             int DriverID = -1, CreatedByUserID = -1; 
             DateTime CreatedDate = DateTime.Now;

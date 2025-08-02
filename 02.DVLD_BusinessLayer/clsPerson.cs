@@ -73,7 +73,7 @@ namespace DVLD_BusinessLayer
             this.ImagePath = ImagePath;
 
             //return full object with meagniful data
-            this.CountryInfo = clsCountry.FindCountry(NationalityCountryID);
+            this.CountryInfo = clsCountry.FindLicenseByLicenseIDCountry(NationalityCountryID);
 
             Mode = enMode.Update;
         }
@@ -95,7 +95,7 @@ namespace DVLD_BusinessLayer
 
         }
 
-        public static clsPerson FindPerson(int PersonID)
+        public static clsPerson FindLicenseByLicenseIDPerson(int PersonID)
         {
 
             string NationalNo = "", FirstName = "", SecondName = "", ThirdName = "",
@@ -118,7 +118,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        public static clsPerson FindPerson(string NationalNo)
+        public static clsPerson FindLicenseByLicenseIDPerson(string NationalNo)
         {
                         
             string FirstName = "", SecondName = "", ThirdName = "",

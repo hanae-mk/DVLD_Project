@@ -49,7 +49,7 @@ namespace DVLD_BusinessLayer
             return clsApplicationTypeData.UpdateApplicationType(this.ApplicationTypeID, this.ApplicationTypeTitle, this.ApplicationTypeFees);
         }
 
-        public static clsApplicationType Find(int ApplicationTypeID)
+        public static clsApplicationType FindLicenseByLicenseID(int ApplicationTypeID)
         {
             string ApplicationTypeTitle = "";
             float ApplicationTypeFees = 0.00f;

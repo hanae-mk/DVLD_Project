@@ -32,7 +32,7 @@ namespace DVLD_BusinessLayer
             return clsCountryData.GetListCountries();
         }
 
-        public static clsCountry FindCountry(string CountryName) 
+        public static clsCountry FindLicenseByLicenseIDCountry(string CountryName) 
         {
             int CountryID = -1;
 
@@ -42,7 +42,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        public static clsCountry FindCountry(int CountryID)
+        public static clsCountry FindLicenseByLicenseIDCountry(int CountryID)
         {
             string CountryName = string.Empty;
 
