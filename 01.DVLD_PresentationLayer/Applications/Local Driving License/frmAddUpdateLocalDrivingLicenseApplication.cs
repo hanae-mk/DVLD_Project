@@ -170,7 +170,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 return;
             }
 
-            //Store Controls Info in The Object
+            //Save Controls Info in The Object
             _LocalDrivingLicenseApplication.ApplicantPersonID = ctrlPersonCardWithFilter1.PersonID;
             _LocalDrivingLicenseApplication.ApplicationDate = DateTime.Now;
             _LocalDrivingLicenseApplication.ApplicationTypeID = 1;
