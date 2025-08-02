@@ -100,7 +100,8 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
             //First we find LicenseClassID we get it's Name then we search the LicenseClassName
             //In the ComboBox using FindString() Method
-            cbLicenseClass.SelectedIndex = cbLicenseClass.FindString(clsLicenseClass.Find(_LocalDrivingLicenseApplication.LicenseClassID).ClassName);
+            cbLicenseClass.SelectedIndex = cbLicenseClass.FindString(clsLicenseClass.FindLicenseByClassID(_LocalDrivingLicenseApplication.LicenseClassID).ClassName);
+
             lblFees.Text = _LocalDrivingLicenseApplication.PaidFees.ToString();
             lblCreatedByUser.Text = clsUser.FindByUserID(_LocalDrivingLicenseApplication.CreatedByUserID).UserName;
         }
@@ -143,10 +144,12 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int LicenseClassID = clsLicenseClass.Find(cbLicenseClass.Text).LicenseClassID;
+            int LicenseClassID = clsLicenseClass.FindLicenseByClassName(cbLicenseClass.Text).LicenseClassID;
+
+            //bool IsActiveApplication
             int ActiveApplicationID = clsApplication.GetActiveApplicationIDForLicenseClass(_SelectedPersonID, (int)clsApplication.enApplicationType.NewDrivingLicense, LicenseClassID);
 
-            //we check if the user have already an active license for this class
+            //we check if the user have already an active application for this class
             if (ActiveApplicationID != -1)
             {
                 MessageBox.Show("Choose Another License Class, The Selected Person Already have an active application for the selected class with ID = " + ActiveApplicationID, 

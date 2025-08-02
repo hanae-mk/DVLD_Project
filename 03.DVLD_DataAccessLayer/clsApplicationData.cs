@@ -301,8 +301,9 @@ namespace DVLD_DataAccessLayer
             return (RowsAffected > 0);
         }
 
-        
-
+        //here we make sure if there is an active application type for a license class
+        //for example is there an active "New Local Driving Application Type"
+        //for "Small MotorCycle Class"
         public static int GetActiveApplicationIDForLicenseClass(int ApplicantPersonID, int ApplicationTypeID, int LicenseClassID)
         {
             int ActiveApplicationID = -1;

@@ -60,7 +60,7 @@ namespace DVLD_BusinessLayer
             this.PaidFees = PaidFees;                   //
             this.CreatedByUserID = CreatedByUserID;     //Base Class
             this.LicenseClassID = LicenseClassID;
-            this.LicenseClassInfo = clsLicenseClass.Find(LicenseClassID); //COMPOSITION
+            this.LicenseClassInfo = clsLicenseClass.FindLicenseByClassID(LicenseClassID); //COMPOSITION
 
             Mode = enMode.Update;
         }

@@ -48,7 +48,7 @@ namespace DVLD_Project.Applications.Controls
             linklblShowLicenseInfo.Enabled = (_LicenseID != -1);
 
             lblLocalDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
-            lblAppliedForLicense.Text = clsLicenseClass.Find(_LocalDrivingLicenseApplication.LicenseClassID).ClassName;
+            lblAppliedForLicense.Text = clsLicenseClass.FindLicenseByClassID(_LocalDrivingLicenseApplication.LicenseClassID).ClassName;
             lblPassedTests.Text = _LocalDrivingLicenseApplication.GetPassedTestCount().ToString() + " /3";
             ctrlApplicationBasicInfo1.LoadApplicationInfo(_LocalDrivingLicenseApplication.ApplicationID);
         }
