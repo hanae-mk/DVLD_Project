@@ -213,6 +213,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
             _SelectedPersonID = obj;
         }
 
+        //Load() Event is fired before Activated() Event
         private void frmAddUpdateLocalDrivingLicenseApplication_Activated(object sender, EventArgs e)
         {
             ctrlPersonCardWithFilter1.FilterFocus();
