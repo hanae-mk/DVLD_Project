@@ -16,18 +16,20 @@ namespace DVLD_Project.Applications.Local_Driving_License
     {
         public enum enMode { AddNew = 1, Update = 2};
         private enMode _Mode = enMode.AddNew;
+       
+        private int _SelectedPersonID = -1; //We use this variable in DataBack Event
 
+        private clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
         private int _LocalDrivingLicenseApplicationID = -1;
-        private int _SelectedPersonID = -1; //We use it in DataBack Event
 
-        clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication; //private object
-
+        //we have 2 constructors : OverLoading Constructor
         public frmAddUpdateLocalDrivingLicenseApplication()
         {
             InitializeComponent();
             _Mode = enMode.AddNew;
         }
 
+        //Parameterized Constructor
         public frmAddUpdateLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID)
         {
             InitializeComponent();
@@ -199,13 +201,13 @@ namespace DVLD_Project.Applications.Local_Driving_License
         }
 
         //we didn't use it here we use it in ctrlPersonCardWithFilter to return data
-        //private void _DataBackEvent(object sender, int PersonID)
-        //{
-        //    // Handle the data received why we didn't use this method in 
-        //    //frmAddUpdateUser because when we click on search we receive data
-        //    _SelectedPersonID = PersonID;
-        //    ctrlPersonCardWithFilter1.LoadPersonInfo(_SelectedPersonID);
-        //}
+        private void _DataBackEvent(object sender, int PersonID)
+        {
+            // Handle the data received why we didn't use this method in 
+            //frmAddUpdateUser because when we click on search we receive data
+            _SelectedPersonID = PersonID;
+            ctrlPersonCardWithFilter1.LoadPersonInfo(_SelectedPersonID);
+        }
 
         //here we receive PersonID from ctrlPersonCardWithFilter
         private void ctrlPersonCardWithFilter1_OnPersonSelected(int obj)

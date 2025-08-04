@@ -80,7 +80,7 @@ namespace DVLD_Project.People
         private void _LoadData()
         {
             //Global object type Person class
-            _Person = clsPerson.FindLicenseByLicenseIDPerson(_PersonID);
+            _Person = clsPerson.FindPersonByID(_PersonID);
 
             if (_Person == null)
             {
