@@ -144,12 +144,12 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int LicenseClassID = clsLicenseClass.FindLicenseByLicenseIDLicenseByLicenseClassName(cbLicenseClass.Text).LicenseClassID;
+            int LicenseClassID = clsLicenseClass.FindLicenseByClassName(cbLicenseClass.Text).LicenseClassID;
 
+            //we check if the applicant have already an active application type NewDrivingLicense for a specific license class
             //bool IsActiveApplication
             int ActiveApplicationID = clsApplication.GetActiveApplicationIDForLicenseClass(_SelectedPersonID, (int)clsApplication.enApplicationType.NewDrivingLicense, LicenseClassID);
-
-            //we check if the user have already an active application for this class
+          
             if (ActiveApplicationID != -1)
             {
                 MessageBox.Show("Choose Another License Class, The Selected Person Already have an active application for the selected class with ID = " + ActiveApplicationID, 
@@ -160,7 +160,8 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 return;
             }
 
-            //check if the applicant already have an active license of the same driving class.
+            //then we check if the applicant already have an active license
+            //of the same driving license class.
             if (clsLicense.IsLicenseExist(ctrlPersonCardWithFilter1.PersonID, LicenseClassID))
             {
                 MessageBox.Show("This Person already have an active license with the same applied driving class, Choose a different driving class",

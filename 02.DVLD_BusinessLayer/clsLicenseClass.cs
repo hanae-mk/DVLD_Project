@@ -75,7 +75,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        public static clsLicenseClass FindLicenseByLicenseIDLicenseByLicenseClassName(string ClassName)
+        public static clsLicenseClass FindLicenseByClassName(string ClassName)
         {
             int LicenseClassID = -1; 
             string ClassDescription = "";

@@ -330,7 +330,7 @@ namespace DVLD_BusinessLayer
 
         public int GetActiveLicenseID()
         {
-            //this will get the license id that belongs to this application
+            //this will return the license id that belongs to this application
             return clsLicense.GetActiveLicenseID(this.ApplicantPersonID, this.LicenseClassID);
         }
     }
