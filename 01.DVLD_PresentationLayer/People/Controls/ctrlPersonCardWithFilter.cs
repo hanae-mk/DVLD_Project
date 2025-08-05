@@ -99,10 +99,10 @@ namespace DVLD_Project.People.Controls
         {
             cbFilterBy.SelectedIndex = 0;
             txtFilterValue.Text = PersonID.ToString();
-            _FindLicenseByLicenseIDNow();
+            _FindNow();
         }
 
-        private void _FindLicenseByLicenseIDNow()
+        private void _FindNow()
         {
             switch(cbFilterBy.Text)
             {
@@ -154,7 +154,7 @@ namespace DVLD_Project.People.Controls
                 return;
             }
 
-            _FindLicenseByLicenseIDNow();
+            _FindNow();
         }      
 
         private void txtFilterValue_Validating(object sender, CancelEventArgs e)
@@ -201,7 +201,6 @@ namespace DVLD_Project.People.Controls
 
             if (cbFilterBy.Text == "Person ID" || cbFilterBy.Text == "User ID")
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-            //                                         what are control characters??
         }
     }
 }

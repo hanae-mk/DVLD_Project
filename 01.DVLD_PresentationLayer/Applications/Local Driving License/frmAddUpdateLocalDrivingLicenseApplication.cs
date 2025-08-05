@@ -216,10 +216,10 @@ namespace DVLD_Project.Applications.Local_Driving_License
         }
 
         //Load() Event is fired before Activated() Event
-        private void frmAddUpdateLocalDrivingLicenseApplication_Activated(object sender, EventArgs e)
-        {
-            ctrlPersonCardWithFilter1.FilterFocus();
-        }
+        //private void frmAddUpdateLocalDrivingLicenseApplication_Activated(object sender, EventArgs e)
+        //{
+        //    ctrlPersonCardWithFilter1.FilterFocus();
+        //}
 
         private void btnClose_Click(object sender, EventArgs e)
         {
