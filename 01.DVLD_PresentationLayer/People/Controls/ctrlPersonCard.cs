@@ -101,30 +101,32 @@ namespace DVLD_Project
             lblEditPersonInfoLink.Visible = true;
 
             if (_Person.Gender == 0)
+            {
                 pbGender.Image = Resources.Man_32;
+                pbPersonImage.Image = Resources.Male_512;
+            }
             else
+            { 
                 pbGender.Image = Resources.Woman_32;
+                pbPersonImage.Image = Resources.Female_512;
+            }
 
-            _LoadPersonImage(); //pbPersonImage.Load(_Person.ImagePath); 
+            _LoadPersonImage();
         }
 
         private void _LoadPersonImage()
-        {
-            if (_Person.Gender == 0)
-                pbPersonImage.Image = Resources.Male_512;
-            else
-                pbPersonImage.Image = Resources.Female_512;
-
+        {              
             if (_Person.ImagePath != "")
             {
                 if (File.Exists(_Person.ImagePath))
-                    //Load _Person.ImagePath in PictureBox
+                    //here we Load _Person.ImagePath in PictureBox
                     //Do NOT use.Load() method that is in PictureBox
+                    //pbPersonImage.Load(_Person.ImagePath);
                     //because it's loads image and still have log to the file
                     //when you want to load another image and delete the old one
                     //it's throws an error that the file is used by another process
                     //so it's better to Load image by this property .ImageLocation
-                    pbPersonImage.ImageLocation = _Person.ImagePath;
+                    pbPersonImage.ImageLocation = _Person.ImagePath;                 
                 else
                     MessageBox.Show("Image Not Found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);              
             }                 

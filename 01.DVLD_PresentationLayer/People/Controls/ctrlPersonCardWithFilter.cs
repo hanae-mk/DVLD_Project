@@ -14,6 +14,7 @@ namespace DVLD_Project.People.Controls
 {
     public partial class ctrlPersonCardWithFilter: UserControl
     {
+        
         public event Action<int> OnPersonSelected;
 
         protected virtual void PersonSelected(int PersonID)
@@ -123,13 +124,13 @@ namespace DVLD_Project.People.Controls
                 break;
             }
 
-            //You can set your conditions as you want
+            //You can set your conditions as you want to fire the event
             //OnPersonSelected != null means is this control used in a form
             //so we can use the event
             if (OnPersonSelected != null && FilterEnabled) // = is gbEnabled
             {
-                //OnPersonSelected(ctrlPersonCard.PersonID); DEBUG BOTH
-                PersonSelected(ctrlPersonCard1.PersonID);
+                OnPersonSelected(ctrlPersonCard1.PersonID); //DEBUG BOTH
+                //PersonSelected(ctrlPersonCard1.PersonID);
                 //Firing Event
             }
             //OnPersonSelected Event will appear in Events when we drag drop this control
@@ -142,12 +143,12 @@ namespace DVLD_Project.People.Controls
             txtFilterValue.Focus();            
         }
 
-        private void btnFindLicenseByLicenseID_Click(object sender, EventArgs e)
+        private void btnFind_Click(object sender, EventArgs e)
         {
             //This Event is for every method that ends with _Validating()
             if (!this.ValidateChildren()) 
             {
-                MessageBox.Show("This filed is not valid!, put the mouse over the red icon to see the error", 
+                MessageBox.Show("This field is not valid!, put the mouse over the red icon to see the error", 
                                 "Validation Error", 
                                 MessageBoxButtons.OK, 
                                 MessageBoxIcon.Error);                
@@ -197,10 +198,10 @@ namespace DVLD_Project.People.Controls
         {
             //First, we check if the "Enter" Key is pressed ((char)13 = Enter)
             if (e.KeyChar == (char)13)
-                btnFindLicenseByLicenseID.PerformClick();
+                btnFind.PerformClick();
 
-            if (cbFilterBy.Text == "Person ID" || cbFilterBy.Text == "User ID")
-                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            if (cbFilterBy.Text == "Person ID")
+                e.Handled = !char.IsDigit(e.KeyChar);
         }
     }
 }
