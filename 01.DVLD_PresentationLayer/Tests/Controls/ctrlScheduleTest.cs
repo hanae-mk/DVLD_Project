@@ -98,7 +98,7 @@ namespace DVLD_Project.Tests.Controls
 
             if(_CreationMode == enCreationMode.RetakeTestSchedule)
             {
-                lblRetakeApplicationFees.Text = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.RetakeTest).ApplicationTypeFees.ToString();
+                lblRetakeApplicationFees.Text = clsApplicationType.FindApplication((int)clsApplication.enApplicationType.RetakeTest).ApplicationTypeFees.ToString();
                 gbRetakeTestInfo.Enabled = true;
                 lblTitle.Text = "Schedule Retake Test";
                 lblRetakeTestApplicationID.Text = "0";
@@ -289,7 +289,7 @@ namespace DVLD_Project.Tests.Controls
                 Application.ApplicationTypeID = (int)clsApplication.enApplicationType.RetakeTest;
                 Application.ApplicationStatus = clsApplication.enApplicationStatus.Completed;
                 Application.LastStatusDate = DateTime.Now;
-                Application.PaidFees = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.RetakeTest).ApplicationTypeFees;
+                Application.PaidFees = clsApplicationType.FindApplication((int)clsApplication.enApplicationType.RetakeTest).ApplicationTypeFees;
                 Application.CreatedByUserID = clsGlobal.CurrentUser.UserID;
 
                 if(!Application.Save())

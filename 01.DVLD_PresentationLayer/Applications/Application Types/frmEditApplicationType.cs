@@ -28,7 +28,7 @@ namespace DVLD_Project.Applications.Application_Types
         {
             lblApplicationTypeID.Text = _ApplicationTypeID.ToString();
          
-            _ApplicationType = clsApplicationType.FindLicenseByLicenseID(_ApplicationTypeID);
+            _ApplicationType = clsApplicationType.FindApplication(_ApplicationTypeID);
 
             if (_ApplicationType != null)
             {

@@ -29,7 +29,7 @@ namespace DVLD_Project.Applications.International_Driving_License
             lblIssueDate.Text = lblApplicationDate.Text;
             //We Add One Year Because International License Availability In The System is 1 Year
             lblExpirationDate.Text = clsFormat.ShortDateTime(DateTime.Now.AddDays(1));
-            lblFees.Text = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.NewInternationalLicense).ApplicationTypeFees.ToString();
+            lblFees.Text = clsApplicationType.FindApplication((int)clsApplication.enApplicationType.NewInternationalLicense).ApplicationTypeFees.ToString();
             lblCreatedByUser.Text = clsGlobal.CurrentUser.UserName;
         }
 
@@ -86,7 +86,7 @@ namespace DVLD_Project.Applications.International_Driving_License
             InternationalLicense.ApplicationDate = DateTime.Now;
             InternationalLicense.ApplicationStatus = clsApplication.enApplicationStatus.Completed;
             InternationalLicense.LastStatusDate = DateTime.Now;
-            InternationalLicense.PaidFees = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.NewInternationalLicense).ApplicationTypeFees;
+            InternationalLicense.PaidFees = clsApplicationType.FindApplication((int)clsApplication.enApplicationType.NewInternationalLicense).ApplicationTypeFees;
             InternationalLicense.CreatedByUserID = clsGlobal.CurrentUser.UserID;
 
             InternationalLicense.DriverID = ctrlDriverLicenseInfoWithFilter1.SelectedLicenseInfo.DriverID;

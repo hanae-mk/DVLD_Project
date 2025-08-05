@@ -64,7 +64,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 lblApplicationDate.Text = DateTime.Now.ToShortDateString();
                 cbLicenseClass.SelectedIndex = 2; //Ordinary Driving License
                 //Here we chose enApplicationType.NewDrivingLicense because we are in AddNew Mode
-                lblFees.Text = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.NewDrivingLicense).ApplicationTypeFees.ToString();   
+                lblFees.Text = clsApplicationType.FindApplication((int)clsApplication.enApplicationType.NewDrivingLicense).ApplicationTypeFees.ToString();   
                 lblCreatedByUser.Text = clsGlobal.CurrentUser.UserName;
             }
             else

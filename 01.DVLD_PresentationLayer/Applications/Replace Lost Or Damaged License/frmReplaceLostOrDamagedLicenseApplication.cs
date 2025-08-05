@@ -55,14 +55,14 @@ namespace DVLD_Project.Applications.ReplaceLostOrDamagedLicense
         {
             lblTitle.Text = "Replacement For Damaged License";
             this.Text = lblTitle.Text;
-            lblApplicationFees.Text = clsApplicationType.FindLicenseByLicenseID(_GetApplicationTypeID()).ApplicationTypeFees.ToString();
+            lblApplicationFees.Text = clsApplicationType.FindApplication(_GetApplicationTypeID()).ApplicationTypeFees.ToString();
         }
 
         private void rbLostLicense_CheckedChanged(object sender, EventArgs e)
         {
             lblTitle.Text = "Replacement For Lost License";
             this.Text = lblTitle.Text;
-            lblApplicationFees.Text = clsApplicationType.FindLicenseByLicenseID(_GetApplicationTypeID()).ApplicationTypeFees.ToString();
+            lblApplicationFees.Text = clsApplicationType.FindApplication(_GetApplicationTypeID()).ApplicationTypeFees.ToString();
         }
 
         private void frmReplaceLostOrDamagedLicenseApplication_Activated(object sender, EventArgs e)

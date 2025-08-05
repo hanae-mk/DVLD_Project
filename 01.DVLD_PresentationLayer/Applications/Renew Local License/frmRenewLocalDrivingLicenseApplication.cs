@@ -70,7 +70,7 @@ namespace DVLD_Project.Licenses.Local_Licenses
 
             lblApplicationDate.Text = clsFormat.ShortDateTime(DateTime.Now);
             lblIssueDate.Text = lblApplicationDate.Text;
-            lblApplicationFees.Text = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.RenewDrivingLicense).ApplicationTypeFees.ToString();
+            lblApplicationFees.Text = clsApplicationType.FindApplication((int)clsApplication.enApplicationType.RenewDrivingLicense).ApplicationTypeFees.ToString();
             lblCreatedBy.Text = clsGlobal.CurrentUser.UserName;
         }
    
