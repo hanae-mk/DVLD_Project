@@ -100,12 +100,12 @@ namespace DVLD_Project.Applications.Local_Driving_License
             //We can also use .ToShortDateString();
             lblApplicationDate.Text = clsFormat.ShortDateTime(_LocalDrivingLicenseApplication.ApplicationDate);
 
-            //First we FindLicenseByLicenseID LicenseClassID we get it's Name then we search the LicenseClassName
-            //In the ComboBox using FindLicenseByLicenseIDString() Method
-            cbLicenseClass.SelectedIndex = cbLicenseClass.FindString(clsLicenseClass.FindLicenseByLicenseIDLicenseByLicenseClassID(_LocalDrivingLicenseApplication.LicenseClassID).ClassName);
+            //First we Find License By ID we get it's Name then we search the LicenseClassName
+            //In the ComboBox using FindString() Method
+            cbLicenseClass.SelectedIndex = cbLicenseClass.FindString(clsLicenseClass.FindLicenseByID(_LocalDrivingLicenseApplication.LicenseClassID).ClassName);
 
             lblFees.Text = _LocalDrivingLicenseApplication.PaidFees.ToString();
-            lblCreatedByUser.Text = clsUser.FindLicenseByLicenseIDByUserID(_LocalDrivingLicenseApplication.CreatedByUserID).UserName;
+            lblCreatedByUser.Text = clsUser.FindUserByID(_LocalDrivingLicenseApplication.CreatedByUserID).UserName;
         }
 
         private void frmAddUpdateLocalDrivingLicenseApplication_Load(object sender, EventArgs e)

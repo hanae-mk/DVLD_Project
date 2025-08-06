@@ -76,7 +76,7 @@ namespace DVLD_BusinessLayer
             this.IssueReason = IssueReason;
             this.CreatedByUserID = CreatedByUserID;
             this.DriverInfo = clsDriver.FindLicenseByLicenseIDByDriverID(this.DriverID);
-            this.LicenseClassInfo = clsLicenseClass.FindLicenseByLicenseIDLicenseByLicenseClassID(this.LicenseClass);
+            this.LicenseClassInfo = clsLicenseClass.FindLicenseByID(this.LicenseClass);
             this.DetainedInfo = clsDetainedLicense.FindLicenseByLicenseIDByLicenseID(this.LicenseID);
 
             Mode = enMode.Update;

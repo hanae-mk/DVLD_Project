@@ -60,7 +60,7 @@ namespace DVLD_BusinessLayer
             this.ClassDescription, this.MinimumAllowedAge, this.DefaultValidityLength, this.ClassFees);
         }
 
-        public static clsLicenseClass FindLicenseByLicenseIDLicenseByLicenseClassID(int LicenseClassID)
+        public static clsLicenseClass FindLicenseByID(int LicenseClassID)
         {
             string ClassName = "", ClassDescription = "";
             byte MinimumAllowedAge = 18, DefaultValidityLength = 10; 

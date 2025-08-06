@@ -108,7 +108,6 @@ namespace DVLD_Project.People.Controls
             {
                 //txtFilterValue.Text takes the value and displays all data
                 //in ctrlPersonCard
-
                 case "Person ID":
                     ctrlPersonCard1.LoadPersonInfo(int.Parse(txtFilterValue.Text));
                     //we chose PersonID so we should convert txtFilterValue.Text to int 

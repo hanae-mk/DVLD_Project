@@ -66,7 +66,7 @@ namespace DVLD_Project.Users
 
             ctrlPersonCardWithFilter1.FilterEnabled = false;
 
-            _User = clsUser.FindLicenseByLicenseIDByUserID(_UserID);
+            _User = clsUser.FindUserByID(_UserID);
 
             if (_User == null)
             {

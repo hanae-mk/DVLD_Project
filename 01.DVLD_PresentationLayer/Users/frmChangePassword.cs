@@ -43,7 +43,7 @@ namespace DVLD_Project.Users
         {
             _ResetDefaultValues();
 
-            _User = clsUser.FindLicenseByLicenseIDByUserID(_UserID);
+            _User = clsUser.FindUserByID(_UserID);
 
             if(_User == null)
             {

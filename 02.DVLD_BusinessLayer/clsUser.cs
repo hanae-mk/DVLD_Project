@@ -57,7 +57,7 @@ namespace DVLD_BusinessLayer
             return (this.UserID != -1);
         }
 
-        public static clsUser FindLicenseByLicenseIDByUserID(int UserID)
+        public static clsUser FindUserByID(int UserID)
         {
             int PersonID = -1;
             string UserName = "", Password = "";
@@ -72,7 +72,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        public static clsUser FindLicenseByLicenseIDByPersonID(int PersonID) 
+        public static clsUser FindUserByPersonID(int PersonID) 
         {
             int UserID = -1;
             string UserName = "", Password = "";
