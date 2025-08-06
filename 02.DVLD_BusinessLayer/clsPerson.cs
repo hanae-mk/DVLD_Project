@@ -95,7 +95,7 @@ namespace DVLD_BusinessLayer
 
         }
 
-        public static clsPerson FindLicenseByLicenseIDPerson(int PersonID)
+        public static clsPerson FindPersonByID(int PersonID)
         {
 
             string NationalNo = "", FirstName = "", SecondName = "", ThirdName = "",
@@ -118,7 +118,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        public static clsPerson FindLicenseByLicenseIDPerson(string NationalNo)
+        public static clsPerson FindPersonByNationalNo(string NationalNo)
         {
                         
             string FirstName = "", SecondName = "", ThirdName = "",

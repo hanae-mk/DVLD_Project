@@ -38,7 +38,7 @@ namespace DVLD_BusinessLayer
             this.UserName = UserName;
             this.Password = Password;
             this.IsActive = IsActive;        
-            this.PersonInfo = clsPerson.FindLicenseByLicenseIDPerson(PersonID); //we can access to all User Infos
+            this.PersonInfo = clsPerson.FindPersonByID(PersonID); //we can access to all User Infos
 
             Mode = enMode.Update;
             //return full object with meagniful data

@@ -195,7 +195,7 @@ namespace DVLD_BusinessLayer
             Application.ApplicationTypeID = (int)clsApplication.enApplicationType.ReleaseDetainedDrivingLicense;
             Application.ApplicationStatus = clsApplication.enApplicationStatus.Completed;
             Application.LastStatusDate = DateTime.Now;
-            Application.PaidFees = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.ReleaseDetainedDrivingLicense).ApplicationTypeFees;
+            Application.PaidFees = clsApplicationType.FindApplication((int)clsApplication.enApplicationType.ReleaseDetainedDrivingLicense).ApplicationTypeFees;
             Application.CreatedByUserID = ReleasedByUserID;
 
             if (!Application.Save())
@@ -219,7 +219,7 @@ namespace DVLD_BusinessLayer
             Application.ApplicationTypeID = (int)clsApplication.enApplicationType.RenewDrivingLicense;
             Application.ApplicationStatus = clsApplication.enApplicationStatus.Completed;
             Application.LastStatusDate = DateTime.Now;
-            Application.PaidFees = clsApplicationType.FindLicenseByLicenseID((int)clsApplication.enApplicationType.RenewDrivingLicense).ApplicationTypeFees;
+            Application.PaidFees = clsApplicationType.FindApplication((int)clsApplication.enApplicationType.RenewDrivingLicense).ApplicationTypeFees;
             Application.CreatedByUserID = CreatedByUserID;
 
             if (!Application.Save())
@@ -263,7 +263,7 @@ namespace DVLD_BusinessLayer
 
             Application.ApplicationStatus = clsApplication.enApplicationStatus.Completed;
             Application.LastStatusDate = DateTime.Now;
-            Application.PaidFees = clsApplicationType.FindLicenseByLicenseID(Application.ApplicationTypeID).ApplicationTypeFees;
+            Application.PaidFees = clsApplicationType.FindApplication(Application.ApplicationTypeID).ApplicationTypeFees;
             Application.CreatedByUserID = CreatedByUserID;
 
             if (!Application.Save())

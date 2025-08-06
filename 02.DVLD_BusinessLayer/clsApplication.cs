@@ -80,10 +80,10 @@ namespace DVLD_BusinessLayer
         {
             this.ApplicationID = ApplicationID;
             this.ApplicantPersonID = ApplicantPersonID;
-            this.PersonInfo = clsPerson.FindLicenseByLicenseIDPerson(ApplicantPersonID);
+            this.PersonInfo = clsPerson.FindPersonByID(ApplicantPersonID);
             this.ApplicationDate = ApplicationDate;
             this.ApplicationTypeID = ApplicationTypeID;
-            this.ApplicationTypeInfo = clsApplicationType.FindLicenseByLicenseID(ApplicationTypeID); 
+            this.ApplicationTypeInfo = clsApplicationType.FindApplication(ApplicationTypeID); 
             this.ApplicationStatus = ApplicationStatus;
             this.LastStatusDate = LastStatusDate;
             this.PaidFees = PaidFees;

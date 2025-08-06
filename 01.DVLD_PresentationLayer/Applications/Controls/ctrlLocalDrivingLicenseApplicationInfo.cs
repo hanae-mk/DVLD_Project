@@ -55,7 +55,7 @@ namespace DVLD_Project.Applications.Controls
 
         public void LoadApplicationInfoByLocalDrivingApplicationID(int LocalDrivingLicenseApplicationID)
         {
-            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLicenseByLicenseIDLocalDrivingLicenseApplicationInfoByID(LocalDrivingLicenseApplicationID);
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindApplicationByLocalDrivingLicenseApplicationID(LocalDrivingLicenseApplicationID);
 
             if (_LocalDrivingLicenseApplication == null)
             {
@@ -73,7 +73,7 @@ namespace DVLD_Project.Applications.Controls
 
         public void LoadApplicationInfoByApplicationID(int ApplicationID)
         {
-            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLicenseByLicenseIDByApplicationID(ApplicationID);
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindApplicationByApplicationID(ApplicationID);
 
             if(_LocalDrivingLicenseApplication == null)
             {

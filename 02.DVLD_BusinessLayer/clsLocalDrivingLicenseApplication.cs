@@ -25,7 +25,7 @@ namespace DVLD_BusinessLayer
             get 
             {
                 //we can access to the base class info via sub class
-                return clsPerson.FindLicenseByLicenseIDPerson(ApplicantPersonID).FullName; //base.PersonInfo.FullName;              
+                return clsPerson.FindPersonByID(ApplicantPersonID).FullName; //base.PersonInfo.FullName;              
             }
         }
 
@@ -37,7 +37,6 @@ namespace DVLD_BusinessLayer
         public clsLocalDrivingLicenseApplication()
         {
             this.LocalDrivingLicenseApplicationID = -1;
-            //this.ApplicationID = -1;
             this.LicenseClassID = -1;
 
             Mode = enMode.AddNew;
@@ -82,7 +81,7 @@ namespace DVLD_BusinessLayer
                 (this.LocalDrivingLicenseApplicationID, this.ApplicationID, this.LicenseClassID);
         }
 
-        public static clsLocalDrivingLicenseApplication FindLicenseByLicenseIDLocalDrivingLicenseApplicationInfoByID(int LocalDrivingLicenseApplicationID)
+        public static clsLocalDrivingLicenseApplication FindApplicationByLocalDrivingLicenseApplicationID(int LocalDrivingLicenseApplicationID)
         {
             int ApplicationID = -1, LicenseClassID = -1;
 
@@ -109,7 +108,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        public static clsLocalDrivingLicenseApplication FindLicenseByLicenseIDByApplicationID(int ApplicationID)
+        public static clsLocalDrivingLicenseApplication FindApplicationByApplicationID(int ApplicationID)
         {
 
             int LocalDrivingLicenseApplicationID = -1, LicenseClassID = -1;
@@ -140,6 +139,8 @@ namespace DVLD_BusinessLayer
         {
             //Because of inheritance first we call the save method in the base class,
             //it will take care of adding all informations to the application table.
+
+            //here we CAST the mode of this class to the mode of the base class
             base.Mode  = (clsApplication.enMode)Mode;
             if (!base.Save())
                 return false;

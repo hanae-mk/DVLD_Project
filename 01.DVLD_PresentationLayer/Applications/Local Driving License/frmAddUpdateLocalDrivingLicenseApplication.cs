@@ -80,7 +80,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
             ctrlPersonCardWithFilter1.FilterEnabled = false;
 
             //we have app ID bcs we are in update mode
-            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindLicenseByLicenseIDLocalDrivingLicenseApplicationInfoByID(_LocalDrivingLicenseApplicationID);
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindApplicationByLocalDrivingLicenseApplicationID(_LocalDrivingLicenseApplicationID);
 
             if (_LocalDrivingLicenseApplication == null)
             {

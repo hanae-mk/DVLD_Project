@@ -37,7 +37,7 @@ namespace DVLD_BusinessLayer
             this.PersonID = PersonID;
             this.CreatedByUserID = CreatedByUserID;
             this.CreatedDate = CreatedDate;
-            this.PersonInfo = clsPerson.FindLicenseByLicenseIDPerson(PersonID);
+            this.PersonInfo = clsPerson.FindPersonByID(PersonID);
 
             Mode = enMode.Update;
         }
