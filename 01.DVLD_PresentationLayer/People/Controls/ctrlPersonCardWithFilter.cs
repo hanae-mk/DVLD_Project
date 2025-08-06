@@ -95,7 +95,6 @@ namespace DVLD_Project.People.Controls
             txtFilterValue.Focus();
         }
 
-        //this method we will use it in forms that contains this user control!
         public void LoadPersonInfo(int PersonID)
         {
             cbFilterBy.SelectedIndex = 0;
