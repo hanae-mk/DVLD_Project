@@ -260,12 +260,6 @@ namespace DVLD_DataAccessLayer
             return IsFound;
         }
 
-
-
-
-
-
-
         public static bool UpdateStatus(int ApplicationID, short NewStatus)
         {
             int RowsAffected = 0;

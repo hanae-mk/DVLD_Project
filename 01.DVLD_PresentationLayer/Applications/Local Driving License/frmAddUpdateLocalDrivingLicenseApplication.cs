@@ -14,9 +14,9 @@ namespace DVLD_Project.Applications.Local_Driving_License
 {
     public partial class frmAddUpdateLocalDrivingLicenseApplication : Form
     {
-        public enum enMode { AddNew = 1, Update = 2};
+        public enum enMode { AddNew = 1, Update = 2 };
         private enMode _Mode = enMode.AddNew;
-       
+
         private int _SelectedPersonID = -1; //We use this variable in DataBack Event
 
         private clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
@@ -52,7 +52,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
         {
             _FillLicenseClassesInComboBox();
 
-            if(_Mode == enMode.AddNew)
+            if (_Mode == enMode.AddNew)
             {
                 lblTitle.Text = "New Local Driving License Application";
                 this.Text = "New Local Driving License Application"; //this.Text means the title of the form
@@ -64,14 +64,14 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 lblApplicationDate.Text = DateTime.Now.ToShortDateString();
                 cbLicenseClass.SelectedIndex = 2; //Ordinary Driving License
                 //Here we chose enApplicationType.NewDrivingLicense because we are in AddNew Mode
-                lblFees.Text = clsApplicationType.FindApplication((int)clsApplication.enApplicationType.NewDrivingLicense).ApplicationTypeFees.ToString();   
+                lblFees.Text = clsApplicationType.FindApplication((int)clsApplication.enApplicationType.NewDrivingLicense).ApplicationTypeFees.ToString();
                 lblCreatedByUser.Text = clsGlobal.CurrentUser.UserName;
             }
             else
             {
                 lblTitle.Text = "Update Local Driving License Application";
-                this.Text = "Update Local Driving License Application";           
-                tpApplicationInfo.Enabled = true;             
+                this.Text = "Update Local Driving License Application";
+                tpApplicationInfo.Enabled = true;
             }
         }
 
@@ -91,11 +91,11 @@ namespace DVLD_Project.Applications.Local_Driving_License
                 this.Close();
                 return;
             }
-           
+
             //We transfer Data from Object to Controls
             ctrlPersonCardWithFilter1.LoadPersonInfo(_LocalDrivingLicenseApplication.ApplicantPersonID);
 
-            lblLocalDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.ApplicationID.ToString(); 
+            lblLocalDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.ApplicationID.ToString();
 
             //We can also use .ToShortDateString();
             lblApplicationDate.Text = clsFormat.ShortDateTime(_LocalDrivingLicenseApplication.ApplicationDate);
@@ -125,7 +125,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-                ctrlPersonCardWithFilter1.FilterFocus(); 
+                ctrlPersonCardWithFilter1.FilterFocus();
                 return;
             }
 
@@ -150,13 +150,13 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
             //we check if the applicant have already an active application type NewDrivingLicense for a specific license class
             //bool IsActiveApplication
-            int ActiveApplicationID = clsApplication.GetActiveApplicationIDForLicenseClass(_SelectedPersonID, (int)clsApplication.enApplicationType.NewDrivingLicense, LicenseClassID);
-          
+            int ActiveApplicationID = clsApplication.GetActiveApplicationIDForLicenseClass(ctrlPersonCardWithFilter1.PersonID, (int)clsApplication.enApplicationType.NewDrivingLicense, LicenseClassID);
+
             if (ActiveApplicationID != -1)
             {
-                MessageBox.Show("Choose Another License Class, The Selected Person Already have an active application for the selected class with ID = " + ActiveApplicationID, 
-                                "Error", 
-                                MessageBoxButtons.OK, 
+                MessageBox.Show("Choose Another License Class, The Selected Person Already have an active application for the selected class with ID = " + ActiveApplicationID,
+                                "Error",
+                                MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 cbLicenseClass.Focus();
                 return;
@@ -187,16 +187,16 @@ namespace DVLD_Project.Applications.Local_Driving_License
             {
                 _Mode = enMode.Update;
                 lblTitle.Text = "Update Local Driving License Application";
-                lblLocalDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();                         
-                MessageBox.Show("Data Saved Successfully", 
-                                "Saved", 
-                                MessageBoxButtons.OK, 
+                lblLocalDrivingLicenseApplicationID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
+                MessageBox.Show("Data Saved Successfully",
+                                "Saved",
+                                MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("An Error Occured While Saving Data", 
-                                "Error", 
-                                MessageBoxButtons.OK, 
+                MessageBox.Show("An Error Occured While Saving Data",
+                                "Error",
+                                MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
         }
 
@@ -216,14 +216,14 @@ namespace DVLD_Project.Applications.Local_Driving_License
         }
 
         //Load() Event is fired before Activated() Event
-        //private void frmAddUpdateLocalDrivingLicenseApplication_Activated(object sender, EventArgs e)
-        //{
-        //    ctrlPersonCardWithFilter1.FilterFocus();
-        //}
+        private void frmAddUpdateLocalDrivingLicenseApplication_Activated(object sender, EventArgs e)
+        {
+            ctrlPersonCardWithFilter1.FilterFocus();
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-    }
+    }      
 }
