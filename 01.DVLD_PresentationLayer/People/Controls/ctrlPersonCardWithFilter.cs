@@ -185,7 +185,7 @@ namespace DVLD_Project.People.Controls
             cbFilterBy.SelectedIndex = 0; 
             txtFilterValue.Text = PersonID.ToString();
             ctrlPersonCard1.LoadPersonInfo(PersonID);
-            //here we will return the PersonID in Form AddUpdatePerson
+            //here we will return the PersonID in the control
         }
 
         public void FilterFocus()
