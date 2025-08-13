@@ -15,6 +15,7 @@ namespace DVLD_Project.People.Controls
     public partial class ctrlPersonCardWithFilter: UserControl
     {
         
+        
         public event Action<int> OnPersonSelected;
 
         protected virtual void PersonSelected(int PersonID)
@@ -181,7 +182,7 @@ namespace DVLD_Project.People.Controls
 
         private void _DataBackEvent(object sender, int PersonID)
         {
-            cbFilterBy.SelectedIndex = 1; //This is the index of AddPerson in ComboBox
+            cbFilterBy.SelectedIndex = 0; 
             txtFilterValue.Text = PersonID.ToString();
             ctrlPersonCard1.LoadPersonInfo(PersonID);
             //here we will return the PersonID in Form AddUpdatePerson
