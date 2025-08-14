@@ -13,9 +13,7 @@ using DVLD_BusinessLayer;
 namespace DVLD_Project.People.Controls
 {
     public partial class ctrlPersonCardWithFilter: UserControl
-    {
-        
-        
+    {              
         public event Action<int> OnPersonSelected;
 
         protected virtual void PersonSelected(int PersonID)
@@ -32,6 +30,7 @@ namespace DVLD_Project.People.Controls
         private bool _ShowAddPerson = true;
         private bool _FilterEnabled = true;
 
+        //Exposed Property
         public bool ShowAddPerson
         {
             set
@@ -46,8 +45,9 @@ namespace DVLD_Project.People.Controls
             {
                 return _ShowAddPerson;
             }
-        }    
+        }
 
+        //Exposed Property
         public bool FilterEnabled
         {
             set
@@ -128,8 +128,8 @@ namespace DVLD_Project.People.Controls
             //so we can use the event
             if (OnPersonSelected != null && FilterEnabled) // = is gbEnabled
             {
-                OnPersonSelected(ctrlPersonCard1.PersonID); //DEBUG BOTH
-                //PersonSelected(ctrlPersonCard1.PersonID);
+                //OnPersonSelected(ctrlPersonCard1.PersonID); //DEBUG BOTH
+                PersonSelected(ctrlPersonCard1.PersonID);
                 //Firing Event
             }
             //OnPersonSelected Event will appear in Events when we drag drop this control

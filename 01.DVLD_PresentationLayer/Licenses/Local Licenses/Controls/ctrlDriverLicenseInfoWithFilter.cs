@@ -31,6 +31,7 @@ namespace DVLD_Project.Licenses.Local_Licenses
 
         private bool _IsFilterEnabled = true;
 
+        //Exposed Property
         public bool IsFilterEnabled
         {
             set 
