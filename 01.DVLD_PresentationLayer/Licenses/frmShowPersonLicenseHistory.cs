@@ -40,17 +40,22 @@ namespace DVLD_Project.Licenses
             }
         }
 
-        private void ctrlPersonCardWithFilter1_OnPersonSelected(int obj)
-        {
-            if (obj == -1)
-                ctrlDriverLicenses1.Clear();
-            else
-                ctrlDriverLicenses1.LoadInfoByPersonID(_PersonID);
-        }
+        //private void ctrlPersonCardWithFilter1_OnPersonSelected(int obj)
+        //{
+        //    if (obj == -1)
+        //        ctrlDriverLicenses1.Clear();
+        //    else
+        //        ctrlDriverLicenses1.LoadInfoByPersonID(_PersonID);
+        //}
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ctrlPersonCardWithFilter1_OnPersonSelected(int obj)
+        {
+
         }
     }
 }

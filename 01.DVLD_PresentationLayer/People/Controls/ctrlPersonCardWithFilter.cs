@@ -13,7 +13,7 @@ using DVLD_BusinessLayer;
 namespace DVLD_Project.People.Controls
 {
     public partial class ctrlPersonCardWithFilter: UserControl
-    {              
+    {                      
         public event Action<int> OnPersonSelected;
 
         protected virtual void PersonSelected(int PersonID)
@@ -22,7 +22,7 @@ namespace DVLD_Project.People.Controls
 
             if(Handler != null)
             {
-                Handler(PersonID);
+                Handler(PersonID); 
             }
         }
 
@@ -124,13 +124,12 @@ namespace DVLD_Project.People.Controls
             }
 
             //You can set your conditions as you want to fire the event
-            //OnPersonSelected != null means is this control used in a form
-            //so we can use the event
+            //OnPersonSelected != null means is this EVENT used in a form
+            //so we can FIRE IT
             if (OnPersonSelected != null && FilterEnabled) // = is gbEnabled
             {
-                //OnPersonSelected(ctrlPersonCard1.PersonID); //DEBUG BOTH
-                PersonSelected(ctrlPersonCard1.PersonID);
                 //Firing Event
+                OnPersonSelected(ctrlPersonCard1.PersonID);               
             }
             //OnPersonSelected Event will appear in Events when we drag drop this control
             //inside a form!
