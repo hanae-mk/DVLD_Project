@@ -31,7 +31,7 @@ namespace DVLD_Project.Licenses
             {
                 ctrlPersonCardWithFilter1.LoadPersonInfo(_PersonID);
                 ctrlPersonCardWithFilter1.FilterEnabled = false;
-                ctrlDriverLicenses1.LoadInfoByPersonID(_PersonID);
+                //ctrlDriverLicenses1.LoadInfoByPersonID(_PersonID);
             }
             else
             {
@@ -40,22 +40,17 @@ namespace DVLD_Project.Licenses
             }
         }
 
-        //private void ctrlPersonCardWithFilter1_OnPersonSelected(int obj)
-        //{
-        //    if (obj == -1)
-        //        ctrlDriverLicenses1.Clear();
-        //    else
-        //        ctrlDriverLicenses1.LoadInfoByPersonID(_PersonID);
-        //}
+        private void ctrlPersonCardWithFilter1_OnPersonSelected(int obj)
+        {
+            if (obj == -1)
+                ctrlDriverLicenses1.Clear();
+            else
+                ctrlDriverLicenses1.LoadInfoByPersonID(_PersonID);
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void ctrlPersonCardWithFilter1_OnPersonSelected(int obj)
-        {
-
         }
     }
 }

@@ -19,7 +19,7 @@ namespace DVLD_Project.Licenses.Local_Licenses
         public event Action<int> OnLicenseSelected;
 
         // Create a protected method to raise the event with a parameter
-        protected virtual void PersonSelected(int LicenseID)
+        protected virtual void LicenseSelected(int LicenseID)
         {
             Action<int> Handler = OnLicenseSelected;
 
@@ -95,7 +95,7 @@ namespace DVLD_Project.Licenses.Local_Licenses
                 btnFindLicenseByLicenseIDLicense.PerformClick(); //That means btnFindLicenseByLicenseIDLicense Perform that Enter Click!
         }
 
-        private void btnFindLicenseByLicenseIDLicense_Click(object sender, EventArgs e)
+        private void btnFindLicense_Click(object sender, EventArgs e)
         {
             if(!this.ValidateChildren())
             {

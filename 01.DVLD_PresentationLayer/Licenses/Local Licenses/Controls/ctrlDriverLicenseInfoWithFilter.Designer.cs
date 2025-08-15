@@ -61,7 +61,7 @@
             this.btnFindLicenseByLicenseIDLicense.Size = new System.Drawing.Size(56, 33);
             this.btnFindLicenseByLicenseIDLicense.TabIndex = 2;
             this.btnFindLicenseByLicenseIDLicense.UseVisualStyleBackColor = true;
-            this.btnFindLicenseByLicenseIDLicense.Click += new System.EventHandler(this.btnFindLicenseByLicenseIDLicense_Click);
+            this.btnFindLicenseByLicenseIDLicense.Click += new System.EventHandler(this.btnFindLicense_Click);
             // 
             // txtLicenseID
             // 

@@ -14,15 +14,16 @@ namespace DVLD_Project.People.Controls
 {
     public partial class ctrlPersonCardWithFilter: UserControl
     {                      
+        //Type of Action is int
         public event Action<int> OnPersonSelected;
 
         protected virtual void PersonSelected(int PersonID)
         {
             Action<int> Handler = OnPersonSelected;
 
-            if(Handler != null)
+            if (Handler != null)
             {
-                Handler(PersonID); 
+                Handler(PersonID);
             }
         }
 

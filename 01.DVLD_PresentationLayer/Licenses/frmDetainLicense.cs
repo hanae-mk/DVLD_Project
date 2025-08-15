@@ -67,6 +67,7 @@ namespace DVLD_Project.Licenses
                                 MessageBoxIcon.Error);
                 return;
             }
+
             MessageBox.Show("License Detained Successfully with ID = " + _DetainID,
                             "License Issued", 
                             MessageBoxButtons.OK, 

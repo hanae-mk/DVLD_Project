@@ -280,7 +280,7 @@ namespace DVLD_BusinessLayer
         {
             int DriverID = -1;
 
-            clsDriver Driver = clsDriver.FindLicenseByLicenseIDByPersonID(this.ApplicantPersonID);
+            clsDriver Driver = clsDriver.FindLicenseByPersonID(this.ApplicantPersonID);
 
             if (Driver == null)
             {

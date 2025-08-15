@@ -93,11 +93,11 @@ namespace DVLD_Project.Licenses.Controls
 
         public void LoadInfoByPersonID(int PersonID)
         {
-            _Driver = clsDriver.FindLicenseByLicenseIDByPersonID(PersonID);
+            _Driver = clsDriver.FindLicenseByPersonID(PersonID);
 
             if(_Driver != null)
             {
-                _DriverID = clsDriver.FindLicenseByLicenseIDByPersonID(PersonID).DriverID;
+                _DriverID = clsDriver.FindLicenseByPersonID(PersonID).DriverID;
             }
 
             _LoadLocalLicenseInfo();

@@ -202,9 +202,7 @@ namespace DVLD_Project.Applications.Local_Driving_License
 
         //we didn't use it here we use it in ctrlPersonCardWithFilter to return data
         private void _DataBackEvent(object sender, int PersonID)
-        {
-            // Handle the data received why we didn't use this method in 
-            //frmAddUpdateUser because when we click on search we receive data
+        {           
             _SelectedPersonID = PersonID;
             ctrlPersonCardWithFilter1.LoadPersonInfo(_SelectedPersonID);
         }

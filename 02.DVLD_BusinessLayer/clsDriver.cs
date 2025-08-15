@@ -65,7 +65,7 @@ namespace DVLD_BusinessLayer
                 return null;
         }
 
-        public static clsDriver FindLicenseByLicenseIDByPersonID(int PersonID)
+        public static clsDriver FindLicenseByPersonID(int PersonID)
         {
             int DriverID = -1, CreatedByUserID = -1; 
             DateTime CreatedDate = DateTime.Now;
