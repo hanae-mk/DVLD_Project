@@ -1,12 +1,12 @@
  # 🚗 Driving License Management System
 
- ### 👀 **Overview**  
+ ### 📋 **Overview**  
 
 A comprehensive **Windows Forms Application** for managing driver licenses, applications, and related administrative tasks.
 
 This system provides a robust solution for driving license authorities to manage licenses, applications, tests, and driver records efficiently.
 ***
-## ✨ **Features**
+## 🚀 **Features**
 
 👤 **User Management**
 
@@ -68,17 +68,18 @@ This system provides a robust solution for driving license authorities to manage
 
 - Licenses Driver history reports
 ***
-## 🛠️ **Requirements**
-
-- .NET Framework
-
-- ADO.Net
-
-- SQL Server
-
-- Windows Forms
-
-- Visual Studio 2022
+## 🏗️ **Architecture**
+The DVLD Project follows a three-tier architecture :
+**1.Presentation Layer:** Windows Forms UI Components
+**2.Business Layer:** Business Logic & Validations
+**3.Data Access Layer:** Database Operations & Data Access
+***
+## 🛠️ **Technologies**
+**Framework:** .NET Framework
+**UI Framework:** Winforms
+**Database:** Microsoft SQL Server
+**Data Access Technology:** ADO.NET 
+**IDE:** Visual Studio 2022
 ***
 ## 🚀 **Installation**
 
