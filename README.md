@@ -70,15 +70,22 @@ This system provides a robust solution for driving license authorities to manage
 ***
 ## 🏗️ **Architecture**
 The DVLD Project follows a three-tier architecture :
+
 **1.Presentation Layer:** Windows Forms UI Components
+
 **2.Business Layer:** Business Logic & Validations
+
 **3.Data Access Layer:** Database Operations & Data Access
 ***
 ## 🛠️ **Technologies**
 **Framework:** .NET Framework
+
 **UI Framework:** Winforms
+
 **Database:** Microsoft SQL Server
+
 **Data Access Technology:** ADO.NET 
+
 **IDE:** Visual Studio 2022
 ***
 ## 🚀 **Installation**
